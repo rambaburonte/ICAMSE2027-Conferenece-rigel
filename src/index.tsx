@@ -2175,45 +2175,61 @@ const AmericasLNGSummit: React.FC = () => {
                       {/* Who Should Attend & Why Attend Section */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ 
-                          padding: '100px 0', 
-                          background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%)',
-                          position: 'relative',
-                          overflow: 'hidden'
+                          padding: '120px 0', 
+                          background: '#ffffff', 
+                          position: 'relative'
                         }}>
-                          {/* Background Pattern */}
-                          <div style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(39, 67, 56, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(39, 67, 56, 0.03) 0%, transparent 50%)',
-                            opacity: 0.5
-                          }}></div>
-
-                          <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
                             
                             {/* Section Header */}
-                            <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                              <h2 style={{ 
-                                fontSize: '3rem', 
-                                fontWeight: '800', 
-                                color: '#274338', 
-                                marginBottom: '20px',
-                                textShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                                letterSpacing: '-0.5px'
+                            <div style={{ textAlign: 'center', marginBottom: '100px' }}>
+                              <div style={{
+                                display: 'inline-block',
+                                padding: '8px 24px',
+                                background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+                                borderRadius: '50px',
+                                marginBottom: '24px',
+                                border: '1px solid rgba(39, 67, 56, 0.1)'
                               }}>
-                                Join ICAMSE 2026
+                                <span style={{
+                                  fontSize: '0.9rem',
+                                  fontWeight: '600',
+                                  color: '#274338',
+                                  letterSpacing: '0.5px',
+                                  textTransform: 'uppercase'
+                                }}>
+                                  Join the Community
+                                </span>
+                              </div>
+                              <h2 style={{ 
+                                fontSize: '3.5rem', 
+                                fontWeight: '300', 
+                                color: '#1a1a1a', 
+                                marginBottom: '24px',
+                                lineHeight: '1.1',
+                                letterSpacing: '-1px'
+                              }}>
+                                ICAMSE 2026
+                                <br />
+                                <span style={{
+                                  fontWeight: '600',
+                                  background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                  WebkitBackgroundClip: 'text',
+                                  WebkitTextFillColor: 'transparent',
+                                  backgroundClip: 'text'
+                                }}>
+                                  Bern, Switzerland
+                                </span>
                               </h2>
                               <p style={{ 
-                                fontSize: '1.3rem', 
-                                color: 'rgba(44, 62, 80, 0.8)', 
-                                maxWidth: '700px', 
+                                fontSize: '1.25rem', 
+                                color: '#666', 
+                                maxWidth: '600px', 
                                 margin: '0 auto',
-                                fontWeight: '400',
-                                lineHeight: '1.6'
+                                lineHeight: '1.6',
+                                fontWeight: '400'
                               }}>
-                                Connect with leading experts and discover the future of advanced materials science
+                                October 13-15, 2026 • Where innovation meets excellence
                               </p>
                             </div>
 
@@ -2224,65 +2240,42 @@ const AmericasLNGSummit: React.FC = () => {
                               alignItems: 'start'
                             }}>
                               
-                              {/* Who Should Attend Card */}
+                              {/* Who Should Attend */}
                               <div style={{
-                                background: 'rgba(255, 255, 255, 0.95)',
-                                borderRadius: '24px',
-                                padding: '50px 40px',
-                                boxShadow: '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)',
-                                backdropFilter: 'blur(10px)',
-                                border: '1px solid rgba(39, 67, 56, 0.08)',
-                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                                position: 'relative',
-                                overflow: 'hidden'
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-8px)';
-                                e.currentTarget.style.boxShadow = '0 30px 80px rgba(39, 67, 56, 0.15), 0 12px 35px rgba(0, 0, 0, 0.08)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)';
-                              }}
-                              >
-                                {/* Card Header */}
-                                <div style={{ 
-                                  display: 'flex', 
-                                  alignItems: 'center', 
-                                  marginBottom: '35px',
-                                  justifyContent: 'center'
+                                position: 'relative'
+                              }}>
+                                <div style={{
+                                  marginBottom: '40px'
                                 }}>
+                                  <h3 style={{
+                                    fontSize: '2.2rem',
+                                    fontWeight: '300',
+                                    color: '#1a1a1a',
+                                    marginBottom: '16px',
+                                    lineHeight: '1.2'
+                                  }}>
+                                    Who Should
+                                    <br />
+                                    <span style={{
+                                      fontWeight: '600',
+                                      color: '#274338'
+                                    }}>
+                                      Attend
+                                    </span>
+                                  </h3>
                                   <div style={{
                                     width: '60px',
-                                    height: '60px',
-                                    background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
-                                    borderRadius: '16px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginRight: '20px',
-                                    boxShadow: '0 8px 20px rgba(39, 67, 56, 0.2)'
-                                  }}>
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                      <circle cx="9" cy="7" r="4"></circle>
-                                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                    </svg>
-                                  </div>
-                                  <h3 style={{ 
-                                    fontSize: '2rem', 
-                                    fontWeight: '700', 
-                                    color: '#274338', 
-                                    margin: 0,
-                                    letterSpacing: '-0.3px'
-                                  }}>
-                                    Who Should Attend
-                                  </h3>
+                                    height: '3px',
+                                    background: 'linear-gradient(90deg, #274338 0%, #3d5a4f 100%)',
+                                    borderRadius: '2px'
+                                  }}></div>
                                 </div>
 
-                                {/* List Items */}
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                                <div style={{
+                                  display: 'flex',
+                                  flexDirection: 'column',
+                                  gap: '20px'
+                                }}>
                                   {[
                                     'Materials Scientists and Engineers',
                                     'Chemists and Physicists', 
@@ -2295,35 +2288,41 @@ const AmericasLNGSummit: React.FC = () => {
                                     <div key={index} style={{
                                       display: 'flex',
                                       alignItems: 'center',
-                                      padding: '12px 0',
-                                      borderBottom: index < 6 ? '1px solid rgba(39, 67, 56, 0.08)' : 'none',
-                                      transition: 'all 0.3s ease'
+                                      padding: '16px 0',
+                                      borderBottom: index < 6 ? '1px solid #f0f0f0' : 'none',
+                                      transition: 'all 0.3s ease',
+                                      cursor: 'default'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.paddingLeft = '8px';
-                                      e.currentTarget.style.background = 'rgba(39, 67, 56, 0.02)';
-                                      e.currentTarget.style.borderRadius = '8px';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.opacity = '0.8';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.paddingLeft = '0';
-                                      e.currentTarget.style.background = 'transparent';
-                                      e.currentTarget.style.borderRadius = '0';
+                                      e.currentTarget.style.transform = 'translateX(0)';
+                                      e.currentTarget.style.opacity = '1';
                                     }}
                                     >
                                       <div style={{
-                                        width: '8px',
-                                        height: '8px',
-                                        background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                        width: '6px',
+                                        height: '6px',
+                                        background: '#274338',
                                         borderRadius: '50%',
-                                        marginRight: '16px',
+                                        marginRight: '20px',
                                         flexShrink: 0,
-                                        boxShadow: '0 2px 6px rgba(39, 67, 56, 0.2)'
-                                      }}></div>
+                                        transition: 'all 0.3s ease'
+                                      }}
+                                      onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = 'scale(1.5)';
+                                      }}
+                                      onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = 'scale(1)';
+                                      }}
+                                      ></div>
                                       <span style={{ 
-                                        fontSize: '1.05rem', 
-                                        color: '#2c3e50', 
-                                        lineHeight: '1.5',
-                                        fontWeight: '500'
+                                        fontSize: '1.1rem', 
+                                        color: '#333', 
+                                        lineHeight: '1.4',
+                                        fontWeight: '400'
                                       }}>
                                         {item}
                                       </span>
@@ -2332,103 +2331,87 @@ const AmericasLNGSummit: React.FC = () => {
                                 </div>
                               </div>
 
-                              {/* Why Attend Card */}
+                              {/* Why Attend */}
                               <div style={{
-                                background: 'rgba(255, 255, 255, 0.95)',
-                                borderRadius: '24px',
-                                padding: '50px 40px',
-                                boxShadow: '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)',
-                                backdropFilter: 'blur(10px)',
-                                border: '1px solid rgba(39, 67, 56, 0.08)',
-                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                                position: 'relative',
-                                overflow: 'hidden'
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-8px)';
-                                e.currentTarget.style.boxShadow = '0 30px 80px rgba(39, 67, 56, 0.15), 0 12px 35px rgba(0, 0, 0, 0.08)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)';
-                              }}
-                              >
-                                {/* Card Header */}
-                                <div style={{ 
-                                  display: 'flex', 
-                                  alignItems: 'center', 
-                                  marginBottom: '35px',
-                                  justifyContent: 'center'
+                                position: 'relative'
+                              }}>
+                                <div style={{
+                                  marginBottom: '40px'
                                 }}>
+                                  <h3 style={{
+                                    fontSize: '2.2rem',
+                                    fontWeight: '300',
+                                    color: '#1a1a1a',
+                                    marginBottom: '16px',
+                                    lineHeight: '1.2'
+                                  }}>
+                                    Why
+                                    <br />
+                                    <span style={{
+                                      fontWeight: '600',
+                                      color: '#274338'
+                                    }}>
+                                      Attend
+                                    </span>
+                                  </h3>
                                   <div style={{
                                     width: '60px',
-                                    height: '60px',
-                                    background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
-                                    borderRadius: '16px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginRight: '20px',
-                                    boxShadow: '0 8px 20px rgba(52, 152, 219, 0.2)'
-                                  }}>
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                      <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                                      <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                                    </svg>
-                                  </div>
-                                  <h3 style={{ 
-                                    fontSize: '2rem', 
-                                    fontWeight: '700', 
-                                    color: '#274338', 
-                                    margin: 0,
-                                    letterSpacing: '-0.3px'
-                                  }}>
-                                    Why Attend ICAMSE 2026 in Bern?
-                                  </h3>
+                                    height: '3px',
+                                    background: 'linear-gradient(90deg, #274338 0%, #3d5a4f 100%)',
+                                    borderRadius: '2px'
+                                  }}></div>
                                 </div>
 
-                                {/* List Items */}
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                                <div style={{
+                                  display: 'flex',
+                                  flexDirection: 'column',
+                                  gap: '20px'
+                                }}>
                                   {[
                                     'High-quality scientific program',
                                     'Strong international participation',
-                                    'Excellent networking opportunities', 
+                                    'Excellent networking opportunities',
                                     'Publication prospects',
                                     'Hosted in Bern, Switzerland, a global hub for science, innovation, and culture'
                                   ].map((item, index) => (
                                     <div key={index} style={{
                                       display: 'flex',
-                                      alignItems: 'flex-start',
-                                      padding: '12px 0',
-                                      borderBottom: index < 4 ? '1px solid rgba(52, 152, 219, 0.08)' : 'none',
-                                      transition: 'all 0.3s ease'
+                                      alignItems: 'center',
+                                      padding: '16px 0',
+                                      borderBottom: index < 4 ? '1px solid #f0f0f0' : 'none',
+                                      transition: 'all 0.3s ease',
+                                      cursor: 'default'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.paddingLeft = '8px';
-                                      e.currentTarget.style.background = 'rgba(52, 152, 219, 0.02)';
-                                      e.currentTarget.style.borderRadius = '8px';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.opacity = '0.8';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.paddingLeft = '0';
-                                      e.currentTarget.style.background = 'transparent';
-                                      e.currentTarget.style.borderRadius = '0';
+                                      e.currentTarget.style.transform = 'translateX(0)';
+                                      e.currentTarget.style.opacity = '1';
                                     }}
                                     >
                                       <div style={{
-                                        width: '8px',
-                                        height: '8px',
-                                        background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
+                                        width: '6px',
+                                        height: '6px',
+                                        background: '#274338',
                                         borderRadius: '50%',
-                                        marginRight: '16px',
-                                        marginTop: '6px',
+                                        marginRight: '20px',
                                         flexShrink: 0,
-                                        boxShadow: '0 2px 6px rgba(52, 152, 219, 0.2)'
-                                      }}></div>
+                                        transition: 'all 0.3s ease'
+                                      }}
+                                      onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = 'scale(1.5)';
+                                      }}
+                                      onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = 'scale(1)';
+                                      }}
+                                      ></div>
                                       <span style={{ 
-                                        fontSize: '1.05rem', 
-                                        color: '#2c3e50', 
-                                        lineHeight: '1.5',
-                                        fontWeight: '500'
+                                        fontSize: '1.1rem', 
+                                        color: '#333', 
+                                        lineHeight: '1.4',
+                                        fontWeight: '400'
                                       }}>
                                         {item}
                                       </span>
@@ -2439,37 +2422,50 @@ const AmericasLNGSummit: React.FC = () => {
                             </div>
 
                             {/* Call to Action */}
-                            <div style={{ textAlign: 'center', marginTop: '80px' }}>
+                            <div style={{
+                              textAlign: 'center',
+                              marginTop: '100px'
+                            }}>
                               <div style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
-                                gap: '12px',
+                                gap: '16px',
                                 background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
                                 color: 'white',
-                                padding: '18px 36px',
+                                padding: '20px 40px',
                                 borderRadius: '50px',
                                 fontSize: '1.1rem',
-                                fontWeight: '600',
+                                fontWeight: '500',
                                 cursor: 'pointer',
-                                boxShadow: '0 8px 25px rgba(39, 67, 56, 0.3)',
+                                boxShadow: '0 8px 32px rgba(39, 67, 56, 0.3)',
                                 transition: 'all 0.3s ease',
-                                border: 'none'
+                                border: 'none',
+                                position: 'relative',
+                                overflow: 'hidden'
                               }}
                               onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = '0 12px 35px rgba(39, 67, 56, 0.4)';
+                                e.currentTarget.style.transform = 'translateY(-3px)';
+                                e.currentTarget.style.boxShadow = '0 12px 40px rgba(39, 67, 56, 0.4)';
                               }}
                               onMouseLeave={(e) => {
                                 e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 8px 25px rgba(39, 67, 56, 0.3)';
+                                e.currentTarget.style.boxShadow = '0 8px 32px rgba(39, 67, 56, 0.3)';
                               }}
                               >
-                                <span>Register Now</span>
+                                <span>Register for ICAMSE 2026</span>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                   <path d="M5 12h14"></path>
                                   <path d="M12 5l7 7-7 7"></path>
                                 </svg>
                               </div>
+                              <p style={{
+                                fontSize: '0.95rem',
+                                color: '#666',
+                                marginTop: '16px',
+                                fontWeight: '400'
+                              }}>
+                                Early bird registration ends June 30, 2026
+                              </p>
                             </div>
                           </div>
                         </section>
