@@ -913,7 +913,7 @@ const AmericasLNGSummit: React.FC = () => {
                       <div className="umb-block-grid__layout-item">
                         <section style={{ 
                           padding: '80px 0', 
-                          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                          background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)',
                           position: 'relative',
                           overflow: 'hidden'
                         }}>
@@ -928,7 +928,7 @@ const AmericasLNGSummit: React.FC = () => {
             opacity: 0.1
           }}></div>
 
-                          <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1400px', margin: '0 auto', padding: '0 20px' }}>
+                          <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
                             {/* Header */}
                             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                               <h2 style={{ 
@@ -965,7 +965,7 @@ const AmericasLNGSummit: React.FC = () => {
                                   border: selectedDay === 1 ? 'none' : '2px solid rgba(255, 255, 255, 0.3)',
                                   padding: '15px 40px',
                                   borderRadius: '12px',
-                                  color: selectedDay === 1 ? '#667eea' : 'rgba(255, 255, 255, 0.8)',
+                                  color: selectedDay === 1 ? '#274338' : 'rgba(255, 255, 255, 0.8)',
                                   fontSize: '1.1rem',
                                   fontWeight: '600',
                                   cursor: 'pointer',
@@ -981,7 +981,7 @@ const AmericasLNGSummit: React.FC = () => {
                                   border: selectedDay === 2 ? 'none' : '2px solid rgba(255, 255, 255, 0.3)',
                                   padding: '15px 40px',
                                   borderRadius: '12px',
-                                  color: selectedDay === 2 ? '#667eea' : 'rgba(255, 255, 255, 0.8)',
+                                  color: selectedDay === 2 ? '#274338' : 'rgba(255, 255, 255, 0.8)',
                                   fontSize: '1.1rem',
                                   fontWeight: '600',
                                   cursor: 'pointer',
@@ -997,7 +997,7 @@ const AmericasLNGSummit: React.FC = () => {
                                   border: selectedDay === 3 ? 'none' : '2px solid rgba(255, 255, 255, 0.3)',
                                   padding: '15px 40px',
                                   borderRadius: '12px',
-                                  color: selectedDay === 3 ? '#667eea' : 'rgba(255, 255, 255, 0.8)',
+                                  color: selectedDay === 3 ? '#274338' : 'rgba(255, 255, 255, 0.8)',
                                   fontSize: '1.1rem',
                                   fontWeight: '600',
                                   cursor: 'pointer',
@@ -1023,7 +1023,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     <h3 style={{ 
                                       fontSize: '1.8rem', 
                                       fontWeight: '600', 
-                                      color: '#667eea', 
+                                      color: '#274338', 
                                       marginBottom: '8px' 
                                     }}>Opening Day</h3>
                                     <p style={{ 
@@ -1040,7 +1040,7 @@ const AmericasLNGSummit: React.FC = () => {
                                   background: '#f8f9fa',
                                   borderRadius: '12px',
                                   padding: '20px',
-                                  borderLeft: '4px solid #667eea',
+                                  borderLeft: '4px solid #274338',
                                   display: 'flex',
                                   alignItems: 'center',
                                   gap: '20px',
@@ -1048,9 +1048,9 @@ const AmericasLNGSummit: React.FC = () => {
                                   cursor: 'pointer'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#e8eaf6';
+                                  e.currentTarget.style.background = '#e8f5f1';
                                   e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.2)';
+                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(39, 67, 56, 0.2)';
                                 }}
                                 onMouseLeave={(e) => {
                                   e.currentTarget.style.background = '#f8f9fa';
@@ -1062,7 +1062,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     minWidth: '80px',
                                     fontFamily: 'monospace',
                                     fontSize: '1.2rem',
-                                    color: '#667eea',
+                                    color: '#274338',
                                     fontWeight: '600'
                                   }}>09:00</div>
                                   <div style={{ flex: 1 }}>
@@ -1082,10 +1082,10 @@ const AmericasLNGSummit: React.FC = () => {
                                   </div>
                                   <div style={{
                                     padding: '6px 16px',
-                                    background: '#e8eaf6',
+                                    background: '#e8f5f1',
                                     borderRadius: '20px',
                                     fontSize: '0.85rem',
-                                    color: '#667eea',
+                                    color: '#274338',
                                     fontWeight: '500'
                                   }}>Registration</div>
                                 </div>
@@ -1095,7 +1095,7 @@ const AmericasLNGSummit: React.FC = () => {
                                   background: '#f8f9fa',
                                   borderRadius: '12px',
                                   padding: '20px',
-                                  borderLeft: '4px solid #764ba2',
+                                  borderLeft: '4px solid #3d5a4f',
                                   display: 'flex',
                                   alignItems: 'center',
                                   gap: '20px',
@@ -1117,7 +1117,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     minWidth: '80px',
                                     fontFamily: 'monospace',
                                     fontSize: '1.2rem',
-                                    color: '#764ba2',
+                                    color: '#3d5a4f',
                                     fontWeight: '600'
                                   }}>10:00</div>
                                   <div style={{ flex: 1 }}>
@@ -1137,10 +1137,10 @@ const AmericasLNGSummit: React.FC = () => {
                                   </div>
                                   <div style={{
                                     padding: '6px 16px',
-                                    background: '#f3e5f5',
+                                    background: '#e1ebe7',
                                     borderRadius: '20px',
                                     fontSize: '0.85rem',
-                                    color: '#764ba2',
+                                    color: '#3d5a4f',
                                     fontWeight: '500'
                                   }}>Keynote</div>
                                 </div>
@@ -1260,7 +1260,7 @@ const AmericasLNGSummit: React.FC = () => {
                                   background: '#f8f9fa',
                                   borderRadius: '12px',
                                   padding: '20px',
-                                  borderLeft: '4px solid #667eea',
+                                  borderLeft: '4px solid #274338',
                                   display: 'flex',
                                   alignItems: 'center',
                                   gap: '20px',
@@ -1268,9 +1268,9 @@ const AmericasLNGSummit: React.FC = () => {
                                   cursor: 'pointer'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#e8eaf6';
+                                  e.currentTarget.style.background = '#e8f5f1';
                                   e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.2)';
+                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(39, 67, 56, 0.2)';
                                 }}
                                 onMouseLeave={(e) => {
                                   e.currentTarget.style.background = '#f8f9fa';
@@ -1282,7 +1282,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     minWidth: '80px',
                                     fontFamily: 'monospace',
                                     fontSize: '1.2rem',
-                                    color: '#667eea',
+                                    color: '#274338',
                                     fontWeight: '600'
                                   }}>14:30</div>
                                   <div style={{ flex: 1 }}>
@@ -1302,10 +1302,10 @@ const AmericasLNGSummit: React.FC = () => {
                                   </div>
                                   <div style={{
                                     padding: '6px 16px',
-                                    background: '#e8eaf6',
+                                    background: '#e8f5f1',
                                     borderRadius: '20px',
                                     fontSize: '0.85rem',
-                                    color: '#667eea',
+                                    color: '#274338',
                                     fontWeight: '500'
                                   }}>Talk</div>
                                 </div>
@@ -1377,11 +1377,11 @@ const AmericasLNGSummit: React.FC = () => {
                                 justifyContent: 'center'
                               }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <div style={{ width: '16px', height: '16px', background: '#667eea', borderRadius: '4px' }}></div>
+                                  <div style={{ width: '16px', height: '16px', background: '#274338', borderRadius: '4px' }}></div>
                                   <span style={{ color: '#666', fontSize: '0.9rem' }}>Registration</span>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <div style={{ width: '16px', height: '16px', background: '#764ba2', borderRadius: '4px' }}></div>
+                                  <div style={{ width: '16px', height: '16px', background: '#3d5a4f', borderRadius: '4px' }}></div>
                                   <span style={{ color: '#666', fontSize: '0.9rem' }}>Keynote</span>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1407,7 +1407,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     <h3 style={{ 
                                       fontSize: '1.8rem', 
                                       fontWeight: '600', 
-                                      color: '#667eea', 
+                                      color: '#274338', 
                                       marginBottom: '8px' 
                                     }}>Conference Day</h3>
                                     <p style={{ 
@@ -1791,7 +1791,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     <h3 style={{ 
                                       fontSize: '1.8rem', 
                                       fontWeight: '600', 
-                                      color: '#667eea', 
+                                      color: '#274338', 
                                       marginBottom: '8px' 
                                     }}>Closing Day</h3>
                                     <p style={{ 
@@ -1808,7 +1808,7 @@ const AmericasLNGSummit: React.FC = () => {
                                       background: '#f8f9fa',
                                       borderRadius: '12px',
                                       padding: '20px',
-                                      borderLeft: '4px solid #764ba2',
+                                      borderLeft: '4px solid #3d5a4f',
                                       display: 'flex',
                                       alignItems: 'center',
                                       gap: '20px',
@@ -1816,7 +1816,7 @@ const AmericasLNGSummit: React.FC = () => {
                                       cursor: 'pointer'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#f3e5f5';
+                                      e.currentTarget.style.background = '#e1ebe7';
                                       e.currentTarget.style.transform = 'translateX(10px)';
                                       e.currentTarget.style.boxShadow = '0 4px 15px rgba(118, 75, 162, 0.2)';
                                     }}
@@ -1830,7 +1830,7 @@ const AmericasLNGSummit: React.FC = () => {
                                         minWidth: '80px',
                                         fontFamily: 'monospace',
                                         fontSize: '1.2rem',
-                                        color: '#764ba2',
+                                        color: '#3d5a4f',
                                         fontWeight: '600'
                                       }}>09:00</div>
                                       <div style={{ flex: 1 }}>
@@ -1850,10 +1850,10 @@ const AmericasLNGSummit: React.FC = () => {
                                       </div>
                                       <div style={{
                                         padding: '6px 16px',
-                                        background: '#f3e5f5',
+                                        background: '#e1ebe7',
                                         borderRadius: '20px',
                                         fontSize: '0.85rem',
-                                        color: '#764ba2',
+                                        color: '#3d5a4f',
                                         fontWeight: '500'
                                       }}>Keynote</div>
                                     </div>
@@ -2083,7 +2083,7 @@ const AmericasLNGSummit: React.FC = () => {
                                       background: '#f8f9fa',
                                       borderRadius: '12px',
                                       padding: '20px',
-                                      borderLeft: '4px solid #667eea',
+                                      borderLeft: '4px solid #274338',
                                       display: 'flex',
                                       alignItems: 'center',
                                       gap: '20px',
@@ -2091,7 +2091,7 @@ const AmericasLNGSummit: React.FC = () => {
                                       cursor: 'pointer'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#e8eaf6';
+                                      e.currentTarget.style.background = '#e8f5f1';
                                       e.currentTarget.style.transform = 'translateX(10px)';
                                       e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.2)';
                                     }}
@@ -2105,7 +2105,7 @@ const AmericasLNGSummit: React.FC = () => {
                                         minWidth: '80px',
                                         fontFamily: 'monospace',
                                         fontSize: '1.2rem',
-                                        color: '#667eea',
+                                        color: '#274338',
                                         fontWeight: '600'
                                       }}>15:30</div>
                                       <div style={{ flex: 1 }}>
@@ -2125,10 +2125,10 @@ const AmericasLNGSummit: React.FC = () => {
                                       </div>
                                       <div style={{
                                         padding: '6px 16px',
-                                        background: '#e8eaf6',
+                                        background: '#e8f5f1',
                                         borderRadius: '20px',
                                         fontSize: '0.85rem',
-                                        color: '#667eea',
+                                        color: '#274338',
                                         fontWeight: '500'
                                       }}>Reception</div>
                                     </div>
@@ -2145,7 +2145,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     justifyContent: 'center'
                                   }}>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#764ba2', borderRadius: '4px' }}></div>
+                                      <div style={{ width: '16px', height: '16px', background: '#3d5a4f', borderRadius: '4px' }}></div>
                                       <span style={{ color: '#666', fontSize: '0.9rem' }}>Keynote</span>
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2167,6 +2167,309 @@ const AmericasLNGSummit: React.FC = () => {
                                   </div>
                                 </>
                               )}
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+
+                      {/* Who Should Attend & Why Attend Section */}
+                      <div className="umb-block-grid__layout-item">
+                        <section style={{ 
+                          padding: '100px 0', 
+                          background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%)',
+                          position: 'relative',
+                          overflow: 'hidden'
+                        }}>
+                          {/* Background Pattern */}
+                          <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(39, 67, 56, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(39, 67, 56, 0.03) 0%, transparent 50%)',
+                            opacity: 0.5
+                          }}></div>
+
+                          <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                            
+                            {/* Section Header */}
+                            <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+                              <h2 style={{ 
+                                fontSize: '3rem', 
+                                fontWeight: '800', 
+                                color: '#274338', 
+                                marginBottom: '20px',
+                                textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                                letterSpacing: '-0.5px'
+                              }}>
+                                Join ICAMSE 2026
+                              </h2>
+                              <p style={{ 
+                                fontSize: '1.3rem', 
+                                color: 'rgba(44, 62, 80, 0.8)', 
+                                maxWidth: '700px', 
+                                margin: '0 auto',
+                                fontWeight: '400',
+                                lineHeight: '1.6'
+                              }}>
+                                Connect with leading experts and discover the future of advanced materials science
+                              </p>
+                            </div>
+
+                            <div style={{ 
+                              display: 'grid', 
+                              gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', 
+                              gap: '50px', 
+                              alignItems: 'start'
+                            }}>
+                              
+                              {/* Who Should Attend Card */}
+                              <div style={{
+                                background: 'rgba(255, 255, 255, 0.95)',
+                                borderRadius: '24px',
+                                padding: '50px 40px',
+                                boxShadow: '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)',
+                                backdropFilter: 'blur(10px)',
+                                border: '1px solid rgba(39, 67, 56, 0.08)',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                position: 'relative',
+                                overflow: 'hidden'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-8px)';
+                                e.currentTarget.style.boxShadow = '0 30px 80px rgba(39, 67, 56, 0.15), 0 12px 35px rgba(0, 0, 0, 0.08)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)';
+                              }}
+                              >
+                                {/* Card Header */}
+                                <div style={{ 
+                                  display: 'flex', 
+                                  alignItems: 'center', 
+                                  marginBottom: '35px',
+                                  justifyContent: 'center'
+                                }}>
+                                  <div style={{
+                                    width: '60px',
+                                    height: '60px',
+                                    background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                    borderRadius: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginRight: '20px',
+                                    boxShadow: '0 8px 20px rgba(39, 67, 56, 0.2)'
+                                  }}>
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                      <circle cx="9" cy="7" r="4"></circle>
+                                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                  </div>
+                                  <h3 style={{ 
+                                    fontSize: '2rem', 
+                                    fontWeight: '700', 
+                                    color: '#274338', 
+                                    margin: 0,
+                                    letterSpacing: '-0.3px'
+                                  }}>
+                                    Who Should Attend
+                                  </h3>
+                                </div>
+
+                                {/* List Items */}
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                                  {[
+                                    'Materials Scientists and Engineers',
+                                    'Chemists and Physicists', 
+                                    'Nanotechnology Researchers',
+                                    'Energy & Battery Researchers',
+                                    'Biomedical Engineers',
+                                    'Industry R&D Professionals',
+                                    'PhD Scholars, Master\'s & Undergraduate Students'
+                                  ].map((item, index) => (
+                                    <div key={index} style={{
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      padding: '12px 0',
+                                      borderBottom: index < 6 ? '1px solid rgba(39, 67, 56, 0.08)' : 'none',
+                                      transition: 'all 0.3s ease'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                      e.currentTarget.style.paddingLeft = '8px';
+                                      e.currentTarget.style.background = 'rgba(39, 67, 56, 0.02)';
+                                      e.currentTarget.style.borderRadius = '8px';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                      e.currentTarget.style.paddingLeft = '0';
+                                      e.currentTarget.style.background = 'transparent';
+                                      e.currentTarget.style.borderRadius = '0';
+                                    }}
+                                    >
+                                      <div style={{
+                                        width: '8px',
+                                        height: '8px',
+                                        background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                        borderRadius: '50%',
+                                        marginRight: '16px',
+                                        flexShrink: 0,
+                                        boxShadow: '0 2px 6px rgba(39, 67, 56, 0.2)'
+                                      }}></div>
+                                      <span style={{ 
+                                        fontSize: '1.05rem', 
+                                        color: '#2c3e50', 
+                                        lineHeight: '1.5',
+                                        fontWeight: '500'
+                                      }}>
+                                        {item}
+                                      </span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Why Attend Card */}
+                              <div style={{
+                                background: 'rgba(255, 255, 255, 0.95)',
+                                borderRadius: '24px',
+                                padding: '50px 40px',
+                                boxShadow: '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)',
+                                backdropFilter: 'blur(10px)',
+                                border: '1px solid rgba(39, 67, 56, 0.08)',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                position: 'relative',
+                                overflow: 'hidden'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-8px)';
+                                e.currentTarget.style.boxShadow = '0 30px 80px rgba(39, 67, 56, 0.15), 0 12px 35px rgba(0, 0, 0, 0.08)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(39, 67, 56, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05)';
+                              }}
+                              >
+                                {/* Card Header */}
+                                <div style={{ 
+                                  display: 'flex', 
+                                  alignItems: 'center', 
+                                  marginBottom: '35px',
+                                  justifyContent: 'center'
+                                }}>
+                                  <div style={{
+                                    width: '60px',
+                                    height: '60px',
+                                    background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
+                                    borderRadius: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginRight: '20px',
+                                    boxShadow: '0 8px 20px rgba(52, 152, 219, 0.2)'
+                                  }}>
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                      <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                      <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                    </svg>
+                                  </div>
+                                  <h3 style={{ 
+                                    fontSize: '2rem', 
+                                    fontWeight: '700', 
+                                    color: '#274338', 
+                                    margin: 0,
+                                    letterSpacing: '-0.3px'
+                                  }}>
+                                    Why Attend ICAMSE 2026 in Bern?
+                                  </h3>
+                                </div>
+
+                                {/* List Items */}
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                                  {[
+                                    'High-quality scientific program',
+                                    'Strong international participation',
+                                    'Excellent networking opportunities', 
+                                    'Publication prospects',
+                                    'Hosted in Bern, Switzerland, a global hub for science, innovation, and culture'
+                                  ].map((item, index) => (
+                                    <div key={index} style={{
+                                      display: 'flex',
+                                      alignItems: 'flex-start',
+                                      padding: '12px 0',
+                                      borderBottom: index < 4 ? '1px solid rgba(52, 152, 219, 0.08)' : 'none',
+                                      transition: 'all 0.3s ease'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                      e.currentTarget.style.paddingLeft = '8px';
+                                      e.currentTarget.style.background = 'rgba(52, 152, 219, 0.02)';
+                                      e.currentTarget.style.borderRadius = '8px';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                      e.currentTarget.style.paddingLeft = '0';
+                                      e.currentTarget.style.background = 'transparent';
+                                      e.currentTarget.style.borderRadius = '0';
+                                    }}
+                                    >
+                                      <div style={{
+                                        width: '8px',
+                                        height: '8px',
+                                        background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
+                                        borderRadius: '50%',
+                                        marginRight: '16px',
+                                        marginTop: '6px',
+                                        flexShrink: 0,
+                                        boxShadow: '0 2px 6px rgba(52, 152, 219, 0.2)'
+                                      }}></div>
+                                      <span style={{ 
+                                        fontSize: '1.05rem', 
+                                        color: '#2c3e50', 
+                                        lineHeight: '1.5',
+                                        fontWeight: '500'
+                                      }}>
+                                        {item}
+                                      </span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Call to Action */}
+                            <div style={{ textAlign: 'center', marginTop: '80px' }}>
+                              <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '12px',
+                                background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                color: 'white',
+                                padding: '18px 36px',
+                                borderRadius: '50px',
+                                fontSize: '1.1rem',
+                                fontWeight: '600',
+                                cursor: 'pointer',
+                                boxShadow: '0 8px 25px rgba(39, 67, 56, 0.3)',
+                                transition: 'all 0.3s ease',
+                                border: 'none'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = '0 12px 35px rgba(39, 67, 56, 0.4)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 8px 25px rgba(39, 67, 56, 0.3)';
+                              }}
+                              >
+                                <span>Register Now</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <path d="M5 12h14"></path>
+                                  <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </section>
