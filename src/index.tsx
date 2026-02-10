@@ -275,11 +275,8 @@ const AmericasLNGSummit: React.FC = () => {
         <div className="header__container">
           {/* Logo Section */}
           <div className="header__top-logo">
-            <a href="index.html" aria-label="Home">
-              <img
-                src="media/ad2dux3m/lng-americas-logo-no-date_colour-gradient-solid-colour-text.html"
-                alt="Americas 2025 LNG Awards Project"
-              />
+            <a href="index.html" aria-label="Home" style={{ textDecoration: 'none' }}>
+              <span style={{ fontWeight: 'bold', fontSize: '2.8rem', color: '#274338', letterSpacing: '4px', textTransform: 'uppercase', lineHeight: 1 }}>ICAMSE2026</span>
             </a>
             <h6>
               October 13-15, 2026
