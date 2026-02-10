@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import heroBg from './assets/hero-bg.jpg';
-import conferenceImg from './assets/Conferenec_img01.png';
-import confImg1 from './assets/Conferenec_img02.png';
-import confImg2 from './assets/Conferenec_img03.png';
-import confImg3 from './assets/Conferenec_img04.png';
-import confImg4 from './assets/Conferenec_img05.png';
-import './css/vendorc619.css';
-import './css/mainc09f.css';
-import './css/devstyles43e1.css';
+import heroBg from '../assets/hero-bg.jpg';
+import conferenceImg from '../assets/Conferenec_img01.png';
+import confImg1 from '../assets/Conferenec_img02.png';
+import confImg2 from '../assets/Conferenec_img03.png';
+import confImg3 from '../assets/Conferenec_img04.png';
+import confImg4 from '../assets/Conferenec_img05.png';
+import '../css/vendorc619.css';
+import '../css/mainc09f.css';
+import '../css/devstyles43e1.css';
 import { 
   MdScience, 
   MdBuild, 
@@ -18,8 +18,6 @@ import {
   MdBusiness 
 } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
-import Header from './Header';
-import Footer from './Footer';
 
 interface StatisticItem {
   value: number;
@@ -50,7 +48,7 @@ interface TrackItem {
   topics: string[];
 }
 
-const AmericasLNGSummit: React.FC = () => {
+const Home: React.FC = () => {
   // Load Google Maps API on component mount
   useEffect(() => {
     const loadGoogleMapsAPI = async () => {
@@ -270,8 +268,6 @@ const AmericasLNGSummit: React.FC = () => {
           title="Google Tag Manager"
         />
       </noscript>
-
-      <Header navLinks={navLinks} />
 
       <main style={{ paddingTop: '110px' }}>
         {/* Social Icons Section */}
@@ -2451,10 +2447,8 @@ const AmericasLNGSummit: React.FC = () => {
           </div>
         </div>
       </main>
-
-      <Footer socialLinks={socialLinks} footerContacts={footerContacts} />
     </>
   );
 };
 
-export default AmericasLNGSummit;
+export default Home;

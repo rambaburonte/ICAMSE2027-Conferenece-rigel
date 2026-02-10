@@ -1,11 +1,101 @@
-import Index from './index';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Speakers from './pages/Speakers';
+import Schedule from './pages/Schedule';
+import OCM from './pages/OCM';
+import Sponsors from './pages/Sponsors';
+import Gallery from './pages/Gallery';
+import SubmitAbstract from './pages/SubmitAbstract';
+import Contact from './pages/Contact';
+import Registration from './pages/Registration';
+import Header from './Header';
+import Footer from './Footer';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import './App.css';
 
+interface NavLink {
+  href: string;
+  label: string;
+  target?: string;
+  ariaLabel: string;
+}
+
+interface SocialLink {
+  url: string;
+  label: string;
+  icon: React.ReactNode;
+}
+
+interface FooterContact {
+  title: string;
+  email: string;
+}
+
 function App() {
+  // Navigation links for header
+  const navLinks: NavLink[] = [
+    { href: '/about', label: 'About', ariaLabel: 'About' },
+    { href: '/speakers', label: 'Speakers', ariaLabel: 'Speakers' },
+    { href: '/schedule', label: 'Schedule', ariaLabel: 'Schedule' },
+    { href: '/ocm', label: 'OCM', ariaLabel: 'OCM' },
+    { href: '/sponsors', label: 'Sponsors', ariaLabel: 'Sponsors' },
+    { href: '/gallery', label: 'Gallery', ariaLabel: 'Gallery' },
+    { href: '/submit-abstract', label: 'Submit Abstract', ariaLabel: 'Submit Abstract' },
+    { href: '/registration', label: 'Registration', ariaLabel: 'Registration' },
+    { href: '/contact', label: 'Contact', ariaLabel: 'Contact' },
+  ];
+
+  // Social media links
+  const socialLinks: SocialLink[] = [
+    {
+      url: 'https://www.facebook.com/people/Americas-LNG-Summit-Exhibition/61579621898944/?mibextid=wwXIfr',
+      label: 'Follow us on Facebook',
+      icon: <FaFacebookF size={20} color="#4267B2" />,
+    },
+    {
+      url: 'https://twitter.com/AmericasGas',
+      label: 'Follow us on Twitter',
+      icon: <FaTwitter size={20} color="#1DA1F2" />,
+    },
+    {
+      url: 'https://www.linkedin.com/company/americas-lng-gas/',
+      label: 'Follow us on LinkedIn',
+      icon: <FaLinkedinIn size={20} color="#0077B5" />,
+    },
+    {
+      url: 'https://www.youtube.com/channel/UColSwAl55Qam-waYgCAmybw',
+      label: 'Follow us on YouTube',
+      icon: <FaYoutube size={20} color="#FF0000" />,
+    },
+  ];
+
+  // Footer contacts
+  const footerContacts: FooterContact[] = [
+    { title: 'Speaking and conference', email: 'info@americaslngsummit.com' },
+    { title: 'Attending and group bookings', email: 'delegates@americaslngsummit.com' },
+    { title: 'General inquiries', email: 'info@americaslngsummit.com' },
+    { title: 'Sponsorship and exhibition', email: 'sales@americaslngsummit.com' },
+    { title: 'Marketing and partnerships', email: 'marketing@americaslngsummit.com' },
+  ];
+
   return (
-    <>
-      <Index />
-    </>
+    <Router>
+      <Header navLinks={navLinks} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/speakers" element={<Speakers />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/ocm" element={<OCM />} />
+        <Route path="/sponsors" element={<Sponsors />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/submit-abstract" element={<SubmitAbstract />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer socialLinks={socialLinks} footerContacts={footerContacts} />
+    </Router>
   );
 }
 
