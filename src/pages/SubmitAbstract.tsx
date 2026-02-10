@@ -60,11 +60,11 @@ const SubmitAbstract: React.FC = () => {
   };
 
   return (
-    <div style={{ paddingTop: '110px', minHeight: '100vh' }}>
+    <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
       {/* Page Header */}
       <section style={{
-        background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)',
-        padding: '80px 0 60px',
+        background: 'transparent',
+        padding: '110px 0 60px',
         textAlign: 'center',
         color: 'white'
       }}>

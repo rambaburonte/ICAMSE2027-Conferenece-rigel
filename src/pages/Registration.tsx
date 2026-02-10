@@ -28,8 +28,8 @@ const Registration: React.FC = () => {
   };
 
   return (
-    <div style={{ paddingTop: '120px', minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }}>
+    <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
+      <div style={{ maxWidth: '800px', margin: '110px auto 0 auto', padding: '20px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }}>
         <h1 style={{ textAlign: 'center', color: 'white', backgroundColor: '#274338', padding: '20px', margin: '-20px -20px 20px -20px', borderRadius: '8px 8px 0 0' }}>
           Conference Registration
         </h1>
