@@ -17,6 +17,7 @@ import {
   MdLocalHospital, 
   MdBusiness 
 } from 'react-icons/md';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 interface StatisticItem {
   value: number;
@@ -103,44 +104,22 @@ const AmericasLNGSummit: React.FC = () => {
     {
       url: 'https://www.facebook.com/people/Americas-LNG-Summit-Exhibition/61579621898944/?mibextid=wwXIfr',
       label: 'Follow us on Facebook',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="10.619" height="23.006" viewBox="0 0 10.619 23.006">
-          <path d="M1554.639,6133.647h4.632v-11.6h3.232l.345-3.884h-3.577v-2.213c0-.915.184-1.277,1.07-1.277h2.507v-4.031h-3.208c-3.447,0-5,1.518-5,4.424v3.1h-2.41v3.932h2.41Z" transform="translate(-1552.229 -6110.641)" fill="#fff" />
-        </svg>
-      ),
+      icon: <FaFacebookF size={20} color="#4267B2" />,
     },
     {
       url: 'https://twitter.com/AmericasGas',
       label: 'Follow us on Twitter',
-      icon: (
-        <svg height="1em" viewBox="0 0 512 512">
-          <path fill="#fff" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-        </svg>
-      ),
+      icon: <FaTwitter size={20} color="#1DA1F2" />,
     },
     {
       url: 'https://www.linkedin.com/company/americas-lng-gas/',
       label: 'Follow us on LinkedIn',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="19.077" height="19.086" viewBox="0 0 19.077 19.086">
-          <g transform="translate(-1776.531 -6111.539)">
-            <rect width="3.939" height="12.724" transform="translate(1776.909 6117.901)" fill="#fff" />
-            <path d="M1778.86,6116.235a2.348,2.348,0,1,0-2.329-2.348A2.339,2.339,0,0,0,1778.86,6116.235Z" fill="#fff" />
-            <path d="M1787.144,6123.946c0-1.789.823-2.854,2.4-2.854,1.448,0,2.144,1.023,2.144,2.854v6.679h3.92v-8.056c0-3.408-1.932-5.056-4.63-5.056a4.435,4.435,0,0,0-3.834,2.1V6117.9h-3.778v12.724h3.778Z" fill="#fff" />
-          </g>
-        </svg>
-      ),
+      icon: <FaLinkedinIn size={20} color="#0077B5" />,
     },
     {
       url: 'https://www.youtube.com/channel/UColSwAl55Qam-waYgCAmybw',
       label: 'Follow us on YouTube',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="21.271" height="14.986" viewBox="0 0 21.271 14.986">
-          <g transform="translate(-1718.434 -6114.651)">
-            <path d="M1739.257,6117a2.69,2.69,0,0,0-1.885-1.9c-1.656-.447-8.3-.447-8.3-.447s-6.647,0-8.315.447a2.671,2.671,0,0,0-1.885,1.9,28.584,28.584,0,0,0-.435,5.149,27.827,27.827,0,0,0,.447,5.148,2.693,2.693,0,0,0,1.885,1.9c1.656.447,8.3.447,8.3.447s6.647,0,8.315-.447a2.671,2.671,0,0,0,1.886-1.9,28.583,28.583,0,0,0,.435-5.148A27.777,27.777,0,0,0,1739.257,6117Zm-12.363,8.315v-6.333l5.559,3.167Z" fill="#fff" />
-          </g>
-        </svg>
-      ),
+      icon: <FaYoutube size={20} color="#FF0000" />,
     },
   ];
 
@@ -224,6 +203,56 @@ const AmericasLNGSummit: React.FC = () => {
         'Aerospace and automotive materials',
         'Construction and cementitious materials',
         'Corrosion, degradation, and failure analysis',
+      ],
+    },
+    {
+      title: 'Smart Coatings & Surface Engineering',
+      icon: MdBuild,
+      topics: [
+        'Self-healing coatings',
+        'Anti-corrosion and anti-fouling surfaces',
+        'Functional thin films',
+        'Surface modification for biomedical devices',
+      ],
+    },
+    {
+      title: 'Polymer Science & Engineering',
+      icon: MdScience,
+      topics: [
+        'Polymer synthesis and characterization',
+        'Biodegradable and sustainable polymers',
+        'Polymer nanocomposites',
+        'Polymers in electronics and photonics',
+      ],
+    },
+    {
+      title: 'Materials for Electronics & Photonics',
+      icon: MdBolt,
+      topics: [
+        'Semiconductor materials',
+        'Optoelectronic materials',
+        'Flexible and wearable electronics',
+        'Quantum materials',
+      ],
+    },
+    {
+      title: 'Environmental & Green Materials',
+      icon: MdSearch,
+      topics: [
+        'Materials for water purification',
+        'Air filtration and pollution control',
+        'Green synthesis and processing',
+        'Life cycle analysis of materials',
+      ],
+    },
+    {
+      title: 'Materials Education & Outreach',
+      icon: MdMemory,
+      topics: [
+        'STEM education in materials science',
+        'Public engagement and science communication',
+        'Diversity and inclusion in materials research',
+        'International collaboration and exchange',
       ],
     },
   ];
@@ -2738,18 +2767,18 @@ const AmericasLNGSummit: React.FC = () => {
             <div className="dmgfooter__col dmgfooter__col-icons">
               <ul>
                 <li>
-                  <a href="https://www.facebook.com/dmgeventsglobal/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/fb.html" alt="fb" />
+                  <a href="https://www.facebook.com/dmgeventsglobal/" target="_blank" rel="noopener noreferrer" aria-label="DMG Facebook">
+                    <FaFacebookF size={20} color="#4267B2" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://x.com/dmgeventsglobal?mx=2" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/twitter.html" alt="twitter" />
+                  <a href="https://x.com/dmgeventsglobal?mx=2" target="_blank" rel="noopener noreferrer" aria-label="DMG Twitter">
+                    <FaTwitter size={20} color="#1DA1F2" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/dmgevents/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/linkedin.html" alt="linked in" />
+                  <a href="https://www.linkedin.com/company/dmgevents/" target="_blank" rel="noopener noreferrer" aria-label="DMG LinkedIn">
+                    <FaLinkedinIn size={20} color="#0077B5" />
                   </a>
                 </li>
               </ul>
