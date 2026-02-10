@@ -2734,34 +2734,13 @@ const AmericasLNGSummit: React.FC = () => {
             <div className="dmgfooter__col">
               <div className="dmgfooter__col-logo">
                 <div className="dmgfooter__col-logo-icon">
-                  <a href="https://www.dmgevents.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/dmglogo.html" alt="dmg-logo" />
-                    <span>
-                      <img src="images/dmg-footer/Tail-icon-footer.html" alt="Tail-icon-footer" />
-                    </span>
+                  <a href="/" target="_blank" rel="noopener noreferrer">
+                    <span style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#274338', letterSpacing: '2px' }}>ICAMSE2026</span>
                   </a>
                 </div>
                 <p>
-                  dmg events is an international exhibition and conference organiser, publisher and information provider to the
-                  Energy, Construction, Plastics, Coatings, Manufacturing, Transport, Design and Hospitality industries.
+                  ICAMSE 2026 – International Conference on Advanced Materials Science & Engineering. Join us in Bern, Switzerland for a premier gathering of global experts, researchers, and innovators in materials science.
                 </p>
-              </div>
-              <div className="dmgfooter__col-member">
-                <p>Member of</p>
-                <div className="dmgfooter__col-images">
-                  <a href="https://www.ufi.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/ufi.html" alt="ufi-member" />
-                  </a>
-                  <a href="https://www.siso.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/siso.html" alt="siso" />
-                  </a>
-                  <a href="https://www.aaxo.co.za/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/aaxo.html" alt="aaxo" />
-                  </a>
-                  <a href="https://www.aeo.org.uk/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/dmg-footer/aeo.html" alt="aeo" />
-                  </a>
-                </div>
               </div>
             </div>
             <div className="dmgfooter__col dmgfooter__col-icons">
