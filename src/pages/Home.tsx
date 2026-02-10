@@ -205,7 +205,7 @@ const Home: React.FC = () => {
         />
       </noscript>
 
-      <main style={{ paddingTop: '110px' }}>
+      <main style={{ paddingTop: '150px' }}>
         {/* Banner Section */}
         <section className="component__banner banner">
           <div className="swiper banner__slider">
@@ -222,13 +222,13 @@ const Home: React.FC = () => {
                   <div className="banner__content">
                     <div className="banner__content-text">
                       <div className="animated__text">
-                        <h1>
-                          International Conference on 
+                        <h2 style={{ fontSize: '4rem', fontWeight: '700', color: '#fff', lineHeight: 1.2, textShadow: '0 4px 15px rgba(0,0,0,0.3)' }}>
+                          International  <br /> Conference on 
                           <br />
-                          Advanced Materials Science and  Engineering
+                          Advanced Materials Science 
                           <br />
-                         
-                        </h1>
+                         and  Engineering
+                        </h2>
                       </div>
                       <div className="btn-wrap">
                         <div className="btn-theme-3">
@@ -255,7 +255,7 @@ const Home: React.FC = () => {
                               <div className="statistics__col">
                                 <h4>
                                   <span className="counter" data-target={stat.value}>
-                                    0
+                                    15
                                   </span>
                                   <span>+</span>
                                 </h4>
