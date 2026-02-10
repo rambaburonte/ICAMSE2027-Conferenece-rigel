@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Registration from './pages/Registration';
 import Header from './Header';
 import Footer from './Footer';
+import ScrollToTop from './components/ScrollToTop';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import './App.css';
 
@@ -81,6 +82,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Header navLinks={navLinks} />
       <Routes>
         <Route path="/" element={<Home />} />
