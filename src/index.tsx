@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import heroBg from './assets/hero-bg.jpg';
+import conferenceImg from './assets/Conferenec_img01.png';
+import confImg1 from './assets/Conferenec_img02.png';
+import confImg2 from './assets/Conferenec_img03.png';
+import confImg3 from './assets/Conferenec_img04.png';
+import confImg4 from './assets/Conferenec_img05.png';
 import './css/vendorc619.css';
 import './css/mainc09f.css';
 import './css/devstyles43e1.css';
@@ -505,13 +510,18 @@ const AmericasLNGSummit: React.FC = () => {
                                 </div>
                               </div>
 
-                              {/* Video Media */}
+                              {/* Conference Image */}
                               <div className="two-col-media">
-                                <div
-                                  id="player"
-                                  className="js-youtube-player"
-                                  data-plyr-provider="youtube"
-                                  data-plyr-embed-id="O6kdfCwAoQU"
+                                <img 
+                                  src={conferenceImg} 
+                                  alt="International Conference on Advanced Materials Science and Engineering" 
+                                  style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    borderRadius: '12px',
+                                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
+                                    objectFit: 'cover'
+                                  }}
                                 />
                               </div>
                             </div>
@@ -2175,24 +2185,24 @@ const AmericasLNGSummit: React.FC = () => {
                       {/* Who Should Attend & Why Attend Section */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ 
-                          padding: '120px 0', 
+                          padding: '60px 0', 
                           background: '#ffffff', 
                           position: 'relative'
                         }}>
                           <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
                             
                             {/* Section Header */}
-                            <div style={{ textAlign: 'center', marginBottom: '100px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '50px', marginTop: '0' }}>
                               <div style={{
                                 display: 'inline-block',
-                                padding: '8px 24px',
+                                padding: '6px 18px',
                                 background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
-                                borderRadius: '50px',
-                                marginBottom: '24px',
-                                border: '1px solid rgba(39, 67, 56, 0.1)'
+                                borderRadius: '30px',
+                                marginBottom: '12px',
+                                border: '1px solid rgba(39, 67, 56, 0.08)'
                               }}>
                                 <span style={{
-                                  fontSize: '0.9rem',
+                                  fontSize: '0.95rem',
                                   fontWeight: '600',
                                   color: '#274338',
                                   letterSpacing: '0.5px',
@@ -2202,42 +2212,33 @@ const AmericasLNGSummit: React.FC = () => {
                                 </span>
                               </div>
                               <h2 style={{ 
-                                fontSize: '3.5rem', 
-                                fontWeight: '300', 
+                                fontSize: '2.2rem', 
+                                fontWeight: '500', 
                                 color: '#1a1a1a', 
-                                marginBottom: '24px',
-                                lineHeight: '1.1',
-                                letterSpacing: '-1px'
+                                marginBottom: '12px',
+                                lineHeight: '1.15',
+                                letterSpacing: '-0.5px'
                               }}>
-                                ICAMSE 2026
-                                <br />
-                                <span style={{
-                                  fontWeight: '600',
-                                  background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
-                                  WebkitBackgroundClip: 'text',
-                                  WebkitTextFillColor: 'transparent',
-                                  backgroundClip: 'text'
-                                }}>
-                                  Bern, Switzerland
-                                </span>
+                                ICAMSE 2026 in <span style={{ fontWeight: '700', color: '#274338' }}>Bern, Switzerland</span>
                               </h2>
                               <p style={{ 
-                                fontSize: '1.25rem', 
-                                color: '#666', 
-                                maxWidth: '600px', 
+                                fontSize: '1.08rem', 
+                                color: '#444', 
+                                maxWidth: '650px', 
                                 margin: '0 auto',
-                                lineHeight: '1.6',
+                                lineHeight: '1.5',
                                 fontWeight: '400'
                               }}>
-                                October 13-15, 2026 • Where innovation meets excellence
+                                October 13-15, 2026 &mdash; Connect with global leaders, innovators, and peers in advanced materials science. Expand your network, share your research, and be part of a vibrant, forward-thinking community shaping the future of engineering and technology.
                               </p>
                             </div>
 
                             <div style={{ 
                               display: 'grid', 
-                              gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', 
-                              gap: '50px', 
-                              alignItems: 'start'
+                              gridTemplateColumns: 'repeat(2, 1fr)', 
+                              gap: '60px', 
+                              alignItems: 'start',
+                              marginBottom: '0'
                             }}>
                               
                               {/* Who Should Attend */}
@@ -2245,13 +2246,13 @@ const AmericasLNGSummit: React.FC = () => {
                                 position: 'relative'
                               }}>
                                 <div style={{
-                                  marginBottom: '40px'
+                                  marginBottom: '28px'
                                 }}>
                                   <h3 style={{
-                                    fontSize: '2.2rem',
+                                    fontSize: '2rem',
                                     fontWeight: '300',
                                     color: '#1a1a1a',
-                                    marginBottom: '16px',
+                                    marginBottom: '12px',
                                     lineHeight: '1.2'
                                   }}>
                                     Who Should
@@ -2274,7 +2275,7 @@ const AmericasLNGSummit: React.FC = () => {
                                 <div style={{
                                   display: 'flex',
                                   flexDirection: 'column',
-                                  gap: '20px'
+                                  gap: '0'
                                 }}>
                                   {[
                                     'Materials Scientists and Engineers',
@@ -2288,7 +2289,7 @@ const AmericasLNGSummit: React.FC = () => {
                                     <div key={index} style={{
                                       display: 'flex',
                                       alignItems: 'center',
-                                      padding: '16px 0',
+                                      padding: '14px 0',
                                       borderBottom: index < 6 ? '1px solid #f0f0f0' : 'none',
                                       transition: 'all 0.3s ease',
                                       cursor: 'default'
@@ -2319,7 +2320,7 @@ const AmericasLNGSummit: React.FC = () => {
                                       }}
                                       ></div>
                                       <span style={{ 
-                                        fontSize: '1.1rem', 
+                                        fontSize: '1.05rem', 
                                         color: '#333', 
                                         lineHeight: '1.4',
                                         fontWeight: '400'
@@ -2336,13 +2337,13 @@ const AmericasLNGSummit: React.FC = () => {
                                 position: 'relative'
                               }}>
                                 <div style={{
-                                  marginBottom: '40px'
+                                  marginBottom: '28px'
                                 }}>
                                   <h3 style={{
-                                    fontSize: '2.2rem',
+                                    fontSize: '2rem',
                                     fontWeight: '300',
                                     color: '#1a1a1a',
-                                    marginBottom: '16px',
+                                    marginBottom: '12px',
                                     lineHeight: '1.2'
                                   }}>
                                     Why
@@ -2365,20 +2366,22 @@ const AmericasLNGSummit: React.FC = () => {
                                 <div style={{
                                   display: 'flex',
                                   flexDirection: 'column',
-                                  gap: '20px'
+                                  gap: '0'
                                 }}>
                                   {[
-                                    'High-quality scientific program',
-                                    'Strong international participation',
-                                    'Excellent networking opportunities',
-                                    'Publication prospects',
-                                    'Hosted in Bern, Switzerland, a global hub for science, innovation, and culture'
+                                    'High-quality scientific program with cutting-edge research presentations',
+                                    'Strong international participation with experts from 50+ countries',
+                                    'Excellent networking with industry leaders and academia',
+                                    'Publication prospects in top-tier journals and conference proceedings',
+                                    'Hosted in Bern, Switzerland, a global hub for science, innovation, and culture',
+                                    'Access to latest technologies and industry innovations',
+                                    'Professional development workshops and career opportunities'
                                   ].map((item, index) => (
                                     <div key={index} style={{
                                       display: 'flex',
                                       alignItems: 'center',
-                                      padding: '16px 0',
-                                      borderBottom: index < 4 ? '1px solid #f0f0f0' : 'none',
+                                      padding: '14px 0',
+                                      borderBottom: index < 6 ? '1px solid #f0f0f0' : 'none',
                                       transition: 'all 0.3s ease',
                                       cursor: 'default'
                                     }}
@@ -2408,7 +2411,7 @@ const AmericasLNGSummit: React.FC = () => {
                                       }}
                                       ></div>
                                       <span style={{ 
-                                        fontSize: '1.1rem', 
+                                        fontSize: '1.05rem', 
                                         color: '#333', 
                                         lineHeight: '1.4',
                                         fontWeight: '400'
@@ -2424,7 +2427,7 @@ const AmericasLNGSummit: React.FC = () => {
                             {/* Call to Action */}
                             <div style={{
                               textAlign: 'center',
-                              marginTop: '100px'
+                              marginTop: '40px'
                             }}>
                               <div style={{
                                 display: 'inline-flex',
@@ -2467,129 +2470,42 @@ const AmericasLNGSummit: React.FC = () => {
                                 Early bird registration ends June 30, 2026
                               </p>
                             </div>
-                          </div>
-                        </section>
-                      </div>
 
-                      {/* --- Begin: Additional Main Content Sections from HTML --- */}
-                      {/* Card Blocks Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="image-text-card-block three-col-image-card enable-background">
-                          <div className="container">
-                            {/* TODO: Map and render card blocks with hover content here */}
-                            <div className="card-blocks-placeholder">Card blocks go here</div>
-                          </div>
-                        </section>
-                      </div>
-
-                      {/* Full Width Header Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <div className="full-width-header theme-3">
-                          <div className="container">
-                            {/* TODO: Add full width header content here */}
-                            <div className="full-width-header-placeholder">Full width header content</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Logo Listing Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="logo__listing-module layout-2">
-                          {/* TODO: Map and render logo listings here */}
-                          <div className="logo-listing-placeholder">Logo listing goes here</div>
-                        </section>
-                      </div>
-
-                      {/* Text CTA Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="component__text-cta align-center" style={{ background: 'url(images/wave-background-1.html)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                          <div className="component__text-cta-wrapper">
-                            {/* TODO: Add text CTA content here */}
-                            <div className="text-cta-placeholder">Text CTA content</div>
-                          </div>
-                        </section>
-                      </div>
-
-                      {/* Another Full Width Header Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <div className="full-width-header theme-3">
-                          <div className="container">
-                            {/* TODO: Add another full width header content here */}
-                            <div className="full-width-header-placeholder">Another full width header content</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* --- Begin: Additional Main Content Sections from HTML --- */}
-                      {/* Card Blocks Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="image-text-card-block three-col-image-card enable-background">
-                          <div className="container">
-                            {/* TODO: Map and render card blocks with hover content here */}
-                            <div className="card-blocks-placeholder">Card blocks go here</div>
-                          </div>
-                        </section>
-                      </div>
-
-                      {/* Full Width Header Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <div className="full-width-header theme-3">
-                          <div className="container">
-                            {/* TODO: Add full width header content here */}
-                            <div className="full-width-header-placeholder">Full width header content</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Logo Listing Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="logo__listing-module layout-2">
-                          {/* TODO: Map and render logo listings here */}
-                          <div className="logo-listing-placeholder">Logo listing goes here</div>
-                        </section>
-                      </div>
-
-                      {/* Text CTA Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="component__text-cta align-center" style={{ background: 'url(images/wave-background-1.html)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                          <div className="component__text-cta-wrapper">
-                            {/* TODO: Add text CTA content here */}
-                            <div className="text-cta-placeholder">Text CTA content</div>
-                          </div>
-                        </section>
-                      </div>
-
-                      {/* Another Full Width Header Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <div className="full-width-header theme-3">
-                          <div className="container">
-                            {/* TODO: Add another full width header content here */}
-                            <div className="full-width-header-placeholder">Another full width header content</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Floor Plan Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="floor__plan">
-                          <div className="container">
-                            <div className="common-head">
-                              <img src="media/reqpbnmj/americas-26-floorplan.html" alt="Floor Plan" />
+                            {/* Conference Gallery */}
+                            <div style={{
+                              margin: '60px auto 0',
+                              maxWidth: '1400px',
+                              padding: '0 20px',
+                            }}>
+                              <h3 style={{
+                                textAlign: 'center',
+                                fontSize: '2.2rem',
+                                fontWeight: 600,
+                                color: '#274338',
+                                marginBottom: '32px',
+                                letterSpacing: '-0.5px',
+                              }}>
+                                Conference Highlights
+                              </h3>
+                              <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(2, 1fr)',
+                                gap: '32px',
+                                alignItems: 'stretch',
+                              }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                                  <img src={confImg1} alt="Conference Hallway" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
+                                  <img src={confImg3} alt="Conference Leaders" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                                  <img src={confImg2} alt="Conference Group" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
+                                  <img src={confImg4} alt="Conference Networking" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </section>
                       </div>
-
-                      {/* Company Slider Section (Placeholder) */}
-                      <div className="umb-block-grid__layout-item">
-                        <section className="company-slider__wrapper layout-two">
-                          <div className="container">
-                            {/* TODO: Add company slider content here */}
-                            <div className="company-slider-placeholder">Company slider content</div>
-                          </div>
-                        </section>
-                      </div>
-                      {/* --- End: Additional Main Content Sections from HTML --- */}
                     </div>
                   </div>
                 </div>
