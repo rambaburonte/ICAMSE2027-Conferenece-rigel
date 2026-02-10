@@ -1,6 +1,5 @@
 import React from 'react';
 import conferenceImg from '../assets/Conferenec_img01.png';
-import { MdScience, MdBuild, MdBolt, MdMemory, MdSearch, MdLocalHospital, MdBusiness } from 'react-icons/md';
 
 interface StatisticItem {
   value: number;

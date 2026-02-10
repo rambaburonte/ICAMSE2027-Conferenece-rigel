@@ -17,29 +17,10 @@ import {
   MdLocalHospital, 
   MdBusiness 
 } from 'react-icons/md';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 interface StatisticItem {
   value: number;
   label: string;
-}
-
-interface NavLink {
-  href: string;
-  label: string;
-  target?: string;
-  ariaLabel: string;
-}
-
-interface SocialLink {
-  url: string;
-  label: string;
-  icon: React.ReactNode;
-}
-
-interface FooterContact {
-  title: string;
-  email: string;
 }
 
 interface TrackItem {
@@ -78,57 +59,12 @@ const Home: React.FC = () => {
   // State for selected day in Event Schedule
   const [selectedDay, setSelectedDay] = useState(1);
 
-  // Navigation links for header
-  const navLinks: NavLink[] = [
-    { href: '#about', label: 'About', ariaLabel: 'About' },
-    { href: '#speakers', label: 'Speakers', ariaLabel: 'Speakers' },
-    { href: '#schedule', label: 'Schedule', ariaLabel: 'Schedule' },
-    { href: '#ocm', label: 'OCM', ariaLabel: 'OCM' },
-    { href: '#sponsors', label: 'Sponsors', ariaLabel: 'Sponsors' },
-    { href: '#gallery', label: 'Gallery', ariaLabel: 'Gallery' },
-    { href: '#submit-abstract', label: 'Submit Abstract', ariaLabel: 'Submit Abstract' },
-    { href: '#contact', label: 'Contact', ariaLabel: 'Contact' },
-  ];
-
   // Banner statistics
   const statistics: StatisticItem[] = [
     { value: 5000, label: 'Attendees' },
     { value: 300, label: 'Exhibitors' },
     { value: 150, label: 'Speakers' },
     { value: 40, label: 'Conference Sessions' },
-  ];
-
-  // Social media links
-  const socialLinks: SocialLink[] = [
-    {
-      url: 'https://www.facebook.com/people/Americas-LNG-Summit-Exhibition/61579621898944/?mibextid=wwXIfr',
-      label: 'Follow us on Facebook',
-      icon: <FaFacebookF size={20} color="#4267B2" />,
-    },
-    {
-      url: 'https://twitter.com/AmericasGas',
-      label: 'Follow us on Twitter',
-      icon: <FaTwitter size={20} color="#1DA1F2" />,
-    },
-    {
-      url: 'https://www.linkedin.com/company/americas-lng-gas/',
-      label: 'Follow us on LinkedIn',
-      icon: <FaLinkedinIn size={20} color="#0077B5" />,
-    },
-    {
-      url: 'https://www.youtube.com/channel/UColSwAl55Qam-waYgCAmybw',
-      label: 'Follow us on YouTube',
-      icon: <FaYoutube size={20} color="#FF0000" />,
-    },
-  ];
-
-  // Footer contacts
-  const footerContacts: FooterContact[] = [
-    { title: 'Speaking and conference', email: 'info@americaslngsummit.com' },
-    { title: 'Attending and group bookings', email: 'delegates@americaslngsummit.com' },
-    { title: 'General inquiries', email: 'info@americaslngsummit.com' },
-    { title: 'Sponsorship and exhibition', email: 'sales@americaslngsummit.com' },
-    { title: 'Marketing and partnerships', email: 'marketing@americaslngsummit.com' },
   ];
 
   // Scientific Themes & Tracks
@@ -270,23 +206,6 @@ const Home: React.FC = () => {
       </noscript>
 
       <main style={{ paddingTop: '110px' }}>
-        {/* Social Icons Section */}
-        <section className="social-icons__wrapper">
-          <div className="social-icons--inner">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-        </section>
-
         {/* Banner Section */}
         <section className="component__banner banner">
           <div className="swiper banner__slider">
