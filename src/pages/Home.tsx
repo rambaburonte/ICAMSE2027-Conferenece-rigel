@@ -596,8 +596,8 @@ const Home: React.FC = () => {
 
                             <div style={{
                               display: 'grid',
-                              gridTemplateColumns: 'repeat(3, 1fr)',
-                              gap: '36px',
+                              gridTemplateColumns: 'repeat(4, 1fr)',
+                              gap: '32px',
                               marginTop: '40px'
                             }}>
                               {[
@@ -605,58 +605,65 @@ const Home: React.FC = () => {
                                   name: 'Prof. Elizabeth Anderson',
                                   title: 'Nobel Laureate in Chemistry',
                                   institution: 'UC Berkeley',
-                                  topic: 'Quantum Materials for Next-Generation Computing',
-                                  bio: 'Leading researcher in quantum materials with over 300 publications and numerous awards.'
+                                  email: 'e.anderson@berkeley.edu'
                                 },
                                 {
                                   name: 'Dr. Hiroshi Tanaka',
                                   title: 'Director, Advanced Materials Institute',
                                   institution: 'University of Tokyo',
-                                  topic: 'Sustainable Materials for Clean Energy',
-                                  bio: 'Pioneer in sustainable materials development with 25+ years of experience in energy materials.'
+                                  email: 'h.tanaka@u-tokyo.ac.jp'
                                 },
                                 {
                                   name: 'Prof. Alexandra Petrov',
                                   title: 'Chair of Materials Engineering',
                                   institution: 'Max Planck Institute',
-                                  topic: 'AI-Driven Materials Discovery',
-                                  bio: 'Expert in computational materials science and machine learning applications in materials design.'
+                                  email: 'a.petrov@mpi.de'
                                 },
                                 {
                                   name: 'Dr. Marcus Williams',
                                   title: 'Chief Scientist',
                                   institution: 'NASA Materials Lab',
-                                  topic: 'Advanced Materials for Space Exploration',
-                                  bio: 'Leading NASA\'s materials research for next-generation spacecraft and space habitats.'
+                                  email: 'm.williams@nasa.gov'
                                 },
                                 {
                                   name: 'Prof. Yuki Nakamura',
                                   title: 'Distinguished Professor',
                                   institution: 'Seoul National University',
-                                  topic: 'Biomimetic Materials and Applications',
-                                  bio: 'World expert in bio-inspired materials with breakthrough innovations in tissue engineering.'
+                                  email: 'y.nakamura@snu.ac.kr'
                                 },
                                 {
                                   name: 'Dr. Catherine Dubois',
                                   title: 'VP of R&D',
                                   institution: 'Materials Innovation Inc.',
-                                  topic: 'Commercial Translation of Advanced Materials',
-                                  bio: 'Successfully commercialized 15+ material technologies with combined market value of $2B+.'
+                                  email: 'c.dubois@matinnovation.com'
+                                },
+                                {
+                                  name: 'Prof. Ahmed Hassan',
+                                  title: 'Materials Science Chair',
+                                  institution: 'King Abdullah University',
+                                  email: 'a.hassan@kaust.edu.sa'
+                                },
+                                {
+                                  name: 'Dr. Nina Patel',
+                                  title: 'Research Director',
+                                  institution: 'Indian Institute of Technology',
+                                  email: 'n.patel@iit.ac.in'
                                 }
                               ].map((speaker, index) => (
                                 <div
                                   key={index}
                                   style={{
-                                    background: '#ffffff',
+                                    background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)',
                                     borderRadius: '16px',
-                                    padding: '36px 28px',
+                                    padding: '32px 24px',
                                     boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
                                     border: '1px solid rgba(39,67,56,0.08)',
                                     transition: 'all 0.3s ease',
                                     cursor: 'pointer',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    height: '100%'
+                                    alignItems: 'center',
+                                    textAlign: 'center'
                                   }}
                                   onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'translateY(-6px)';
@@ -668,43 +675,43 @@ const Home: React.FC = () => {
                                   }}
                                 >
                                   <div style={{
-                                    width: '100%',
-                                    height: '180px',
-                                    borderRadius: '12px',
+                                    width: '100px',
+                                    height: '100px',
+                                    borderRadius: '50%',
                                     background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     marginBottom: '20px',
-                                    boxShadow: '0 4px 12px rgba(39,67,56,0.15)'
+                                    boxShadow: '0 4px 12px rgba(39,67,56,0.2)'
                                   }}>
-                                    <MdRecordVoiceOver size={64} style={{ color: '#ffffff' }} />
+                                    <MdRecordVoiceOver size={48} style={{ color: '#ffffff' }} />
                                   </div>
-                                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#1a2d26', marginBottom: '8px' }}>
+                                  <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#1a2d26', marginBottom: '6px' }}>
                                     {speaker.name}
                                   </h3>
-                                  <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '4px' }}>
+                                  <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
                                     {speaker.title}
                                   </div>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '16px' }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
                                     <MdSchool size={16} />
                                     <span>{speaker.institution}</span>
                                   </div>
-                                  <div style={{
-                                    background: 'linear-gradient(135deg, #f0f4f8 0%, #e6eef5 100%)',
-                                    padding: '12px 16px',
-                                    borderRadius: '8px',
-                                    marginBottom: '14px',
-                                    borderLeft: '3px solid #274338'
-                                  }}>
-                                    <div style={{ fontSize: '0.85rem', color: '#666', marginBottom: '4px', fontWeight: 500 }}>Keynote Topic:</div>
-                                    <div style={{ fontSize: '0.95rem', color: '#1a2d26', fontWeight: 500, lineHeight: 1.4 }}>
-                                      {speaker.topic}
-                                    </div>
-                                  </div>
-                                  <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: 1.6, margin: 0, flexGrow: 1 }}>
-                                    {speaker.bio}
-                                  </p>
+                                  <a href={`mailto:${speaker.email}`} style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    fontSize: '0.85rem',
+                                    color: '#3498db',
+                                    textDecoration: 'none',
+                                    transition: 'color 0.3s ease'
+                                  }}
+                                  onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
+                                  onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
+                                  >
+                                    <MdEmail size={14} />
+                                    <span>Contact</span>
+                                  </a>
                                 </div>
                               ))}
                             </div>
@@ -717,10 +724,25 @@ const Home: React.FC = () => {
                         <section style={{ padding: '70px 0', background: '#f8fafc' }}>
                           <div className="container" style={{ maxWidth: '1600px', margin: '0 auto', padding: '0 20px' }}>
                             <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-                              <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1a2d26', marginBottom: '12px', letterSpacing: '-0.5px' }}>
+                              <h2 style={{ 
+                                fontSize: '2.5rem', 
+                                fontWeight: 700, 
+                                color: '#1a2d26', 
+                                marginBottom: '14px', 
+                                letterSpacing: '-0.02em',
+                                lineHeight: '1.2'
+                              }}>
                                 Scientific Themes & Tracks
                               </h2>
-                              <p style={{ fontSize: '1.08rem', color: '#4a5568', maxWidth: '700px', margin: '0 auto', fontWeight: 400 }}>
+                              <p style={{ 
+                                fontSize: '1.08rem', 
+                                color: '#4a5568', 
+                                maxWidth: '750px', 
+                                margin: '0 auto', 
+                                fontWeight: 400,
+                                lineHeight: '1.6',
+                                letterSpacing: '0.01em'
+                              }}>
                                 Explore our comprehensive range of research themes and technical tracks covering the latest advancements in materials science
                               </p>
                             </div>
@@ -750,10 +772,18 @@ const Home: React.FC = () => {
                                     e.currentTarget.style.boxShadow = '0 2px 12px rgba(39, 67, 56, 0.08)';
                                   }}
                                 >
-                                  <div style={{ fontSize: '2.5rem', marginBottom: '16px', color: '#274338', opacity: 0.8 }}>
+                                  <div style={{ fontSize: '2.5rem', marginBottom: '18px', color: '#274338', opacity: 0.85 }}>
                                     <track.icon size={44} />
                                   </div>
-                                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#1a2d26', marginBottom: '14px', minHeight: '56px', lineHeight: '1.4' }}>
+                                  <h3 style={{ 
+                                    fontSize: '1.2rem', 
+                                    fontWeight: 600, 
+                                    color: '#1a2d26', 
+                                    marginBottom: '18px', 
+                                    minHeight: '56px', 
+                                    lineHeight: '1.45',
+                                    letterSpacing: '-0.01em'
+                                  }}>
                                     {track.title}
                                   </h3>
                                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -761,24 +791,26 @@ const Home: React.FC = () => {
                                       <li
                                         key={topicIndex}
                                         style={{
-                                          fontSize: '0.95rem',
-                                          color: '#555',
-                                          marginBottom: '8px',
-                                          paddingLeft: '18px',
+                                          fontSize: '0.92rem',
+                                          color: '#4a5568',
+                                          marginBottom: '10px',
+                                          paddingLeft: '20px',
                                           position: 'relative',
-                                          lineHeight: '1.5',
+                                          lineHeight: '1.6',
+                                          fontWeight: 400,
+                                          letterSpacing: '0.01em'
                                         }}
                                       >
                                         <span
                                           style={{
                                             position: 'absolute',
                                             left: '0',
-                                            top: '0.6rem',
-                                            width: '4px',
-                                            height: '4px',
+                                            top: '0.65rem',
+                                            width: '6px',
+                                            height: '6px',
                                             background: '#274338',
                                             borderRadius: '50%',
-                                            opacity: 0.6,
+                                            opacity: 0.5,
                                           }}
                                         />
                                         {topic}
