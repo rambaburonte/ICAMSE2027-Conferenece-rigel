@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
         {/* Logo Section */}
         <div className="header__top-logo">
           <Link to="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <img src={logo} alt="ICAMSE2026 Logo" style={{ height: '86px', width: '155px', objectFit: 'fill', display: 'flex' }} />
+            <img src={logo} alt="ICAMSE2026 Logo" style={{ height: '88px', width: '223px', objectFit: 'cover', display: 'flow' }} />
           </Link>
           <h6>
             October 13-15, 2026
