@@ -751,87 +751,172 @@ const Home: React.FC = () => {
 
                       {/* Scientific Themes & Tracks Section */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '70px 0', background: '#f8fafc' }}>
-                          <div className="container" style={{ maxWidth: '1600px', margin: '0 auto', padding: '0 20px' }}>
-                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+                        <section style={{ padding: '90px 0 100px', background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)', position: 'relative' }}>
+                          {/* Decorative background elements */}
+                          <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(39,67,56,0.03) 1px, transparent 1px)',
+                            backgroundSize: '40px 40px',
+                            pointerEvents: 'none'
+                          }}></div>
+
+                          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 20px', position: 'relative', zIndex: 1 }}>
+                            {/* Section Header */}
+                            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                              <div style={{
+                                display: 'inline-block',
+                                padding: '8px 24px',
+                                background: 'linear-gradient(135deg, rgba(39,67,56,0.08) 0%, rgba(39,67,56,0.12) 100%)',
+                                borderRadius: '30px',
+                                marginBottom: '20px',
+                                border: '1px solid rgba(39,67,56,0.15)'
+                              }}>
+                                <span style={{
+                                  fontSize: '0.85rem',
+                                  fontWeight: 600,
+                                  color: '#274338',
+                                  letterSpacing: '1.5px',
+                                  textTransform: 'uppercase'
+                                }}>Conference Tracks</span>
+                              </div>
+
                               <h2 style={{ 
-                                fontSize: '2.5rem', 
-                                fontWeight: 900, 
+                                fontSize: '2.8rem', 
+                                fontWeight: 800, 
                                 color: '#1a2d26', 
-                                marginBottom: '14px', 
-                                letterSpacing: '-0.02em',
-                                lineHeight: '1.2',
+                                marginBottom: '20px', 
+                                letterSpacing: '-0.03em',
+                                lineHeight: '1.15',
                                 fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                               }}>
-                                Scientific Themes & Tracks
+                                Scientific Themes & Research Tracks
                               </h2>
                               <p style={{ 
-                                fontSize: '1.08rem', 
-                                color: '#4a5568', 
-                                maxWidth: '750px', 
-                                margin: '0 auto', 
+                                fontSize: '1.125rem', 
+                                color: '#5a6c7d', 
+                                maxWidth: '820px', 
+                                margin: '0 auto 8px', 
                                 fontWeight: 400,
-                                lineHeight: '1.6',
-                                letterSpacing: '0.01em',
+                                lineHeight: '1.65',
+                                letterSpacing: '0.005em',
                                 fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                               }}>
-                                Explore our comprehensive range of research themes and technical tracks covering the latest advancements in materials science
+                                Discover cutting-edge research across 12 specialized tracks covering the full spectrum of materials science and engineering
+                              </p>
+                              <p style={{
+                                fontSize: '0.95rem',
+                                color: '#718096',
+                                fontWeight: 400,
+                                fontStyle: 'italic'
+                              }}>
+                                Submit your abstract to any of the following tracks
                               </p>
                             </div>
 
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '36px', marginTop: '40px' }}>
+                            {/* Tracks Grid */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px', marginTop: '50px' }}>
                               {scientificTracks.map((track, index) => (
                                 <div
                                   key={index}
                                   style={{
-                                    background: '#ffffff',
-                                    borderRadius: '16px',
-                                    padding: '38px 32px',
-                                    boxShadow: '0 2px 16px rgba(39, 67, 56, 0.10)',
-                                    transition: 'all 0.3s ease',
+                                    background: 'linear-gradient(135deg, #ffffff 0%, #fafbfc 100%)',
+                                    borderRadius: '20px',
+                                    padding: '40px 32px 36px',
+                                    boxShadow: '0 2px 20px rgba(39, 67, 56, 0.08)',
+                                    transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
                                     cursor: 'pointer',
-                                    border: '1px solid rgba(39, 67, 56, 0.06)',
-                                    minWidth: 0,
-                                    maxWidth: '480px',
-                                    margin: '0 auto',
+                                    border: '1px solid rgba(39, 67, 56, 0.08)',
+                                    position: 'relative',
+                                    overflow: 'hidden'
                                   }}
                                   onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-6px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(39, 67, 56, 0.12)';
+                                    e.currentTarget.style.transform = 'translateY(-8px)';
+                                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(39, 67, 56, 0.15)';
+                                    e.currentTarget.style.borderColor = 'rgba(39, 67, 56, 0.2)';
                                   }}
                                   onMouseLeave={(e) => {
                                     e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 2px 12px rgba(39, 67, 56, 0.08)';
+                                    e.currentTarget.style.boxShadow = '0 2px 20px rgba(39, 67, 56, 0.08)';
+                                    e.currentTarget.style.borderColor = 'rgba(39, 67, 56, 0.08)';
                                   }}
                                 >
-                                  <div style={{ fontSize: '2.5rem', marginBottom: '18px', color: '#274338', opacity: 0.85 }}>
-                                    <track.icon size={44} />
+                                  {/* Track Number Badge */}
+                                  <div style={{
+                                    position: 'absolute',
+                                    top: '20px',
+                                    right: '20px',
+                                    width: '42px',
+                                    height: '42px',
+                                    borderRadius: '50%',
+                                    background: 'linear-gradient(135deg, rgba(39,67,56,0.08) 0%, rgba(39,67,56,0.12) 100%)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontWeight: 700,
+                                    fontSize: '0.95rem',
+                                    color: '#274338',
+                                    border: '2px solid rgba(39,67,56,0.15)'
+                                  }}>
+                                    {String(index + 1).padStart(2, '0')}
                                   </div>
+
+                                  {/* Icon */}
+                                  <div style={{ 
+                                    marginBottom: '24px', 
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '64px',
+                                    height: '64px',
+                                    borderRadius: '16px',
+                                    background: 'linear-gradient(135deg, rgba(39,67,56,0.08) 0%, rgba(39,67,56,0.05) 100%)',
+                                    border: '1px solid rgba(39,67,56,0.12)'
+                                  }}>
+                                    <track.icon size={32} style={{ color: '#274338' }} />
+                                  </div>
+
+                                  {/* Title */}
                                   <h3 style={{ 
-                                    fontSize: '1.2rem', 
+                                    fontSize: '1.3rem', 
                                     fontWeight: 700, 
                                     color: '#1a2d26', 
-                                    marginBottom: '18px', 
-                                    minHeight: '56px', 
-                                    lineHeight: '1.45',
-                                    letterSpacing: '-0.01em',
-                                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                                    marginBottom: '20px', 
+                                    minHeight: '62px', 
+                                    lineHeight: '1.4',
+                                    letterSpacing: '-0.015em',
+                                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                                    paddingRight: '50px'
                                   }}>
-                                    <strong>{track.title}</strong>
+                                    {track.title}
                                   </h3>
+
+                                  {/* Divider */}
+                                  <div style={{
+                                    width: '40px',
+                                    height: '3px',
+                                    background: 'linear-gradient(90deg, #274338 0%, rgba(39,67,56,0.3) 100%)',
+                                    marginBottom: '20px',
+                                    borderRadius: '2px'
+                                  }}></div>
+
+                                  {/* Topics List */}
                                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                                     {track.topics.map((topic, topicIndex) => (
                                       <li
                                         key={topicIndex}
                                         style={{  
-                                          fontSize: '0.92rem',
-                                          color: '#4a5568',
-                                          marginBottom: '10px',
-                                          paddingLeft: '20px',
+                                          fontSize: '0.94rem',
+                                          color: '#5a6c7d',
+                                          marginBottom: '12px',
+                                          paddingLeft: '24px',
                                           position: 'relative',
-                                          lineHeight: '1.6',
-                                          fontWeight: 500,
-                                          letterSpacing: '0.01em',
+                                          lineHeight: '1.55',
+                                          fontWeight: 450,
+                                          letterSpacing: '0.008em',
                                           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                                         }}
                                       >
@@ -839,20 +924,114 @@ const Home: React.FC = () => {
                                           style={{
                                             position: 'absolute',
                                             left: '0',
-                                            top: '0.65rem',
-                                            width: '6px',
-                                            height: '6px',
-                                            background: '#274338',
+                                            top: '0.6rem',
+                                            width: '8px',
+                                            height: '8px',
+                                            background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
                                             borderRadius: '50%',
-                                            opacity: 0.5,
+                                            opacity: 0.6,
+                                            boxShadow: '0 2px 4px rgba(39,67,56,0.2)'
                                           }}
                                         />
                                         {topic}
                                       </li>
                                     ))}
                                   </ul>
+
+                                  {/* Decorative corner accent */}
+                                  <div style={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    left: 0,
+                                    width: '60px',
+                                    height: '60px',
+                                    background: 'linear-gradient(135deg, rgba(39,67,56,0.03) 0%, transparent 100%)',
+                                    borderRadius: '0 60px 0 20px'
+                                  }}></div>
                                 </div>
                               ))}
+                            </div>
+
+                            {/* Call to Action */}
+                            <div style={{
+                              marginTop: '70px',
+                              textAlign: 'center',
+                              padding: '50px 40px',
+                              background: 'linear-gradient(135deg, rgba(39,67,56,0.04) 0%, rgba(39,67,56,0.08) 100%)',
+                              borderRadius: '24px',
+                              border: '1px solid rgba(39,67,56,0.12)'
+                            }}>
+                              <h3 style={{
+                                fontSize: '1.8rem',
+                                fontWeight: 700,
+                                color: '#1a2d26',
+                                marginBottom: '16px',
+                                letterSpacing: '-0.02em'
+                              }}>
+                                Don't See Your Research Area?
+                              </h3>
+                              <p style={{
+                                fontSize: '1.05rem',
+                                color: '#5a6c7d',
+                                marginBottom: '28px',
+                                maxWidth: '700px',
+                                margin: '0 auto 28px',
+                                lineHeight: '1.6'
+                              }}>
+                                We welcome interdisciplinary research that bridges multiple tracks. Contact our program committee for guidance on the best fit for your work.
+                              </p>
+                              <div style={{
+                                display: 'flex',
+                                gap: '16px',
+                                justifyContent: 'center',
+                                flexWrap: 'wrap'
+                              }}>
+                                <button style={{
+                                  padding: '14px 32px',
+                                  background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                  color: '#ffffff',
+                                  border: 'none',
+                                  borderRadius: '12px',
+                                  fontSize: '1rem',
+                                  fontWeight: 600,
+                                  cursor: 'pointer',
+                                  transition: 'all 0.3s ease',
+                                  boxShadow: '0 4px 12px rgba(39,67,56,0.25)'
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.transform = 'translateY(-2px)';
+                                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(39,67,56,0.35)';
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.transform = 'translateY(0)';
+                                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(39,67,56,0.25)';
+                                }}
+                                >
+                                  Submit Your Abstract
+                                </button>
+                                <button style={{
+                                  padding: '14px 32px',
+                                  background: '#ffffff',
+                                  color: '#274338',
+                                  border: '2px solid #274338',
+                                  borderRadius: '12px',
+                                  fontSize: '1rem',
+                                  fontWeight: 600,
+                                  cursor: 'pointer',
+                                  transition: 'all 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.background = '#274338';
+                                  e.currentTarget.style.color = '#ffffff';
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.background = '#ffffff';
+                                  e.currentTarget.style.color = '#274338';
+                                }}
+                                >
+                                  Contact Program Committee
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </section>
