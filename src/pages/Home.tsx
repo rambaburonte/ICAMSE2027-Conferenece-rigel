@@ -17,6 +17,7 @@ import {
   MdLocalHospital, 
   MdBusiness 
 } from 'react-icons/md';
+  import { MdGroups, MdStarRate } from 'react-icons/md';
 
 interface StatisticItem {
   value: number;
@@ -381,82 +382,94 @@ const Home: React.FC = () => {
                         </section>
                       </div>
 
-                      {/* Conference Objectives Section - Redesigned */}
+                      {/* Conference Objectives Section - Enhanced */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '60px 0', background: '#f7fafc' }}>
-                          <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
-                            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
-                              <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1a2d26', marginBottom: '10px', letterSpacing: '-0.5px' }}>
+                        <section style={{ padding: '80px 0', background: '#f7fafc' }}>
+                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+                              <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', marginBottom: '14px', letterSpacing: '-0.5px' }}>
                                 Conference Objectives
                               </h2>
-                              <p style={{ color: '#4a5568', fontSize: '1.08rem', maxWidth: 650, margin: '0 auto', fontWeight: 400 }}>
-                                Our mission is to foster innovation, collaboration, and knowledge exchange in advanced materials science and engineering. We aim to bring together global experts, researchers, and industry leaders to address emerging challenges and shape the future of the field.
+                              <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
+                                ICAMSE 2026 is dedicated to advancing the field of materials science and engineering by fostering innovation, collaboration, and global knowledge exchange. Our objectives are designed to empower researchers, professionals, and students to shape the future of technology and sustainability.
                               </p>
                             </div>
                             <div style={{
                               display: 'grid',
-                              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                              gap: '32px',
+                              gridTemplateColumns: 'repeat(4, 1fr)',
+                              gap: '36px',
                               marginTop: '32px',
                             }}>
+                              {/* Objective 1 */}
                               <div style={{
                                 background: '#fff',
-                                borderRadius: '14px',
-                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
-                                padding: '32px 24px',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
-                                minHeight: 180,
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
                               }}>
-                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Advance Scientific Knowledge</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
-                                  Showcase the latest breakthroughs and research in materials science, engineering, and technology.
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdScience size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Advance Scientific Knowledge</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Showcase and disseminate the latest breakthroughs in materials science, engineering, and technology.
                                 </p>
                               </div>
+                              {/* Objective 2 */}
                               <div style={{
                                 background: '#fff',
-                                borderRadius: '14px',
-                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
-                                padding: '32px 24px',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
-                                minHeight: 180,
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
                               }}>
-                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Foster Collaboration</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
-                                  Connect academia, industry, and government to encourage interdisciplinary partnerships and real-world impact.
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdBusiness size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Foster Global Collaboration</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Connect academia, industry, and government to drive interdisciplinary partnerships and impactful solutions.
                                 </p>
                               </div>
+                              {/* Objective 3 */}
                               <div style={{
                                 background: '#fff',
-                                borderRadius: '14px',
-                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
-                                padding: '32px 24px',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
-                                minHeight: 180,
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
                               }}>
-                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Inspire the Next Generation</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
-                                  Support young scientists and students through mentorship, networking, and educational opportunities.
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdBolt size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Promote Sustainable Solutions</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Address global challenges by promoting green, circular, and innovative materials and processes.
                                 </p>
                               </div>
+                              {/* Objective 4 */}
                               <div style={{
                                 background: '#fff',
-                                borderRadius: '14px',
-                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
-                                padding: '32px 24px',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
-                                minHeight: 180,
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
                               }}>
-                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Promote Sustainable Solutions</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
-                                  Address global challenges by promoting sustainable, green, and innovative materials and processes.
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdLocalHospital size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Inspire the Next Generation</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Empower young scientists and students through mentorship, networking, and educational opportunities.
                                 </p>
                               </div>
                             </div>
@@ -544,122 +557,159 @@ const Home: React.FC = () => {
                         </section>
                       </div>
 
-                      {/* Event Schedule Section */}
+                      {/* Event Schedule Section - Enhanced */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ 
-                          padding: '80px 0', 
-                          background: '#274338',
+                          padding: '90px 0', 
+                          background: 'linear-gradient(135deg, #1a2d26 0%, #274338 100%)',
                           position: 'relative',
                           overflow: 'hidden'
                         }}>
-                          <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
+                          {/* Decorative Background Pattern */}
+                          <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 1px, transparent 1px)',
+                            backgroundSize: '50px 50px',
+                            opacity: 0.4,
+                            zIndex: 1
+                          }}></div>
+
+                          <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
                             {/* Header */}
                             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                               <h2 style={{ 
-                                fontSize: '2.5rem', 
+                                fontSize: '2.8rem', 
                                 fontWeight: 700, 
                                 color: '#ffffff', 
-                                marginBottom: '12px',
+                                marginBottom: '14px',
                                 letterSpacing: '-0.5px'
                               }}>
                                 Event Schedule
                               </h2>
                               <p style={{ 
-                                fontSize: '1.1rem', 
-                                color: 'rgba(255,255,255,0.9)', 
-                                maxWidth: '600px', 
+                                fontSize: '1.15rem', 
+                                color: 'rgba(255,255,255,0.88)', 
+                                maxWidth: '650px', 
                                 margin: '0 auto',
+                                fontWeight: 400,
+                                lineHeight: 1.6
+                              }}>
+                                Explore our comprehensive three-day conference program featuring keynotes, technical sessions, workshops, and networking events.
+                              </p>
+                              <div style={{
+                                fontSize: '0.95rem',
+                                color: 'rgba(255,255,255,0.75)',
+                                marginTop: '10px',
                                 fontWeight: 400
                               }}>
-                                October 13-15, 2026 • Three Days of Innovation and Excellence
-                              </p>
+                                October 13-15, 2026
+                              </div>
                             </div>
 
                             {/* Day Tabs */}
                             <div style={{ 
                               display: 'flex', 
-                              gap: '12px', 
+                              gap: '16px', 
                               marginBottom: '50px',
                               justifyContent: 'center',
                               flexWrap: 'wrap'
                             }}>
-                              {[1, 2, 3].map((day) => (
+                              {[
+                                { day: 1, label: 'Day 1', date: 'October 13' },
+                                { day: 2, label: 'Day 2', date: 'October 14' },
+                                { day: 3, label: 'Day 3', date: 'October 15' }
+                              ].map(({ day, label, date }) => (
                                 <button
                                   key={day}
                                   onClick={() => setSelectedDay(day)}
                                   style={{
-                                    background: selectedDay === day ? '#ffffff' : 'rgba(255, 255, 255, 0.15)',
-                                    border: 'none',
-                                    padding: '12px 32px',
-                                    borderRadius: '10px',
-                                    color: selectedDay === day ? '#274338' : 'rgba(255, 255, 255, 0.85)',
-                                    fontSize: '1rem',
+                                    background: selectedDay === day ? '#ffffff' : 'rgba(255, 255, 255, 0.12)',
+                                    border: selectedDay === day ? 'none' : '1px solid rgba(255, 255, 255, 0.25)',
+                                    padding: '14px 36px',
+                                    borderRadius: '12px',
+                                    color: selectedDay === day ? '#274338' : 'rgba(255, 255, 255, 0.9)',
+                                    fontSize: '1.05rem',
                                     fontWeight: 600,
                                     cursor: 'pointer',
-                                    transition: 'all 0.3s ease'
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: selectedDay === day ? '0 8px 24px rgba(255,255,255,0.2)' : 'none',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center'
                                   }}
                                   onMouseEnter={(e) => {
                                     if (selectedDay !== day) {
-                                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.18)';
+                                      e.currentTarget.style.transform = 'translateY(-3px)';
                                     }
                                   }}
                                   onMouseLeave={(e) => {
                                     if (selectedDay !== day) {
-                                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
+                                      e.currentTarget.style.transform = 'translateY(0)';
                                     }
                                   }}
                                 >
-                                  Day {day}
+                                  <div style={{ fontSize: '1rem' }}>{label}</div>
+                                  <div style={{ fontSize: '0.8rem', opacity: 0.8, marginTop: '2px' }}>{date}</div>
                                 </button>
                               ))}
                             </div>
 
                             {/* Schedule Content */}
                             <div style={{ 
-                              background: 'rgba(255, 255, 255, 0.95)',
+                              background: '#ffffff',
                               borderRadius: '20px',
-                              padding: '35px',
-                              boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
+                              padding: '48px 44px',
+                              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.25)',
                               backdropFilter: 'blur(10px)'
                             }}>
                               {/* Day 1 Schedule */}
                               {selectedDay === 1 && (
                                 <>
-                                  <div style={{ marginBottom: '30px' }}>
+                                  <div style={{ marginBottom: '40px' }}>
                                     <h3 style={{ 
-                                      fontSize: '1.8rem', 
-                                      fontWeight: '600', 
-                                      color: '#274338', 
-                                      marginBottom: '8px' 
+                                      fontSize: '1.9rem', 
+                                      fontWeight: 700, 
+                                      color: '#1a2d26', 
+                                      marginBottom: '6px' 
                                     }}>Opening Day</h3>
                                     <p style={{ 
-                                      fontSize: '1rem', 
+                                      fontSize: '1.05rem', 
                                       color: '#666', 
-                                      marginBottom: '20px' 
+                                      marginBottom: '0',
+                                      fontWeight: 400
                                     }}>October 13, 2026</p>
+                                    <div style={{ width: '60px', height: '3px', background: '#274338', marginTop: '12px', borderRadius: '2px' }}></div>
                                   </div>
 
                                   {/* Event List */}
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                 {/* Event 1 */}
                                 <div style={{
-                                  background: '#f8f9fa',
-                                  borderRadius: '12px',
-                                  padding: '20px',
+                                  background: '#f8fafc',
+                                  borderRadius: '14px',
+                                  padding: '22px 24px',
                                   borderLeft: '4px solid #274338',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '20px',
+                                  gap: '24px',
                                   transition: 'all 0.3s ease',
-                                  cursor: 'pointer'
+                                  cursor: 'pointer',
+                                  border: '1px solid #f0f0f0',
+                                  borderLeftWidth: '4px'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#e8f5f1';
-                                  e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(39, 67, 56, 0.2)';
+                                  e.currentTarget.style.background = '#f0f5f3';
+                                  e.currentTarget.style.transform = 'translateX(8px)';
+                                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = '#f8f9fa';
+                                  e.currentTarget.style.background = '#f8fafc';
                                   e.currentTarget.style.transform = 'translateX(0)';
                                   e.currentTarget.style.boxShadow = 'none';
                                 }}
@@ -698,23 +748,25 @@ const Home: React.FC = () => {
 
                                 {/* Event 2 */}
                                 <div style={{
-                                  background: '#f8f9fa',
-                                  borderRadius: '12px',
-                                  padding: '20px',
+                                  background: '#f8fafc',
+                                  borderRadius: '14px',
+                                  padding: '22px 24px',
                                   borderLeft: '4px solid #3d5a4f',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '20px',
+                                  gap: '24px',
                                   transition: 'all 0.3s ease',
-                                  cursor: 'pointer'
+                                  cursor: 'pointer',
+                                  border: '1px solid #f0f0f0',
+                                  borderLeftWidth: '4px'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#f3e5f5';
-                                  e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(118, 75, 162, 0.2)';
+                                  e.currentTarget.style.background = '#f0f5f3';
+                                  e.currentTarget.style.transform = 'translateX(8px)';
+                                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = '#f8f9fa';
+                                  e.currentTarget.style.background = '#f8fafc';
                                   e.currentTarget.style.transform = 'translateX(0)';
                                   e.currentTarget.style.boxShadow = 'none';
                                 }}
@@ -753,23 +805,25 @@ const Home: React.FC = () => {
 
                                 {/* Event 3 */}
                                 <div style={{
-                                  background: '#f8f9fa',
-                                  borderRadius: '12px',
-                                  padding: '20px',
+                                  background: '#f8fafc',
+                                  borderRadius: '14px',
+                                  padding: '22px 24px',
                                   borderLeft: '4px solid #3498db',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '20px',
+                                  gap: '24px',
                                   transition: 'all 0.3s ease',
-                                  cursor: 'pointer'
+                                  cursor: 'pointer',
+                                  border: '1px solid #f0f0f0',
+                                  borderLeftWidth: '4px'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#e3f2fd';
-                                  e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(52, 152, 219, 0.2)';
+                                  e.currentTarget.style.background = '#f0f5f3';
+                                  e.currentTarget.style.transform = 'translateX(8px)';
+                                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = '#f8f9fa';
+                                  e.currentTarget.style.background = '#f8fafc';
                                   e.currentTarget.style.transform = 'translateX(0)';
                                   e.currentTarget.style.boxShadow = 'none';
                                 }}
@@ -808,23 +862,25 @@ const Home: React.FC = () => {
 
                                 {/* Event 4 */}
                                 <div style={{
-                                  background: '#f8f9fa',
-                                  borderRadius: '12px',
-                                  padding: '20px',
+                                  background: '#f8fafc',
+                                  borderRadius: '14px',
+                                  padding: '22px 24px',
                                   borderLeft: '4px solid #95a5a6',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '20px',
+                                  gap: '24px',
                                   transition: 'all 0.3s ease',
-                                  cursor: 'pointer'
+                                  cursor: 'pointer',
+                                  border: '1px solid #f0f0f0',
+                                  borderLeftWidth: '4px'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#ecf0f1';
-                                  e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(149, 165, 166, 0.2)';
+                                  e.currentTarget.style.background = '#f0f5f3';
+                                  e.currentTarget.style.transform = 'translateX(8px)';
+                                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = '#f8f9fa';
+                                  e.currentTarget.style.background = '#f8fafc';
                                   e.currentTarget.style.transform = 'translateX(0)';
                                   e.currentTarget.style.boxShadow = 'none';
                                 }}
@@ -863,23 +919,25 @@ const Home: React.FC = () => {
 
                                 {/* Event 5 */}
                                 <div style={{
-                                  background: '#f8f9fa',
-                                  borderRadius: '12px',
-                                  padding: '20px',
+                                  background: '#f8fafc',
+                                  borderRadius: '14px',
+                                  padding: '22px 24px',
                                   borderLeft: '4px solid #274338',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '20px',
+                                  gap: '24px',
                                   transition: 'all 0.3s ease',
-                                  cursor: 'pointer'
+                                  cursor: 'pointer',
+                                  border: '1px solid #f0f0f0',
+                                  borderLeftWidth: '4px'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#e8f5f1';
-                                  e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(39, 67, 56, 0.2)';
+                                  e.currentTarget.style.background = '#f0f5f3';
+                                  e.currentTarget.style.transform = 'translateX(8px)';
+                                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = '#f8f9fa';
+                                  e.currentTarget.style.background = '#f8fafc';
                                   e.currentTarget.style.transform = 'translateX(0)';
                                   e.currentTarget.style.boxShadow = 'none';
                                 }}
@@ -918,23 +976,25 @@ const Home: React.FC = () => {
 
                                 {/* Event 6 */}
                                 <div style={{
-                                  background: '#f8f9fa',
-                                  borderRadius: '12px',
-                                  padding: '20px',
+                                  background: '#f8fafc',
+                                  borderRadius: '14px',
+                                  padding: '22px 24px',
                                   borderLeft: '4px solid #e67e22',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '20px',
+                                  gap: '24px',
                                   transition: 'all 0.3s ease',
-                                  cursor: 'pointer'
+                                  cursor: 'pointer',
+                                  border: '1px solid #f0f0f0',
+                                  borderLeftWidth: '4px'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#fef5e7';
-                                  e.currentTarget.style.transform = 'translateX(10px)';
-                                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(230, 126, 34, 0.2)';
+                                  e.currentTarget.style.background = '#f0f5f3';
+                                  e.currentTarget.style.transform = 'translateX(8px)';
+                                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = '#f8f9fa';
+                                  e.currentTarget.style.background = '#f8fafc';
                                   e.currentTarget.style.transform = 'translateX(0)';
                                   e.currentTarget.style.boxShadow = 'none';
                                 }}
@@ -974,33 +1034,33 @@ const Home: React.FC = () => {
 
                               {/* Legend */}
                               <div style={{
-                                marginTop: '30px',
-                                paddingTop: '20px',
+                                marginTop: '40px',
+                                paddingTop: '24px',
                                 borderTop: '1px solid #e0e0e0',
                                 display: 'flex',
                                 flexWrap: 'wrap',
-                                gap: '15px',
+                                gap: '20px',
                                 justifyContent: 'center'
                               }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <div style={{ width: '16px', height: '16px', background: '#274338', borderRadius: '4px' }}></div>
-                                  <span style={{ color: '#666', fontSize: '0.9rem' }}>Registration</span>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                  <div style={{ width: '12px', height: '12px', background: '#274338', borderRadius: '3px' }}></div>
+                                  <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Registration</span>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <div style={{ width: '16px', height: '16px', background: '#3d5a4f', borderRadius: '4px' }}></div>
-                                  <span style={{ color: '#666', fontSize: '0.9rem' }}>Keynote</span>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                  <div style={{ width: '12px', height: '12px', background: '#3d5a4f', borderRadius: '3px' }}></div>
+                                  <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Keynote</span>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <div style={{ width: '16px', height: '16px', background: '#3498db', borderRadius: '4px' }}></div>
-                                  <span style={{ color: '#666', fontSize: '0.9rem' }}>Talk</span>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                  <div style={{ width: '12px', height: '12px', background: '#3498db', borderRadius: '3px' }}></div>
+                                  <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Talk</span>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <div style={{ width: '16px', height: '16px', background: '#95a5a6', borderRadius: '4px' }}></div>
-                                  <span style={{ color: '#666', fontSize: '0.9rem' }}>Break</span>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                  <div style={{ width: '12px', height: '12px', background: '#95a5a6', borderRadius: '3px' }}></div>
+                                  <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Break</span>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                  <div style={{ width: '16px', height: '16px', background: '#e67e22', borderRadius: '4px' }}></div>
-                                  <span style={{ color: '#666', fontSize: '0.9rem' }}>Workshop</span>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                  <div style={{ width: '12px', height: '12px', background: '#e67e22', borderRadius: '3px' }}></div>
+                                  <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Workshop</span>
                                 </div>
                               </div>
                                 </>
@@ -1009,41 +1069,45 @@ const Home: React.FC = () => {
                               {/* Day 2 Schedule */}
                               {selectedDay === 2 && (
                                 <>
-                                  <div style={{ marginBottom: '30px' }}>
+                                  <div style={{ marginBottom: '40px' }}>
                                     <h3 style={{ 
-                                      fontSize: '1.8rem', 
-                                      fontWeight: '600', 
-                                      color: '#274338', 
-                                      marginBottom: '8px' 
+                                      fontSize: '1.9rem', 
+                                      fontWeight: 700, 
+                                      color: '#1a2d26', 
+                                      marginBottom: '6px' 
                                     }}>Conference Day</h3>
                                     <p style={{ 
-                                      fontSize: '1rem', 
+                                      fontSize: '1.05rem', 
                                       color: '#666', 
-                                      marginBottom: '20px' 
+                                      marginBottom: '0',
+                                      fontWeight: 400
                                     }}>October 14, 2026</p>
+                                    <div style={{ width: '60px', height: '3px', background: '#274338', marginTop: '12px', borderRadius: '2px' }}></div>
                                   </div>
 
                                   {/* Event List */}
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                     {/* Event 1 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #3498db',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#e3f2fd';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(52, 152, 219, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1082,23 +1146,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 2 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #9b59b6',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#f4ecf7';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(155, 89, 182, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1137,23 +1203,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 3 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #95a5a6',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#ecf0f1';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(149, 165, 166, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1192,23 +1260,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 4 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #e67e22',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#fef5e7';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(230, 126, 34, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1247,23 +1317,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 5 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #27ae60',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#e8f8f5';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(39, 174, 96, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1302,23 +1374,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 6 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #e74c3c',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#fadbd8';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(231, 76, 60, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1358,33 +1432,33 @@ const Home: React.FC = () => {
 
                                   {/* Legend */}
                                   <div style={{
-                                    marginTop: '30px',
-                                    paddingTop: '20px',
+                                    marginTop: '40px',
+                                    paddingTop: '24px',
                                     borderTop: '1px solid #e0e0e0',
                                     display: 'flex',
                                     flexWrap: 'wrap',
-                                    gap: '15px',
+                                    gap: '20px',
                                     justifyContent: 'center'
                                   }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#3d5a4f', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Keynote</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#3d5a4f', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Keynote</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#3498db', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Talk</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#3498db', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Talk</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#95a5a6', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Break</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#95a5a6', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Break</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#9b59b6', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Panel</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#9b59b6', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Panel</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#27ae60', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Special</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#27ae60', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Special</span>
                                     </div>
                                   </div>
                                 </>
@@ -1393,41 +1467,45 @@ const Home: React.FC = () => {
                               {/* Day 3 Schedule */}
                               {selectedDay === 3 && (
                                 <>
-                                  <div style={{ marginBottom: '30px' }}>
+                                  <div style={{ marginBottom: '40px' }}>
                                     <h3 style={{ 
-                                      fontSize: '1.8rem', 
-                                      fontWeight: '600', 
-                                      color: '#274338', 
-                                      marginBottom: '8px' 
+                                      fontSize: '1.9rem', 
+                                      fontWeight: 700, 
+                                      color: '#1a2d26', 
+                                      marginBottom: '6px' 
                                     }}>Closing Day</h3>
                                     <p style={{ 
-                                      fontSize: '1rem', 
+                                      fontSize: '1.05rem', 
                                       color: '#666', 
-                                      marginBottom: '20px' 
+                                      marginBottom: '0',
+                                      fontWeight: 400
                                     }}>October 15, 2026</p>
+                                    <div style={{ width: '60px', height: '3px', background: '#274338', marginTop: '12px', borderRadius: '2px' }}></div>
                                   </div>
 
                                   {/* Event List */}
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                     {/* Event 1 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #3d5a4f',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#e1ebe7';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(118, 75, 162, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1466,23 +1544,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 2 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #3498db',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#e3f2fd';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(52, 152, 219, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1521,23 +1601,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 3 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #95a5a6',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#ecf0f1';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(149, 165, 166, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1576,23 +1658,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 4 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #9b59b6',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#f4ecf7';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(155, 89, 182, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1631,23 +1715,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 5 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #27ae60',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#e8f8f5';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(39, 174, 96, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1686,23 +1772,25 @@ const Home: React.FC = () => {
 
                                     {/* Event 6 */}
                                     <div style={{
-                                      background: '#f8f9fa',
-                                      borderRadius: '12px',
-                                      padding: '20px',
+                                      background: '#f8fafc',
+                                      borderRadius: '14px',
+                                      padding: '22px 24px',
                                       borderLeft: '4px solid #274338',
                                       display: 'flex',
                                       alignItems: 'center',
-                                      gap: '20px',
+                                      gap: '24px',
                                       transition: 'all 0.3s ease',
-                                      cursor: 'pointer'
+                                      cursor: 'pointer',
+                                      border: '1px solid #f0f0f0',
+                                      borderLeftWidth: '4px'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.background = '#e8f5f1';
-                                      e.currentTarget.style.transform = 'translateX(10px)';
-                                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.2)';
+                                      e.currentTarget.style.background = '#f0f5f3';
+                                      e.currentTarget.style.transform = 'translateX(8px)';
+                                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(39,67,56,0.08)';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.background = '#f8f9fa';
+                                      e.currentTarget.style.background = '#f8fafc';
                                       e.currentTarget.style.transform = 'translateX(0)';
                                       e.currentTarget.style.boxShadow = 'none';
                                     }}
@@ -1742,33 +1830,33 @@ const Home: React.FC = () => {
 
                                   {/* Legend */}
                                   <div style={{
-                                    marginTop: '30px',
-                                    paddingTop: '20px',
+                                    marginTop: '40px',
+                                    paddingTop: '24px',
                                     borderTop: '1px solid #e0e0e0',
                                     display: 'flex',
                                     flexWrap: 'wrap',
-                                    gap: '15px',
+                                    gap: '20px',
                                     justifyContent: 'center'
                                   }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#3d5a4f', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Keynote</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#3d5a4f', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Keynote</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#3498db', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Talk</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#3498db', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Talk</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#95a5a6', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Break</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#95a5a6', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Break</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#9b59b6', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Panel</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#9b59b6', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Panel</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <div style={{ width: '16px', height: '16px', background: '#27ae60', borderRadius: '4px' }}></div>
-                                      <span style={{ color: '#666', fontSize: '0.9rem' }}>Special</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                      <div style={{ width: '12px', height: '12px', background: '#27ae60', borderRadius: '3px' }}></div>
+                                      <span style={{ color: '#666', fontSize: '0.95rem', fontWeight: 500 }}>Special</span>
                                     </div>
                                   </div>
                                 </>
@@ -1834,7 +1922,7 @@ const Home: React.FC = () => {
                                   alignItems: 'center',
                                   gap: '10px'
                                 }}>
-                                  <span style={{ fontSize: '1.5rem' }}>👥</span>
+                                  <span style={{ fontSize: '1.5rem', display: 'flex', alignItems: 'center' }}><MdGroups size={28} style={{ marginRight: 6, color: '#274338' }} /></span>
                                   Who Should Attend
                                 </h3>
 
@@ -1904,7 +1992,7 @@ const Home: React.FC = () => {
                                   alignItems: 'center',
                                   gap: '10px'
                                 }}>
-                                  <span style={{ fontSize: '1.5rem' }}>✨</span>
+                                  <span style={{ fontSize: '1.5rem', display: 'flex', alignItems: 'center' }}><MdStarRate size={28} style={{ marginRight: 6, color: '#3498db' }} /></span>
                                   Why Attend
                                 </h3>
 
