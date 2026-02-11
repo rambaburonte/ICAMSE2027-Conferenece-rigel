@@ -198,63 +198,6 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
         </div>
       </footer>
 
-      {/* DMG Footer */}
-      <div className="dmgfooter">
-        <div className="container">
-          <div className="dmgfooter__row">
-            <div className="dmgfooter__col">
-              <div className="dmgfooter__col-logo">
-                <div className="dmgfooter__col-logo-icon">
-                  <a href="/" target="_blank" rel="noopener noreferrer">
-                    <span style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#274338', letterSpacing: '2px' }}>ICAMSE2026</span>
-                  </a>
-                </div>
-                <p>
-                  ICAMSE 2026 – International Conference on Advanced Materials Science & Engineering. Join us in Bern, Switzerland for a premier gathering of global experts, researchers, and innovators in materials science.
-                </p>
-              </div>
-            </div>
-            <div className="dmgfooter__col dmgfooter__col-icons">
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/dmgeventsglobal/" target="_blank" rel="noopener noreferrer" aria-label="DMG Facebook">
-                    <FaFacebookF size={20} color="#4267B2" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://x.com/dmgeventsglobal?mx=2" target="_blank" rel="noopener noreferrer" aria-label="DMG Twitter">
-                    <FaTwitter size={20} color="#1DA1F2" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/company/dmgevents/" target="_blank" rel="noopener noreferrer" aria-label="DMG LinkedIn">
-                    <FaLinkedinIn size={20} color="#0077B5" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="dmgfooter__row-links">
-            <ul>
-              <li>
-                <a href="https://www.dmgevents.com/cookies-policy/" target="_blank" rel="noopener noreferrer">
-                  Cookies Preferences
-                </a>
-              </li>
-              <li>
-                <a href="https://www.dmgevents.com/privacy-policy/" target="_blank" rel="noopener noreferrer">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a href="https://www.dmgevents.com/website-terms/" target="_blank" rel="noopener noreferrer">
-                  Website Terms
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
