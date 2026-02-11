@@ -17,7 +17,7 @@ import {
   MdLocalHospital, 
   MdBusiness 
 } from 'react-icons/md';
-  import { MdGroups, MdStarRate } from 'react-icons/md';
+  import { MdGroups, MdStarRate, MdPeople, MdRecordVoiceOver, MdEmail, MdSchool } from 'react-icons/md';
 
 interface StatisticItem {
   value: number;
@@ -472,6 +472,241 @@ const Home: React.FC = () => {
                                   Empower young scientists and students through mentorship, networking, and educational opportunities.
                                 </p>
                               </div>
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+
+                      {/* Organizing Committee Section */}
+                      <div className="umb-block-grid__layout-item">
+                        <section style={{ padding: '80px 0', background: '#ffffff' }}>
+                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '14px' }}>
+                                <MdPeople size={36} style={{ color: '#274338' }} />
+                                <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', letterSpacing: '-0.5px', margin: 0 }}>
+                                  Organizing Committee
+                                </h2>
+                              </div>
+                              <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
+                                Meet the distinguished professionals behind ICAMSE 2026, committed to creating an exceptional conference experience.
+                              </p>
+                            </div>
+
+                            <div style={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(4, 1fr)',
+                              gap: '32px',
+                              marginTop: '40px'
+                            }}>
+                              {[
+                                { name: 'Dr. Sarah Mitchell', role: 'Conference Chair', institution: 'ETH Zurich', email: 's.mitchell@ethz.ch' },
+                                { name: 'Prof. James Chen', role: 'Program Committee Chair', institution: 'MIT', email: 'jchen@mit.edu' },
+                                { name: 'Dr. Maria García', role: 'Technical Chair', institution: 'University of Cambridge', email: 'm.garcia@cam.ac.uk' },
+                                { name: 'Prof. David Kumar', role: 'Industry Liaison', institution: 'Stanford University', email: 'd.kumar@stanford.edu' },
+                                { name: 'Dr. Emma Wilson', role: 'Publicity Chair', institution: 'Imperial College London', email: 'e.wilson@ic.ac.uk' },
+                                { name: 'Prof. Michael Zhang', role: 'Publications Chair', institution: 'Tsinghua University', email: 'mzhang@tsinghua.edu.cn' },
+                                { name: 'Dr. Sophie Laurent', role: 'Workshop Coordinator', institution: 'Sorbonne University', email: 's.laurent@sorbonne.fr' },
+                                { name: 'Prof. Robert Brown', role: 'Finance Chair', institution: 'Oxford University', email: 'r.brown@ox.ac.uk' }
+                              ].map((member, index) => (
+                                <div
+                                  key={index}
+                                  style={{
+                                    background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)',
+                                    borderRadius: '16px',
+                                    padding: '32px 24px',
+                                    boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                    border: '1px solid rgba(39,67,56,0.08)',
+                                    transition: 'all 0.3s ease',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    textAlign: 'center'
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-6px)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(39,67,56,0.12)';
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 2px 16px rgba(39,67,56,0.09)';
+                                  }}
+                                >
+                                  <div style={{
+                                    width: '100px',
+                                    height: '100px',
+                                    borderRadius: '50%',
+                                    background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginBottom: '20px',
+                                    boxShadow: '0 4px 12px rgba(39,67,56,0.2)'
+                                  }}>
+                                    <MdPeople size={48} style={{ color: '#ffffff' }} />
+                                  </div>
+                                  <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#1a2d26', marginBottom: '6px' }}>
+                                    {member.name}
+                                  </h3>
+                                  <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
+                                    {member.role}
+                                  </div>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
+                                    <MdSchool size={16} />
+                                    <span>{member.institution}</span>
+                                  </div>
+                                  <a href={`mailto:${member.email}`} style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    fontSize: '0.85rem',
+                                    color: '#3498db',
+                                    textDecoration: 'none',
+                                    transition: 'color 0.3s ease'
+                                  }}
+                                  onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
+                                  onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
+                                  >
+                                    <MdEmail size={14} />
+                                    <span>Contact</span>
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+
+                      {/* Keynote Speakers Section */}
+                      <div className="umb-block-grid__layout-item">
+                        <section style={{ padding: '80px 0', background: '#f7fafc' }}>
+                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '14px' }}>
+                                <MdRecordVoiceOver size={36} style={{ color: '#274338' }} />
+                                <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', letterSpacing: '-0.5px', margin: 0 }}>
+                                  Keynote Speakers
+                                </h2>
+                              </div>
+                              <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
+                                Learn from world-renowned experts sharing cutting-edge research and insights in materials science and engineering.
+                              </p>
+                            </div>
+
+                            <div style={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(3, 1fr)',
+                              gap: '36px',
+                              marginTop: '40px'
+                            }}>
+                              {[
+                                {
+                                  name: 'Prof. Elizabeth Anderson',
+                                  title: 'Nobel Laureate in Chemistry',
+                                  institution: 'UC Berkeley',
+                                  topic: 'Quantum Materials for Next-Generation Computing',
+                                  bio: 'Leading researcher in quantum materials with over 300 publications and numerous awards.'
+                                },
+                                {
+                                  name: 'Dr. Hiroshi Tanaka',
+                                  title: 'Director, Advanced Materials Institute',
+                                  institution: 'University of Tokyo',
+                                  topic: 'Sustainable Materials for Clean Energy',
+                                  bio: 'Pioneer in sustainable materials development with 25+ years of experience in energy materials.'
+                                },
+                                {
+                                  name: 'Prof. Alexandra Petrov',
+                                  title: 'Chair of Materials Engineering',
+                                  institution: 'Max Planck Institute',
+                                  topic: 'AI-Driven Materials Discovery',
+                                  bio: 'Expert in computational materials science and machine learning applications in materials design.'
+                                },
+                                {
+                                  name: 'Dr. Marcus Williams',
+                                  title: 'Chief Scientist',
+                                  institution: 'NASA Materials Lab',
+                                  topic: 'Advanced Materials for Space Exploration',
+                                  bio: 'Leading NASA\'s materials research for next-generation spacecraft and space habitats.'
+                                },
+                                {
+                                  name: 'Prof. Yuki Nakamura',
+                                  title: 'Distinguished Professor',
+                                  institution: 'Seoul National University',
+                                  topic: 'Biomimetic Materials and Applications',
+                                  bio: 'World expert in bio-inspired materials with breakthrough innovations in tissue engineering.'
+                                },
+                                {
+                                  name: 'Dr. Catherine Dubois',
+                                  title: 'VP of R&D',
+                                  institution: 'Materials Innovation Inc.',
+                                  topic: 'Commercial Translation of Advanced Materials',
+                                  bio: 'Successfully commercialized 15+ material technologies with combined market value of $2B+.'
+                                }
+                              ].map((speaker, index) => (
+                                <div
+                                  key={index}
+                                  style={{
+                                    background: '#ffffff',
+                                    borderRadius: '16px',
+                                    padding: '36px 28px',
+                                    boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                    border: '1px solid rgba(39,67,56,0.08)',
+                                    transition: 'all 0.3s ease',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    height: '100%'
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-6px)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(39,67,56,0.12)';
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 2px 16px rgba(39,67,56,0.09)';
+                                  }}
+                                >
+                                  <div style={{
+                                    width: '100%',
+                                    height: '180px',
+                                    borderRadius: '12px',
+                                    background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginBottom: '20px',
+                                    boxShadow: '0 4px 12px rgba(39,67,56,0.15)'
+                                  }}>
+                                    <MdRecordVoiceOver size={64} style={{ color: '#ffffff' }} />
+                                  </div>
+                                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#1a2d26', marginBottom: '8px' }}>
+                                    {speaker.name}
+                                  </h3>
+                                  <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '4px' }}>
+                                    {speaker.title}
+                                  </div>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '16px' }}>
+                                    <MdSchool size={16} />
+                                    <span>{speaker.institution}</span>
+                                  </div>
+                                  <div style={{
+                                    background: 'linear-gradient(135deg, #f0f4f8 0%, #e6eef5 100%)',
+                                    padding: '12px 16px',
+                                    borderRadius: '8px',
+                                    marginBottom: '14px',
+                                    borderLeft: '3px solid #274338'
+                                  }}>
+                                    <div style={{ fontSize: '0.85rem', color: '#666', marginBottom: '4px', fontWeight: 500 }}>Keynote Topic:</div>
+                                    <div style={{ fontSize: '0.95rem', color: '#1a2d26', fontWeight: 500, lineHeight: 1.4 }}>
+                                      {speaker.topic}
+                                    </div>
+                                  </div>
+                                  <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: 1.6, margin: 0, flexGrow: 1 }}>
+                                    {speaker.bio}
+                                  </p>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </section>
