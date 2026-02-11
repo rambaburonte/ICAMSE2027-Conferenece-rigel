@@ -726,7 +726,7 @@ const Home: React.FC = () => {
                             <div style={{ textAlign: 'center', marginBottom: '50px' }}>
                               <h2 style={{ 
                                 fontSize: '2.5rem', 
-                                fontWeight: 700, 
+                                fontWeight: 900, 
                                 color: '#1a2d26', 
                                 marginBottom: '14px', 
                                 letterSpacing: '-0.02em',
@@ -779,7 +779,7 @@ const Home: React.FC = () => {
                                   </div>
                                   <h3 style={{ 
                                     fontSize: '1.2rem', 
-                                    fontWeight: 600, 
+                                    fontWeight: 700, 
                                     color: '#1a2d26', 
                                     marginBottom: '18px', 
                                     minHeight: '56px', 
@@ -787,20 +787,20 @@ const Home: React.FC = () => {
                                     letterSpacing: '-0.01em',
                                     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                                   }}>
-                                    {track.title}
+                                    <strong>{track.title}</strong>
                                   </h3>
                                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                                     {track.topics.map((topic, topicIndex) => (
                                       <li
                                         key={topicIndex}
-                                        style={{
+                                        style={{  
                                           fontSize: '0.92rem',
                                           color: '#4a5568',
                                           marginBottom: '10px',
                                           paddingLeft: '20px',
                                           position: 'relative',
                                           lineHeight: '1.6',
-                                          fontWeight: 400,
+                                          fontWeight: 500,
                                           letterSpacing: '0.01em',
                                           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                                         }}
