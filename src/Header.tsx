@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './assets/ICAMSE2026_logo.png';
 import { Link } from 'react-router-dom';
 
 interface NavLink {
@@ -7,7 +8,6 @@ interface NavLink {
   target?: string;
   ariaLabel: string;
 }
-
 interface HeaderProps {
   navLinks: NavLink[];
 }
@@ -18,8 +18,8 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
       <div className="header__container">
         {/* Logo Section */}
         <div className="header__top-logo">
-          <Link to="/" aria-label="Home" style={{ textDecoration: 'none' }}>
-            <span style={{ fontWeight: 'bold', fontSize: '2.8rem', color: '#274338', letterSpacing: '4px', textTransform: 'uppercase', lineHeight: 1 }}>ICAMSE2026</span>
+          <Link to="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <img src={logo} alt="ICAMSE2026 Logo" style={{ height: '86px', width: '155px', objectFit: 'fill', display: 'flex' }} />
           </Link>
           <h6>
             October 13-15, 2026
