@@ -205,7 +205,7 @@ const Home: React.FC = () => {
         />
       </noscript>
 
-      <main style={{ paddingTop: '150px' }}>
+      <main style={{ paddingTop: '160px' }}>
         {/* Banner Section */}
         <section className="component__banner banner">
           <div className="swiper banner__slider">
@@ -381,315 +381,83 @@ const Home: React.FC = () => {
                         </section>
                       </div>
 
-                      {/* Conference Objectives Section */}
+                      {/* Conference Objectives Section - Redesigned */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '60px 0', background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)' }}>
-                          <div className="container">
-                            <div className="common-head" style={{ textAlign: 'center', marginBottom: '50px' }}>
-                              <h2 style={{ fontSize: '2.5rem', fontWeight: '700', color: '#333', marginBottom: '15px' }}>
+                        <section style={{ padding: '60px 0', background: '#f7fafc' }}>
+                          <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+                              <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1a2d26', marginBottom: '10px', letterSpacing: '-0.5px' }}>
                                 Conference Objectives
                               </h2>
+                              <p style={{ color: '#4a5568', fontSize: '1.08rem', maxWidth: 650, margin: '0 auto', fontWeight: 400 }}>
+                                Our mission is to foster innovation, collaboration, and knowledge exchange in advanced materials science and engineering. We aim to bring together global experts, researchers, and industry leaders to address emerging challenges and shape the future of the field.
+                              </p>
                             </div>
-                            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '60px' }}>
-                                
-                                {/* Section 1: Academic & Research Excellence */}
-                                <div>
-                                  <h3 style={{ 
-                                    fontSize: '1.6rem', 
-                                    fontWeight: '600', 
-                                    color: '#2c3e50', 
-                                    marginBottom: '30px',
-                                    textAlign: 'center',
-                                    borderBottom: '2px solid #3498db',
-                                    paddingBottom: '10px'
-                                  }}>
-                                    Academic & Research Excellence
-                                  </h3>
-                                  <ul style={{ 
-                                    listStyle: 'none', 
-                                    padding: 0, 
-                                    margin: 0,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: '20px'
-                                  }}>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(102, 126, 234, 0.3)',
-                                      }}>✓</span>
-                                      Showcase recent breakthroughs in advanced materials research
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(102, 126, 234, 0.3)',
-                                      }}>✓</span>
-                                      Foster interdisciplinary collaboration across scientific domains
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(102, 126, 234, 0.3)',
-                                      }}>✓</span>
-                                      Encourage young researchers and students to present their work
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(102, 126, 234, 0.3)',
-                                      }}>✓</span>
-                                      Advance fundamental understanding of materials science
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(102, 126, 234, 0.3)',
-                                      }}>✓</span>
-                                      Promote cutting-edge characterization and testing methodologies
-                                    </li>
-                                  </ul>
-                                </div>
-
-                                {/* Section 2: Industry & Innovation Impact */}
-                                <div>
-                                  <h3 style={{ 
-                                    fontSize: '1.6rem', 
-                                    fontWeight: '600', 
-                                    color: '#2c3e50', 
-                                    marginBottom: '30px',
-                                    textAlign: 'center',
-                                    borderBottom: '2px solid #e74c3c',
-                                    paddingBottom: '10px'
-                                  }}>
-                                    Industry & Innovation Impact
-                                  </h3>
-                                  <ul style={{ 
-                                    listStyle: 'none', 
-                                    padding: 0, 
-                                    margin: 0,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: '20px'
-                                  }}>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(231, 76, 60, 0.3)',
-                                      }}>✓</span>
-                                      Promote collaboration between academia and industry
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(231, 76, 60, 0.3)',
-                                      }}>✓</span>
-                                      Discuss challenges and future directions in materials science
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(231, 76, 60, 0.3)',
-                                      }}>✓</span>
-                                      Facilitate knowledge exchange through plenary, keynote, and technical sessions
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(231, 76, 60, 0.3)',
-                                      }}>✓</span>
-                                      Bridge the gap between fundamental research and industrial applications
-                                    </li>
-                                    <li style={{
-                                      fontSize: '1rem',
-                                      color: '#555',
-                                      paddingLeft: '45px',
-                                      position: 'relative',
-                                      lineHeight: '1.7',
-                                    }}>
-                                      <span style={{
-                                        position: 'absolute',
-                                        left: '0',
-                                        top: '2px',
-                                        width: '30px',
-                                        height: '30px',
-                                        background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#fff',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 3px 10px rgba(231, 76, 60, 0.3)',
-                                      }}>✓</span>
-                                      Accelerate technology transfer and commercialization of materials innovations
-                                    </li>
-                                  </ul>
-                                </div>
+                            <div style={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                              gap: '32px',
+                              marginTop: '32px',
+                            }}>
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '14px',
+                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
+                                padding: '32px 24px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 180,
+                              }}>
+                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Advance Scientific Knowledge</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
+                                  Showcase the latest breakthroughs and research in materials science, engineering, and technology.
+                                </p>
+                              </div>
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '14px',
+                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
+                                padding: '32px 24px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 180,
+                              }}>
+                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Foster Collaboration</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
+                                  Connect academia, industry, and government to encourage interdisciplinary partnerships and real-world impact.
+                                </p>
+                              </div>
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '14px',
+                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
+                                padding: '32px 24px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 180,
+                              }}>
+                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Inspire the Next Generation</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
+                                  Support young scientists and students through mentorship, networking, and educational opportunities.
+                                </p>
+                              </div>
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '14px',
+                                boxShadow: '0 2px 12px rgba(39,67,56,0.07)',
+                                padding: '32px 24px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 180,
+                              }}>
+                                <h3 style={{ color: '#274338', fontWeight: 600, fontSize: '1.15rem', marginBottom: 10 }}>Promote Sustainable Solutions</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.6 }}>
+                                  Address global challenges by promoting sustainable, green, and innovative materials and processes.
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -698,42 +466,46 @@ const Home: React.FC = () => {
 
                       {/* Scientific Themes & Tracks Section */}
                       <div className="umb-block-grid__layout-item">
-                        <section className="image-text-card-block three-col-image-card enable-background" style={{ padding: '60px 0', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)' }}>
-                          <div className="container">
-                            <div className="common-head" style={{ textAlign: 'center', marginBottom: '50px' }}>
-                              <h2 style={{ fontSize: '2.5rem', fontWeight: '700', color: '#333', marginBottom: '15px' }}>
+                        <section style={{ padding: '70px 0', background: '#f8fafc' }}>
+                          <div className="container" style={{ maxWidth: '1600px', margin: '0 auto', padding: '0 20px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+                              <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1a2d26', marginBottom: '12px', letterSpacing: '-0.5px' }}>
                                 Scientific Themes & Tracks
                               </h2>
-                              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '800px', margin: '0 auto' }}>
-                                Explore our comprehensive range of research themes and technical tracks
+                              <p style={{ fontSize: '1.08rem', color: '#4a5568', maxWidth: '700px', margin: '0 auto', fontWeight: 400 }}>
+                                Explore our comprehensive range of research themes and technical tracks covering the latest advancements in materials science
                               </p>
                             </div>
 
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '36px', marginTop: '40px' }}>
                               {scientificTracks.map((track, index) => (
                                 <div
                                   key={index}
                                   style={{
                                     background: '#ffffff',
-                                    borderRadius: '12px',
-                                    padding: '30px',
-                                    boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    borderRadius: '16px',
+                                    padding: '38px 32px',
+                                    boxShadow: '0 2px 16px rgba(39, 67, 56, 0.10)',
+                                    transition: 'all 0.3s ease',
                                     cursor: 'pointer',
+                                    border: '1px solid rgba(39, 67, 56, 0.06)',
+                                    minWidth: 0,
+                                    maxWidth: '480px',
+                                    margin: '0 auto',
                                   }}
                                   onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-8px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                                    e.currentTarget.style.transform = 'translateY(-6px)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(39, 67, 56, 0.12)';
                                   }}
                                   onMouseLeave={(e) => {
                                     e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+                                    e.currentTarget.style.boxShadow = '0 2px 12px rgba(39, 67, 56, 0.08)';
                                   }}
                                 >
-                                  <div style={{ fontSize: '3rem', marginBottom: '15px', color: '#3498db' }}>
-                                    <track.icon size={48} />
+                                  <div style={{ fontSize: '2.5rem', marginBottom: '16px', color: '#274338', opacity: 0.8 }}>
+                                    <track.icon size={44} />
                                   </div>
-                                  <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#2c3e50', marginBottom: '20px', minHeight: '60px' }}>
+                                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#1a2d26', marginBottom: '14px', minHeight: '56px', lineHeight: '1.4' }}>
                                     {track.title}
                                   </h3>
                                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -743,21 +515,22 @@ const Home: React.FC = () => {
                                         style={{
                                           fontSize: '0.95rem',
                                           color: '#555',
-                                          marginBottom: '10px',
-                                          paddingLeft: '20px',
+                                          marginBottom: '8px',
+                                          paddingLeft: '18px',
                                           position: 'relative',
-                                          lineHeight: '1.6',
+                                          lineHeight: '1.5',
                                         }}
                                       >
                                         <span
                                           style={{
                                             position: 'absolute',
                                             left: '0',
-                                            top: '8px',
-                                            width: '6px',
-                                            height: '6px',
-                                            background: '#3498db',
+                                            top: '0.6rem',
+                                            width: '4px',
+                                            height: '4px',
+                                            background: '#274338',
                                             borderRadius: '50%',
+                                            opacity: 0.6,
                                           }}
                                         />
                                         {topic}
@@ -775,39 +548,28 @@ const Home: React.FC = () => {
                       <div className="umb-block-grid__layout-item">
                         <section style={{ 
                           padding: '80px 0', 
-                          background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)',
+                          background: '#274338',
                           position: 'relative',
                           overflow: 'hidden'
                         }}>
-                          {/* Background Pattern */}
-                          <div style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-            opacity: 0.1
-          }}></div>
-
                           <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
                             {/* Header */}
                             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                               <h2 style={{ 
-                                fontSize: '2.8rem', 
-                                fontWeight: '700', 
+                                fontSize: '2.5rem', 
+                                fontWeight: 700, 
                                 color: '#ffffff', 
-                                marginBottom: '15px',
-                                textShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                                marginBottom: '12px',
+                                letterSpacing: '-0.5px'
                               }}>
                                 Event Schedule
                               </h2>
                               <p style={{ 
-                                fontSize: '1.2rem', 
-                                color: 'rgba(255,255,255,0.95)', 
+                                fontSize: '1.1rem', 
+                                color: 'rgba(255,255,255,0.9)', 
                                 maxWidth: '600px', 
                                 margin: '0 auto',
-                                fontWeight: '300'
+                                fontWeight: 400
                               }}>
                                 October 13-15, 2026 • Three Days of Innovation and Excellence
                               </p>
@@ -816,58 +578,40 @@ const Home: React.FC = () => {
                             {/* Day Tabs */}
                             <div style={{ 
                               display: 'flex', 
-                              gap: '15px', 
+                              gap: '12px', 
                               marginBottom: '50px',
-                              justifyContent: 'center'
+                              justifyContent: 'center',
+                              flexWrap: 'wrap'
                             }}>
-                              <button 
-                                onClick={() => setSelectedDay(1)}
-                                style={{
-                                  background: selectedDay === 1 ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.2)',
-                                  border: selectedDay === 1 ? 'none' : '2px solid rgba(255, 255, 255, 0.3)',
-                                  padding: '15px 40px',
-                                  borderRadius: '12px',
-                                  color: selectedDay === 1 ? '#274338' : 'rgba(255, 255, 255, 0.8)',
-                                  fontSize: '1.1rem',
-                                  fontWeight: '600',
-                                  cursor: 'pointer',
-                                  boxShadow: selectedDay === 1 ? '0 4px 20px rgba(255, 255, 255, 0.3)' : 'none',
-                                  transition: 'all 0.3s ease'
-                                }}>
-                                Day 1
-                              </button>
-                              <button 
-                                onClick={() => setSelectedDay(2)}
-                                style={{
-                                  background: selectedDay === 2 ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.2)',
-                                  border: selectedDay === 2 ? 'none' : '2px solid rgba(255, 255, 255, 0.3)',
-                                  padding: '15px 40px',
-                                  borderRadius: '12px',
-                                  color: selectedDay === 2 ? '#274338' : 'rgba(255, 255, 255, 0.8)',
-                                  fontSize: '1.1rem',
-                                  fontWeight: '600',
-                                  cursor: 'pointer',
-                                  boxShadow: selectedDay === 2 ? '0 4px 20px rgba(255, 255, 255, 0.3)' : 'none',
-                                  transition: 'all 0.3s ease'
-                                }}>
-                                Day 2
-                              </button>
-                              <button 
-                                onClick={() => setSelectedDay(3)}
-                                style={{
-                                  background: selectedDay === 3 ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.2)',
-                                  border: selectedDay === 3 ? 'none' : '2px solid rgba(255, 255, 255, 0.3)',
-                                  padding: '15px 40px',
-                                  borderRadius: '12px',
-                                  color: selectedDay === 3 ? '#274338' : 'rgba(255, 255, 255, 0.8)',
-                                  fontSize: '1.1rem',
-                                  fontWeight: '600',
-                                  cursor: 'pointer',
-                                  boxShadow: selectedDay === 3 ? '0 4px 20px rgba(255, 255, 255, 0.3)' : 'none',
-                                  transition: 'all 0.3s ease'
-                                }}>
-                                Day 3
-                              </button>
+                              {[1, 2, 3].map((day) => (
+                                <button
+                                  key={day}
+                                  onClick={() => setSelectedDay(day)}
+                                  style={{
+                                    background: selectedDay === day ? '#ffffff' : 'rgba(255, 255, 255, 0.15)',
+                                    border: 'none',
+                                    padding: '12px 32px',
+                                    borderRadius: '10px',
+                                    color: selectedDay === day ? '#274338' : 'rgba(255, 255, 255, 0.85)',
+                                    fontSize: '1rem',
+                                    fontWeight: 600,
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s ease'
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    if (selectedDay !== day) {
+                                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                                    }
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    if (selectedDay !== day) {
+                                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                                    }
+                                  }}
+                                >
+                                  Day {day}
+                                </button>
+                              ))}
                             </div>
 
                             {/* Schedule Content */}
@@ -2037,92 +1781,62 @@ const Home: React.FC = () => {
                       {/* Who Should Attend & Why Attend Section */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ 
-                          padding: '60px 0', 
+                          padding: '80px 0', 
                           background: '#ffffff', 
                           position: 'relative'
                         }}>
-                          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
+                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
                             
                             {/* Section Header */}
-                            <div style={{ textAlign: 'center', marginBottom: '50px', marginTop: '0' }}>
-                              <div style={{
-                                display: 'inline-block',
-                                padding: '6px 18px',
-                                background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
-                                borderRadius: '30px',
-                                marginBottom: '12px',
-                                border: '1px solid rgba(39, 67, 56, 0.08)'
-                              }}>
-                                <span style={{
-                                  fontSize: '0.95rem',
-                                  fontWeight: '600',
-                                  color: '#274338',
-                                  letterSpacing: '0.5px',
-                                  textTransform: 'uppercase'
-                                }}>
-                                  Join the Community
-                                </span>
-                              </div>
+                            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                               <h2 style={{ 
-                                fontSize: '2.2rem', 
-                                fontWeight: '500', 
-                                color: '#1a1a1a', 
+                                fontSize: '2.5rem', 
+                                fontWeight: 700, 
+                                color: '#1a2d26', 
                                 marginBottom: '12px',
-                                lineHeight: '1.15',
                                 letterSpacing: '-0.5px'
                               }}>
-                                ICAMSE 2026 in <span style={{ fontWeight: '700', color: '#274338' }}>Bern, Switzerland</span>
+                                Join a Global Community
                               </h2>
                               <p style={{ 
                                 fontSize: '1.08rem', 
-                                color: '#444', 
-                                maxWidth: '650px', 
+                                color: '#4a5568', 
+                                maxWidth: '700px', 
                                 margin: '0 auto',
                                 lineHeight: '1.5',
-                                fontWeight: '400'
+                                fontWeight: 400
                               }}>
-                                October 13-15, 2026 &mdash; Connect with global leaders, innovators, and peers in advanced materials science. Expand your network, share your research, and be part of a vibrant, forward-thinking community shaping the future of engineering and technology.
+                                Learn why researchers, professionals, and innovators worldwide choose ICAMSE 2026 for collaboration, growth, and impact.
                               </p>
                             </div>
 
                             <div style={{ 
                               display: 'grid', 
                               gridTemplateColumns: 'repeat(2, 1fr)', 
-                              gap: '60px', 
+                              gap: '50px', 
                               alignItems: 'start',
-                              marginBottom: '0'
+                              marginBottom: '40px'
                             }}>
                               
                               {/* Who Should Attend */}
                               <div style={{
-                                position: 'relative'
+                                background: 'linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%)',
+                                borderRadius: '16px',
+                                padding: '40px 32px',
+                                border: '1px solid rgba(39, 67, 56, 0.08)'
                               }}>
-                                <div style={{
-                                  marginBottom: '28px'
+                                <h3 style={{
+                                  fontSize: '1.6rem',
+                                  fontWeight: 600,
+                                  color: '#1a2d26',
+                                  marginBottom: '24px',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '10px'
                                 }}>
-                                  <h3 style={{
-                                    fontSize: '2rem',
-                                    fontWeight: '300',
-                                    color: '#1a1a1a',
-                                    marginBottom: '12px',
-                                    lineHeight: '1.2'
-                                  }}>
-                                    Who Should
-                                    <br />
-                                    <span style={{
-                                      fontWeight: '600',
-                                      color: '#274338'
-                                    }}>
-                                      Attend
-                                    </span>
-                                  </h3>
-                                  <div style={{
-                                    width: '60px',
-                                    height: '3px',
-                                    background: 'linear-gradient(90deg, #274338 0%, #3d5a4f 100%)',
-                                    borderRadius: '2px'
-                                  }}></div>
-                                </div>
+                                  <span style={{ fontSize: '1.5rem' }}>👥</span>
+                                  Who Should Attend
+                                </h3>
 
                                 <div style={{
                                   display: 'flex',
@@ -2130,52 +1844,42 @@ const Home: React.FC = () => {
                                   gap: '0'
                                 }}>
                                   {[
-                                    'Materials Scientists and Engineers',
-                                    'Chemists and Physicists', 
+                                    'Materials Scientists & Engineers',
+                                    'Chemists & Physicists', 
                                     'Nanotechnology Researchers',
-                                    'Energy & Battery Researchers',
+                                    'Energy & Battery Specialists',
                                     'Biomedical Engineers',
                                     'Industry R&D Professionals',
-                                    'PhD Scholars, Master\'s & Undergraduate Students'
+                                    'Students & Early Career Researchers'
                                   ].map((item, index) => (
                                     <div key={index} style={{
                                       display: 'flex',
                                       alignItems: 'center',
-                                      padding: '14px 0',
-                                      borderBottom: index < 6 ? '1px solid #f0f0f0' : 'none',
-                                      transition: 'all 0.3s ease',
-                                      cursor: 'default'
+                                      padding: '12px 0',
+                                      borderBottom: index < 6 ? '1px solid rgba(39, 67, 56, 0.1)' : 'none',
+                                      transition: 'all 0.2s ease'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.transform = 'translateX(8px)';
-                                      e.currentTarget.style.opacity = '0.8';
+                                      e.currentTarget.style.paddingLeft = '8px';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.transform = 'translateX(0)';
-                                      e.currentTarget.style.opacity = '1';
+                                      e.currentTarget.style.paddingLeft = '0';
                                     }}
                                     >
                                       <div style={{
-                                        width: '6px',
-                                        height: '6px',
+                                        width: '5px',
+                                        height: '5px',
                                         background: '#274338',
                                         borderRadius: '50%',
-                                        marginRight: '20px',
+                                        marginRight: '16px',
                                         flexShrink: 0,
-                                        transition: 'all 0.3s ease'
-                                      }}
-                                      onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1.5)';
-                                      }}
-                                      onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1)';
-                                      }}
-                                      ></div>
+                                        opacity: 0.7
+                                      }}></div>
                                       <span style={{ 
-                                        fontSize: '1.05rem', 
+                                        fontSize: '1rem', 
                                         color: '#333', 
-                                        lineHeight: '1.4',
-                                        fontWeight: '400'
+                                        lineHeight: '1.5',
+                                        fontWeight: 400
                                       }}>
                                         {item}
                                       </span>
@@ -2186,34 +1890,23 @@ const Home: React.FC = () => {
 
                               {/* Why Attend */}
                               <div style={{
-                                position: 'relative'
+                                background: 'linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 100%)',
+                                borderRadius: '16px',
+                                padding: '40px 32px',
+                                border: '1px solid rgba(39, 67, 56, 0.08)'
                               }}>
-                                <div style={{
-                                  marginBottom: '28px'
+                                <h3 style={{
+                                  fontSize: '1.6rem',
+                                  fontWeight: 600,
+                                  color: '#1a2d26',
+                                  marginBottom: '24px',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '10px'
                                 }}>
-                                  <h3 style={{
-                                    fontSize: '2rem',
-                                    fontWeight: '300',
-                                    color: '#1a1a1a',
-                                    marginBottom: '12px',
-                                    lineHeight: '1.2'
-                                  }}>
-                                    Why
-                                    <br />
-                                    <span style={{
-                                      fontWeight: '600',
-                                      color: '#274338'
-                                    }}>
-                                      Attend
-                                    </span>
-                                  </h3>
-                                  <div style={{
-                                    width: '60px',
-                                    height: '3px',
-                                    background: 'linear-gradient(90deg, #274338 0%, #3d5a4f 100%)',
-                                    borderRadius: '2px'
-                                  }}></div>
-                                </div>
+                                  <span style={{ fontSize: '1.5rem' }}>✨</span>
+                                  Why Attend
+                                </h3>
 
                                 <div style={{
                                   display: 'flex',
@@ -2221,52 +1914,42 @@ const Home: React.FC = () => {
                                   gap: '0'
                                 }}>
                                   {[
-                                    'High-quality scientific program with cutting-edge research presentations',
-                                    'Strong international participation with experts from 50+ countries',
-                                    'Excellent networking with industry leaders and academia',
-                                    'Publication prospects in top-tier journals and conference proceedings',
-                                    'Hosted in Bern, Switzerland, a global hub for science, innovation, and culture',
-                                    'Access to latest technologies and industry innovations',
-                                    'Professional development workshops and career opportunities'
+                                    'Access cutting-edge scientific research & innovations',
+                                    'Network with 5,000+ global experts & leaders',
+                                    'Build collaboration opportunities across sectors',
+                                    'Publish in top-tier journals & proceedings',
+                                    'Experience Switzerland\'s innovation ecosystem',
+                                    'Discover latest industry technologies',
+                                    'Professional development & career growth'
                                   ].map((item, index) => (
                                     <div key={index} style={{
                                       display: 'flex',
                                       alignItems: 'center',
-                                      padding: '14px 0',
-                                      borderBottom: index < 6 ? '1px solid #f0f0f0' : 'none',
-                                      transition: 'all 0.3s ease',
-                                      cursor: 'default'
+                                      padding: '12px 0',
+                                      borderBottom: index < 6 ? '1px solid rgba(39, 67, 56, 0.1)' : 'none',
+                                      transition: 'all 0.2s ease'
                                     }}
                                     onMouseEnter={(e) => {
-                                      e.currentTarget.style.transform = 'translateX(8px)';
-                                      e.currentTarget.style.opacity = '0.8';
+                                      e.currentTarget.style.paddingLeft = '8px';
                                     }}
                                     onMouseLeave={(e) => {
-                                      e.currentTarget.style.transform = 'translateX(0)';
-                                      e.currentTarget.style.opacity = '1';
+                                      e.currentTarget.style.paddingLeft = '0';
                                     }}
                                     >
                                       <div style={{
-                                        width: '6px',
-                                        height: '6px',
+                                        width: '5px',
+                                        height: '5px',
                                         background: '#274338',
                                         borderRadius: '50%',
-                                        marginRight: '20px',
+                                        marginRight: '16px',
                                         flexShrink: 0,
-                                        transition: 'all 0.3s ease'
-                                      }}
-                                      onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1.5)';
-                                      }}
-                                      onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1)';
-                                      }}
-                                      ></div>
+                                        opacity: 0.7
+                                      }}></div>
                                       <span style={{ 
-                                        fontSize: '1.05rem', 
+                                        fontSize: '1rem', 
                                         color: '#333', 
-                                        lineHeight: '1.4',
-                                        fontWeight: '400'
+                                        lineHeight: '1.5',
+                                        fontWeight: 400
                                       }}>
                                         {item}
                                       </span>
