@@ -730,7 +730,8 @@ const Home: React.FC = () => {
                                 color: '#1a2d26', 
                                 marginBottom: '14px', 
                                 letterSpacing: '-0.02em',
-                                lineHeight: '1.2'
+                                lineHeight: '1.2',
+                                fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                               }}>
                                 Scientific Themes & Tracks
                               </h2>
@@ -741,7 +742,8 @@ const Home: React.FC = () => {
                                 margin: '0 auto', 
                                 fontWeight: 400,
                                 lineHeight: '1.6',
-                                letterSpacing: '0.01em'
+                                letterSpacing: '0.01em',
+                                fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                               }}>
                                 Explore our comprehensive range of research themes and technical tracks covering the latest advancements in materials science
                               </p>
@@ -782,7 +784,8 @@ const Home: React.FC = () => {
                                     marginBottom: '18px', 
                                     minHeight: '56px', 
                                     lineHeight: '1.45',
-                                    letterSpacing: '-0.01em'
+                                    letterSpacing: '-0.01em',
+                                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                                   }}>
                                     {track.title}
                                   </h3>
@@ -798,7 +801,8 @@ const Home: React.FC = () => {
                                           position: 'relative',
                                           lineHeight: '1.6',
                                           fontWeight: 400,
-                                          letterSpacing: '0.01em'
+                                          letterSpacing: '0.01em',
+                                          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                                         }}
                                       >
                                         <span
