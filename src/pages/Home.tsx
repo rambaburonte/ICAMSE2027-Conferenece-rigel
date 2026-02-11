@@ -876,7 +876,7 @@ const Home: React.FC = () => {
                                     background: 'linear-gradient(135deg, rgba(39,67,56,0.08) 0%, rgba(39,67,56,0.05) 100%)',
                                     border: '1px solid rgba(39,67,56,0.12)'
                                   }}>
-                                    <track.icon size={32} style={{ color: '#274338' }} />
+                                    <track.icon size={32} color="#274338" />
                                   </div>
 
                                   {/* Title */}
