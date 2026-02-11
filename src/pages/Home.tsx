@@ -57,15 +57,45 @@ const Home: React.FC = () => {
     loadGoogleMapsAPI();
   }, []);
 
+  // Counter animation for statistics
+  useEffect(() => {
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.counter');
+      const duration = 2000; // 2 seconds
+
+      counters.forEach((counter: Element) => {
+        const target = parseInt((counter as HTMLElement).getAttribute('data-target') || '0');
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            (counter as HTMLElement).textContent = Math.floor(current).toString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            (counter as HTMLElement).textContent = target.toString();
+          }
+        };
+
+        updateCounter();
+      });
+    };
+
+    // Delay to ensure DOM is ready
+    const timer = setTimeout(animateCounters, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   // State for selected day in Event Schedule
   const [selectedDay, setSelectedDay] = useState(1);
 
   // Banner statistics
   const statistics: StatisticItem[] = [
-    { value: 5000, label: 'Attendees' },
-    { value: 300, label: 'Exhibitors' },
-    { value: 150, label: 'Speakers' },
-    { value: 40, label: 'Conference Sessions' },
+    { value: 300, label: 'Attendees' },
+    { value: 50, label: 'Exhibitors' },
+    { value: 40, label: 'Speakers' },
+    { value: 15, label: 'Conference Sessions' },
   ];
 
   // Scientific Themes & Tracks
@@ -256,7 +286,7 @@ const Home: React.FC = () => {
                               <div className="statistics__col">
                                 <h4>
                                   <span className="counter" data-target={stat.value}>
-                                    15
+                                    0
                                   </span>
                                   <span>+</span>
                                 </h4>
