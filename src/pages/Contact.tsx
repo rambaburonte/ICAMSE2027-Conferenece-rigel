@@ -48,19 +48,27 @@ const Contact: React.FC = () => {
     {
       icon: <FaEnvelope size={30} />,
       title: 'Email Us',
-      details: ['info@americaslngsummit.com', 'support@americaslngsummit.com'],
+      details: [
+        importantDetails?.EmailId1 || 'info@icamse2027.com',
+        importantDetails?.EmailId2 || 'support@icamse2027.com'
+      ].filter(Boolean),
       color: '#3498db'
     },
     {
       icon: <FaPhone size={30} />,
       title: 'Call Us',
-      details: ['+41 31 123 4567', '+41 31 765 4321'],
+      details: [
+        importantDetails?.Contact1,
+        importantDetails?.Contact2
+      ].filter(Boolean),
       color: '#27ae60'
     },
     {
       icon: <FaMapMarkerAlt size={30} />,
       title: 'Visit Us',
-      details: ['Bern Convention Center', 'Bern, Switzerland'],
+      details: [
+        importantDetails?.ConferenceVenue || 'Bangalore, India'
+      ].filter(Boolean),
       color: '#e74c3c'
     }
   ];

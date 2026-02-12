@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import { useConference } from '../context/ConferenceContext';
 
 const Schedule: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState(1);
+  const { importantDetails } = useConference();
+
+  // Get conference dates from API or fallback
+  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  const conferenceVenue = importantDetails?.ConferenceVenue || 'Bangalore, India';
 
   return (
     <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
@@ -29,7 +35,7 @@ const Schedule: React.FC = () => {
             opacity: 0.95,
             color: 'white'
           }}>
-            October 13-15, 2026 • Three Days of Innovation and Excellence
+            {conferenceDates} • {conferenceVenue}
           </p>
         </div>
       </section>

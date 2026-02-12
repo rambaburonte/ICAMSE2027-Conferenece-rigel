@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useConference } from '../context/ConferenceContext';
 import heroBg from '../assets/hero-bg.jpg';
 import conferenceImg from '../assets/Conferenec_img01.png';
 import confImg1 from '../assets/Conferenec_img02.png';
@@ -31,6 +32,52 @@ interface TrackItem {
 }
 
 const Home: React.FC = () => {
+  const { importantDetails } = useConference();
+  
+  // Get conference details from API or fallback
+  const conferenceTitle = importantDetails?.ConferenceTitle || 'International Conference on Advanced Materials Science and Engineering 2027';
+  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  const conferenceVenue = importantDetails?.ConferenceVenue || 'Bangalore, India';
+  
+  // Parse conference dates for schedule display
+  const parseConferenceDatesForSchedule = (dateString: string) => {
+    try {
+      // Handle format like "March 15-16, 2027" or "March 15, 2027"
+      const rangeMatch = dateString.match(/^(\w+)\s+(\d+)-(\d+),\s+(\d+)$/);
+      const singleMatch = dateString.match(/^(\w+)\s+(\d+),\s+(\d+)$/);
+
+      if (rangeMatch) {
+        const [, month, startDay, endDay, year] = rangeMatch;
+        return {
+          day1: `${month} ${startDay}`,
+          day2: `${month} ${parseInt(startDay) + 1}`,
+          day3: `${month} ${endDay}`,
+          fullDate: dateString
+        };
+      } else if (singleMatch) {
+        const [, month, day, year] = singleMatch;
+        return {
+          day1: `${month} ${day}`,
+          day2: `${month} ${parseInt(day) + 1}`,
+          day3: `${month} ${parseInt(day) + 2}`,
+          fullDate: dateString
+        };
+      }
+    } catch (error) {
+      console.error('Error parsing dates:', error);
+    }
+    
+    // Fallback
+    return {
+      day1: 'March 15',
+      day2: 'March 16',
+      day3: 'March 17',
+      fullDate: conferenceDates
+    };
+  };
+  
+  const scheduleInfo = parseConferenceDatesForSchedule(conferenceDates);
+  
   // Load Google Maps API on component mount
   useEffect(() => {
     const loadGoogleMapsAPI = async () => {
@@ -95,7 +142,8 @@ const Home: React.FC = () => {
     { value: 300, label: 'Attendees' },
     { value: 50, label: 'Exhibitors' },
     { value: 40, label: 'Speakers' },
-    { value: 15, label: 'Conference ' },
+    { value: 15, label: 'Sessions ' },
+    { value: 40, label: 'Countries' },
   ];
 
   // Scientific Themes & Tracks
@@ -341,13 +389,13 @@ const Home: React.FC = () => {
                                     About the Conference
                                   </h2>
                                   <p>
-                                    The International Conference on Advanced Materials Science and Engineering (ICAMSE 2026) aims to bring together leading scientists, engineers, academicians, industry professionals, and young researchers from around the world to exchange the latest advances, innovations, and challenges in materials science.
+                                    {conferenceTitle} aims to bring together leading scientists, engineers, academicians, industry professionals, and young researchers from around the world to exchange the latest advances, innovations, and challenges in materials science.
                                   </p>
                                   <p>
                                     The conference will serve as a premier interdisciplinary platform to present cutting-edge research on the design, synthesis, characterization, processing, and application of advanced materials across energy, healthcare, electronics, manufacturing, and sustainability sectors.
                                   </p>
                                   <p>
-                                    Held in the heart of Bern, Switzerland, ICAMSE 2026 offers a unique opportunity to foster global collaborations in a high-quality academic and industrial environment.
+                                    Held in {conferenceVenue}, we offer a unique opportunity to foster global collaborations in a high-quality academic and industrial environment.
                                   </p>
 
                                 {/* Content Statistics */}
@@ -1087,7 +1135,7 @@ const Home: React.FC = () => {
                                 marginTop: '10px',
                                 fontWeight: 400
                               }}>
-                                October 13-15, 2026
+                                {scheduleInfo.fullDate}
                               </div>
                             </div>
 
@@ -1100,9 +1148,9 @@ const Home: React.FC = () => {
                               flexWrap: 'wrap'
                             }}>
                               {[
-                                { day: 1, label: 'Day 1', date: 'October 13' },
-                                { day: 2, label: 'Day 2', date: 'October 14' },
-                                { day: 3, label: 'Day 3', date: 'October 15' }
+                                { day: 1, label: 'Day 1', date: scheduleInfo.day1 },
+                                { day: 2, label: 'Day 2', date: scheduleInfo.day2 },
+                                { day: 3, label: 'Day 3', date: scheduleInfo.day3 }
                               ].map(({ day, label, date }) => (
                                 <button
                                   key={day}
@@ -1164,7 +1212,7 @@ const Home: React.FC = () => {
                                       color: '#666', 
                                       marginBottom: '0',
                                       fontWeight: 400
-                                    }}>October 13, 2026</p>
+                                    }}>{scheduleInfo.day1}, {conferenceDates.match(/\d{4}$/)?.[0] || '2027'}</p>
                                     <div style={{ width: '60px', height: '3px', background: '#274338', marginTop: '12px', borderRadius: '2px' }}></div>
                                   </div>
 
@@ -1562,7 +1610,7 @@ const Home: React.FC = () => {
                                       color: '#666', 
                                       marginBottom: '0',
                                       fontWeight: 400
-                                    }}>October 14, 2026</p>
+                                    }}>{scheduleInfo.day2}, {conferenceDates.match(/\d{4}$/)?.[0] || '2027'}</p>
                                     <div style={{ width: '60px', height: '3px', background: '#274338', marginTop: '12px', borderRadius: '2px' }}></div>
                                   </div>
 
@@ -1960,7 +2008,7 @@ const Home: React.FC = () => {
                                       color: '#666', 
                                       marginBottom: '0',
                                       fontWeight: 400
-                                    }}>October 15, 2026</p>
+                                    }}>{scheduleInfo.day3}, {conferenceDates.match(/\d{4}$/)?.[0] || '2027'}</p>
                                     <div style={{ width: '60px', height: '3px', background: '#274338', marginTop: '12px', borderRadius: '2px' }}></div>
                                   </div>
 
