@@ -1,10 +1,15 @@
 import React from 'react';
+import { useConference } from '../context/ConferenceContext';
 import confImg1 from '../assets/Conferenec_img02.png';
 import confImg2 from '../assets/Conferenec_img03.png';
 import confImg3 from '../assets/Conferenec_img04.png';
 import confImg4 from '../assets/Conferenec_img05.png';
 
 const Gallery: React.FC = () => {
+  const { importantDetails } = useConference();
+  const conferenceVenue = importantDetails?.ConferenceVenue || 'Conference Venue';
+  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  
   const galleryImages = [
     { src: confImg1, title: 'Conference Hallway', category: 'Venue' },
     { src: confImg2, title: 'Conference Group Photo', category: 'Networking' },
@@ -46,7 +51,7 @@ const Gallery: React.FC = () => {
             opacity: 0.95,
             color: 'white'
           }}>
-            Explore highlights from past conferences and get a glimpse of what awaits at ICAMSE 2026
+            {conferenceDates} • {conferenceVenue}
           </p>
         </div>
       </section>

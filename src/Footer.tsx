@@ -1,4 +1,5 @@
 import React from 'react';
+import { useConference } from './context/ConferenceContext';
 
 interface SocialLink {
   url: string;
@@ -17,6 +18,31 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
+  const { importantDetails } = useConference();
+  const conferenceVenue = importantDetails?.ConferenceVenue || 'Conference Venue';
+  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  
+  // Parse dates for footer display
+  const parseFooterDates = (dateString: string) => {
+    try {
+      const rangeMatch = dateString.match(/(\w+)\s+(\d+)-(\d+),\s+(\d+)/);
+      if (rangeMatch) {
+        const [, month, startDay, endDay, year] = rangeMatch;
+        return {
+          day1: `${month} ${startDay}, ${year}`,
+          day2: `${month} ${endDay}, ${year}`
+        };
+      }
+    } catch (error) {
+      console.error('Error parsing dates:', error);
+    }
+    return {
+      day1: 'March 15, 2027',
+      day2: 'March 16, 2027'
+    };
+  };
+  
+  const footerDates = parseFooterDates(conferenceDates);
   return (
     <>
       {/* Main Footer */}
@@ -34,9 +60,9 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
                 </h5>
                 <div className="footer-content">
                   <p>
-                    October 14, 2026: 10:00 AM-6:00 PM
+                    {footerDates.day1}: 10:00 AM-6:00 PM
                     <br />
-                    October 15, 2026: 9:00 AM-5:30 PM
+                    {footerDates.day2}: 9:00 AM-5:30 PM
                   </p>
                 </div>
               </div>
@@ -49,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
                   LOCATION
                 </h5>
                 <div className="footer-content">
-                  <p>Event Center, Lake Charles, USA</p>
+                  <p>{conferenceVenue}</p>
                 </div>
               </div>
             </div>

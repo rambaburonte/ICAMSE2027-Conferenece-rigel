@@ -4,6 +4,9 @@ import { useConference } from '../context/ConferenceContext';
 
 const SubmitAbstract: React.FC = () => {
   const { importantDetails } = useConference();
+  const conferenceVenue = importantDetails?.ConferenceVenue || 'Conference Venue';
+  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  
   const [formData, setFormData] = useState({
     title: '',
     authors: '',
@@ -118,7 +121,7 @@ const SubmitAbstract: React.FC = () => {
             opacity: 0.95,
             color: 'white'
           }}>
-            Share your research with the global materials science community
+            {conferenceDates} • {conferenceVenue}
           </p>
         </div>
       </section>

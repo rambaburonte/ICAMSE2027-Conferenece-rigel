@@ -15,7 +15,10 @@ interface CommitteeMember {
 }
 
 const OCM: React.FC = () => {
-  const { loginDetails } = useConference();
+  const { loginDetails, importantDetails } = useConference();
+  const conferenceVenue = importantDetails?.ConferenceVenue || 'Conference Venue';
+  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  
   const [committeeMembers, setCommitteeMembers] = useState<CommitteeMember[]>(() => {
     // Initialize with cached data for instant display
     try {
@@ -130,7 +133,7 @@ const OCM: React.FC = () => {
             opacity: 0.95,
             color: 'white'
           }}>
-            Meet the dedicated team behind ICAMSE 2026
+            {conferenceDates} • {conferenceVenue}
           </p>
         </div>
       </section>
