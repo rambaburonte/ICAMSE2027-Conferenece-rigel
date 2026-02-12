@@ -12,6 +12,7 @@ import Registration from './pages/Registration';
 import Header from './Header';
 import Footer from './Footer';
 import ScrollToTop from './components/ScrollToTop';
+import { ConferenceProvider } from './context/ConferenceContext';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import './App.css';
 
@@ -81,23 +82,25 @@ function App() {
   ];
 
   return (
-    <Router>
-      <ScrollToTop />
-      <Header navLinks={navLinks} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/speakers" element={<Speakers />} />
-        <Route path="/schedule" element={<Schedule />} />
-        <Route path="/ocm" element={<OCM />} />
-        <Route path="/sponsors" element={<Sponsors />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/submit-abstract" element={<SubmitAbstract />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer socialLinks={socialLinks} footerContacts={footerContacts} />
-    </Router>
+    <ConferenceProvider>
+      <Router>
+        <ScrollToTop />
+        <Header navLinks={navLinks} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/speakers" element={<Speakers />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/ocm" element={<OCM />} />
+          <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/submit-abstract" element={<SubmitAbstract />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer socialLinks={socialLinks} footerContacts={footerContacts} />
+      </Router>
+    </ConferenceProvider>
   );
 }
 

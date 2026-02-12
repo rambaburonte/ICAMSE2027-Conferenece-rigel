@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { submitRegistration, getErrorMessage } from '../services/api';
+import { useConference } from '../context/ConferenceContext';
 
 const Registration: React.FC = () => {
+  const { importantDetails } = useConference();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -10,6 +13,8 @@ const Registration: React.FC = () => {
     registrationType: 'attendee',
     agreeToTerms: false,
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -20,11 +25,36 @@ const Registration: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, just log the data. In a real app, send to backend.
-    console.log('Registration Data:', formData);
-    alert('Registration submitted successfully!');
+    setLoading(true);
+    setError(null);
+
+    try {
+      const registrationData = {
+        ...formData,
+        conf: importantDetails?.ShortName || 'ICAMSE2027',
+        user: importantDetails?.ShortName || 'ICAMSE2027'
+      };
+
+      await submitRegistration(registrationData);
+      alert('Registration submitted successfully!');
+      // Reset form
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        affiliation: '',
+        country: '',
+        registrationType: 'attendee',
+        agreeToTerms: false,
+      });
+    } catch (err) {
+      const errorMessage = getErrorMessage(err);
+      setError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

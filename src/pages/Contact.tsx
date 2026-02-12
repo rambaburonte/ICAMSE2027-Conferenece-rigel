@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { submitContact, getErrorMessage } from '../services/api';
+import { useConference } from '../context/ConferenceContext';
 
 const Contact: React.FC = () => {
+  const { importantDetails } = useConference();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -16,10 +21,27 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setLoading(true);
+    setError(null);
+
+    try {
+      const contactData = {
+        ...formData,
+        phone: '', // Add phone if needed
+        user: importantDetails?.ShortName || 'ICAMSE2027'
+      };
+
+      await submitContact(contactData);
+      alert('Thank you for your message! We will get back to you soon.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      const errorMessage = getErrorMessage(err);
+      setError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -112,11 +134,11 @@ const Contact: React.FC = () => {
                 cursor: 'pointer',
                 borderTop: `4px solid ${info.color}`
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.currentTarget.style.transform = 'translateY(-8px)';
                 e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)';
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
               }}>
@@ -243,30 +265,48 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                  {error && (
+                    <div style={{
+                      color: '#dc3545',
+                      background: '#f8d7da',
+                      border: '1px solid #f5c6cb',
+                      borderRadius: '8px',
+                      padding: '10px',
+                      marginBottom: '15px',
+                      fontSize: '0.9rem'
+                    }}>
+                      {error}
+                    </div>
+                  )}
                   <button
                     type="submit"
+                    disabled={loading}
                     style={{
-                      background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                      background: loading ? '#ccc' : 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
                       color: 'white',
                       padding: '16px 50px',
                       border: 'none',
                       borderRadius: '50px',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      cursor: 'pointer',
+                      cursor: loading ? 'not-allowed' : 'pointer',
                       boxShadow: '0 4px 20px rgba(39, 67, 56, 0.3)',
                       transition: 'all 0.3s ease'
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.boxShadow = '0 6px 25px rgba(39, 67, 56, 0.4)';
+                    onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
+                      if (!loading) {
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(39, 67, 56, 0.4)';
+                      }
                     }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 20px rgba(39, 67, 56, 0.3)';
+                    onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
+                      if (!loading) {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(39, 67, 56, 0.3)';
+                      }
                     }}
                   >
-                    Send Message
+                    {loading ? 'Sending...' : 'Send Message'}
                   </button>
                 </div>
               </div>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { submitAbstract, getErrorMessage } from '../services/api';
+import { useConference } from '../context/ConferenceContext';
 
 const SubmitAbstract: React.FC = () => {
+  const { importantDetails } = useConference();
   const [formData, setFormData] = useState({
     title: '',
     authors: '',
@@ -12,6 +15,8 @@ const SubmitAbstract: React.FC = () => {
     abstract: '',
     keywords: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -20,10 +25,38 @@ const SubmitAbstract: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    alert('Abstract submitted successfully! You will receive a confirmation email shortly.');
+    setLoading(true);
+    setError(null);
+
+    try {
+      const submitData = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        submitData.append(key, value);
+      });
+      submitData.append('user', importantDetails?.ShortName || 'ICAMSE2027');
+
+      await submitAbstract(submitData);
+      alert('Abstract submitted successfully! You will receive a confirmation email shortly.');
+      // Reset form
+      setFormData({
+        title: '',
+        authors: '',
+        affiliation: '',
+        email: '',
+        phone: '',
+        track: '',
+        presentationType: '',
+        abstract: '',
+        keywords: ''
+      });
+    } catch (err) {
+      const errorMessage = getErrorMessage(err);
+      setError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const tracks = [

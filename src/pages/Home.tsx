@@ -95,7 +95,7 @@ const Home: React.FC = () => {
     { value: 300, label: 'Attendees' },
     { value: 50, label: 'Exhibitors' },
     { value: 40, label: 'Speakers' },
-    { value: 15, label: 'Conference Sessions' },
+    { value: 15, label: 'Conference ' },
   ];
 
   // Scientific Themes & Tracks
