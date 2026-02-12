@@ -19,8 +19,13 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
   const { importantDetails } = useConference();
-  const conferenceVenue = importantDetails?.ConferenceVenue || 'Conference Venue';
-  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  // Strip HTML tags (API may return <br> tags)
+  const conferenceVenue = importantDetails?.ConferenceVenue
+    ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
+    : 'Conference Venue';
+  const conferenceDates = importantDetails?.ConferenceDates
+    ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
+    : 'March 15-16, 2027';
   
   // Parse dates for footer display
   const parseFooterDates = (dateString: string) => {

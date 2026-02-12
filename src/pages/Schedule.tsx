@@ -6,8 +6,13 @@ const Schedule: React.FC = () => {
   const { importantDetails } = useConference();
 
   // Get conference dates from API or fallback
-  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
-  const conferenceVenue = importantDetails?.ConferenceVenue || 'Bangalore, India';
+  // Strip HTML tags (API may return <br> tags)
+  const conferenceDates = importantDetails?.ConferenceDates
+    ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
+    : 'March 15-16, 2027';
+  const conferenceVenue = importantDetails?.ConferenceVenue
+    ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
+    : 'Bangalore, India';
 
   return (
     <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>

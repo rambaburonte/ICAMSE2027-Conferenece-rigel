@@ -16,8 +16,13 @@ interface CommitteeMember {
 
 const OCM: React.FC = () => {
   const { loginDetails, importantDetails } = useConference();
-  const conferenceVenue = importantDetails?.ConferenceVenue || 'Conference Venue';
-  const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
+  // Strip HTML tags (API may return <br> tags)
+  const conferenceVenue = importantDetails?.ConferenceVenue
+    ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
+    : 'Conference Venue';
+  const conferenceDates = importantDetails?.ConferenceDates
+    ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
+    : 'March 15-16, 2027';
   
   const [committeeMembers, setCommitteeMembers] = useState<CommitteeMember[]>(() => {
     // Initialize with cached data for instant display

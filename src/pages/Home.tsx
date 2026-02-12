@@ -52,7 +52,10 @@ const Home: React.FC = () => {
   const { importantDetails } = useConference();
   
   // Get conference details from API or fallback
-  const conferenceTitle = importantDetails?.ConferenceTitle || 'International Conference on Advanced Materials Science and Engineering 2027';
+  // Strip HTML tags from title (API may return <br> tags)
+  const conferenceTitle = importantDetails?.ConferenceTitle 
+    ? importantDetails.ConferenceTitle.replace(/<[^>]*>/g, '')
+    : 'International Conference on Advanced Materials Science and Engineering 2027';
   const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
   const conferenceVenue = importantDetails?.ConferenceVenue || 'Bangalore, India';
   
