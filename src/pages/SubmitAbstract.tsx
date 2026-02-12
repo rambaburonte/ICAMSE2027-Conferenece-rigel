@@ -88,7 +88,7 @@ const SubmitAbstract: React.FC = () => {
       const submitData = new FormData();
       
       // Add all form fields matching backend expectations
-      submitData.append('user', importantDetails?.ShortName || 'ICAMSE2027');
+      submitData.append('user', shortName || 'ICAMSE2027');
       submitData.append('title', formData.title);
       submitData.append('fname', formData.name);
       submitData.append('country', formData.country);
@@ -106,6 +106,8 @@ const SubmitAbstract: React.FC = () => {
 
       // Debug: Log FormData contents
       console.log('Submitting abstract with data:');
+      console.log('shortName:', shortName);
+      console.log('importantDetails.ShortName:', importantDetails?.ShortName);
       for (let [key, value] of submitData.entries()) {
         console.log(`${key}:`, value);
       }
