@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './assets/ICAMSE2026_logo.png';
 import { Link } from 'react-router-dom';
+import { useConference } from './context/ConferenceContext';
 
 interface NavLink {
   href: string;
@@ -13,6 +14,12 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ navLinks }) => {
+  const { importantDetails } = useConference();
+  
+  // Get conference details from API or fallback
+  const conferenceDates = importantDetails?.ConferenceDates || 'October 13-15, 2026';
+  const conferenceVenue = importantDetails?.ConferenceVenue || 'Lake Charles, USA';
+
   return (
     <header className="header main_header" style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000, background: '#274338' }}>
       <div className="header__container">
@@ -22,9 +29,9 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
             <img src={logo} alt="ICAMSE2026 Logo" style={{ height: '88px', width: '223px', objectFit: 'cover', display: 'flow' }} />
           </Link>
           <h6>
-            October 13-15, 2026
+            {conferenceDates}
             <br />
-            Lake Charles, USA
+            {conferenceVenue}
           </h6>
         </div>
 

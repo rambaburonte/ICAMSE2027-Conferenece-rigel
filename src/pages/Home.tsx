@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useConference } from '../context/ConferenceContext';
+import { getMembersByUser } from '../services/api';
 import heroBg from '../assets/hero-bg.jpg';
 import conferenceImg from '../assets/Conferenec_img01.png';
 import confImg1 from '../assets/Conferenec_img02.png';
@@ -16,9 +17,13 @@ import {
   MdMemory, 
   MdSearch, 
   MdLocalHospital, 
-  MdBusiness 
+  MdBusiness,
+  MdRecordVoiceOver,
+  MdEmail,
+  MdSchool,
+  MdGroups,
+  MdStarRate
 } from 'react-icons/md';
-  import { MdGroups, MdStarRate, MdPeople, MdRecordVoiceOver, MdEmail, MdSchool } from 'react-icons/md';
 
 interface StatisticItem {
   value: number;
@@ -29,6 +34,18 @@ interface TrackItem {
   title: string;
   icon: React.ComponentType<{ size?: number; className?: string }>;
   topics: string[];
+}
+
+interface Speaker {
+  id: number;
+  name: string;
+  affiliation: string;
+  photo: string;
+  speaker_category?: string;
+  category?: string;
+  designation?: string;
+  role?: string;
+  specialty?: string;
 }
 
 const Home: React.FC = () => {
@@ -134,8 +151,74 @@ const Home: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Fetch speakers from API
+  useEffect(() => {
+    const loadSpeakers = async (username: string) => {
+      try {
+        setSpeakersLoading(true);
+        console.log('Home: Fetching speakers for username:', username);
+        const allData = await getMembersByUser(username);
+        console.log('Home: All members data received:', allData);
+
+        // Filter speakers only
+        const speakerMembers = (allData || []).filter(
+          (member: Speaker) => 
+            member.category?.toLowerCase() === 'speaker' || 
+            member.speaker_category?.toLowerCase() === 'speaker'
+        );
+
+        setSpeakers(speakerMembers);
+        // Data is already cached by Speakers page
+      } catch (error) {
+        console.error('Failed to fetch speakers:', error);
+      } finally {
+        setSpeakersLoading(false);
+      }
+    };
+
+    const fetchData = async () => {
+      const username = importantDetails?.username || localStorage.getItem('conferenceUsername');
+      
+      if (!username) {
+        try {
+          const cachedLogin = localStorage.getItem('conferenceLoginDetails');
+          if (cachedLogin) {
+            const parsed = JSON.parse(cachedLogin);
+            if (parsed?.username) {
+              await loadSpeakers(parsed.username);
+              return;
+            }
+          }
+        } catch (e) {
+          console.error('Failed to get cached username:', e);
+        }
+        setSpeakersLoading(false);
+        return;
+      }
+
+      await loadSpeakers(username);
+    };
+
+    fetchData();
+  }, [importantDetails?.username]);
+
   // State for selected day in Event Schedule
   const [selectedDay, setSelectedDay] = useState(1);
+
+  // State for speakers
+  const [speakers, setSpeakers] = useState<Speaker[]>(() => {
+    // Initialize with cached data for instant display
+    try {
+      const cached = localStorage.getItem('conferenceSpeakers');
+      const allMembers = cached ? JSON.parse(cached) : [];
+      return allMembers.filter((m: Speaker) =>
+        m.category?.toLowerCase() === 'speaker' || m.speaker_category?.toLowerCase() === 'speaker'
+      );
+    } catch {
+      return [];
+    }
+  });
+  const [speakersLoading, setSpeakersLoading] = useState<boolean>(false);
 
   // Banner statistics
   const statistics: StatisticItem[] = [
@@ -309,11 +392,7 @@ const Home: React.FC = () => {
                     <div className="banner__content-text">
                       <div className="animated__text">
                         <h2 style={{ fontSize: '4rem', fontWeight: '700', color: '#fff', lineHeight: 1.2, textShadow: '0 4px 15px rgba(0,0,0,0.3)' }}>
-                          International  <br /> Conference on 
-                          <br />
-                          Advanced Materials Science 
-                          <br />
-                         and  Engineering
+                          {conferenceTitle}
                         </h2>
                       </div>
                       <div className="btn-wrap">
@@ -452,7 +531,7 @@ const Home: React.FC = () => {
                               <div className="two-col-media">
                                 <img 
                                   src={conferenceImg} 
-                                  alt="International Conference on Advanced Materials Science and Engineering" 
+                                  alt={conferenceTitle} 
                                   style={{
                                     width: '100%',
                                     height: 'auto',
@@ -562,108 +641,7 @@ const Home: React.FC = () => {
                         </section>
                       </div>
 
-                      {/* Organizing Committee Section */}
-                      <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '80px 0', background: '#ffffff' }}>
-                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '14px' }}>
-                                <MdPeople size={36} style={{ color: '#274338' }} />
-                                <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', letterSpacing: '-0.5px', margin: 0 }}>
-                                  Organizing Committee
-                                </h2>
-                              </div>
-                              <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
-                                Meet the distinguished professionals behind ICAMSE 2027, committed to creating an exceptional conference experience.
-                              </p>
-                            </div>
-
-                            <div style={{
-                              display: 'grid',
-                              gridTemplateColumns: 'repeat(4, 1fr)',
-                              gap: '32px',
-                              marginTop: '40px'
-                            }}>
-                              {[
-                                { name: 'Dr. Sarah Mitchell', role: 'Conference Chair', institution: 'ETH Zurich', email: contactEmails[0] },
-                                { name: 'Prof. James Chen', role: 'Program Committee Chair', institution: 'MIT', email: contactEmails[1] },
-                                { name: 'Dr. Maria García', role: 'Technical Chair', institution: 'University of Cambridge', email: contactEmails[2] },
-                                { name: 'Prof. David Kumar', role: 'Industry Liaison', institution: 'Stanford University', email: contactEmails[0] },
-                                { name: 'Dr. Emma Wilson', role: 'Publicity Chair', institution: 'Imperial College London', email: contactEmails[1] },
-                                { name: 'Prof. Michael Zhang', role: 'Publications Chair', institution: 'Tsinghua University', email: contactEmails[2] },
-                                { name: 'Dr. Sophie Laurent', role: 'Workshop Coordinator', institution: 'Sorbonne University', email: contactEmails[0] },
-                                { name: 'Prof. Robert Brown', role: 'Finance Chair', institution: 'Oxford University', email: contactEmails[1] }
-                              ].map((member, index) => (
-                                <div
-                                  key={index}
-                                  style={{
-                                    background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)',
-                                    borderRadius: '16px',
-                                    padding: '32px 24px',
-                                    boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
-                                    border: '1px solid rgba(39,67,56,0.08)',
-                                    transition: 'all 0.3s ease',
-                                    cursor: 'pointer',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    textAlign: 'center'
-                                  }}
-                                  onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-6px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(39,67,56,0.12)';
-                                  }}
-                                  onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 2px 16px rgba(39,67,56,0.09)';
-                                  }}
-                                >
-                                  <div style={{
-                                    width: '100px',
-                                    height: '100px',
-                                    borderRadius: '50%',
-                                    background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginBottom: '20px',
-                                    boxShadow: '0 4px 12px rgba(39,67,56,0.2)'
-                                  }}>
-                                    <MdPeople size={48} style={{ color: '#ffffff' }} />
-                                  </div>
-                                  <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#1a2d26', marginBottom: '6px' }}>
-                                    {member.name}
-                                  </h3>
-                                  <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
-                                    {member.role}
-                                  </div>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
-                                    <MdSchool size={16} />
-                                    <span>{member.institution}</span>
-                                  </div>
-                                  <a href={`mailto:${member.email}`} style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '6px',
-                                    fontSize: '0.85rem',
-                                    color: '#3498db',
-                                    textDecoration: 'none',
-                                    transition: 'color 0.3s ease'
-                                  }}
-                                  onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
-                                  onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
-                                  >
-                                    <MdEmail size={14} />
-                                    <span>Contact</span>
-                                  </a>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </section>
-                      </div>
-
-                      {/* Keynote Speakers Section */}
+                      {/* Speakers Section */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ padding: '80px 0', background: '#f7fafc' }}>
                           <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
@@ -671,7 +649,7 @@ const Home: React.FC = () => {
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '14px' }}>
                                 <MdRecordVoiceOver size={36} style={{ color: '#274338' }} />
                                 <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', letterSpacing: '-0.5px', margin: 0 }}>
-                                  Keynote Speakers
+                                  Speakers
                                 </h2>
                               </div>
                               <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
@@ -685,58 +663,38 @@ const Home: React.FC = () => {
                               gap: '32px',
                               marginTop: '40px'
                             }}>
-                              {[
-                                {
-                                  name: 'Prof. Elizabeth Anderson',
-                                  title: 'Nobel Laureate in Chemistry',
-                                  institution: 'UC Berkeley',
-                                  email: contactEmails[2]
-                                },
-                                {
-                                  name: 'Dr. Hiroshi Tanaka',
-                                  title: 'Director, Advanced Materials Institute',
-                                  institution: 'University of Tokyo',
-                                  email: contactEmails[1]
-                                },
-                                {
-                                  name: 'Prof. Alexandra Petrov',
-                                  title: 'Chair of Materials Engineering',
-                                  institution: 'Max Planck Institute',
-                                  email: contactEmails[0]
-                                },
-                                {
-                                  name: 'Dr. Marcus Williams',
-                                  title: 'Chief Scientist',
-                                  institution: 'NASA Materials Lab',
-                                  email: contactEmails[2]
-                                },
-                                {
-                                  name: 'Prof. Yuki Nakamura',
-                                  title: 'Distinguished Professor',
-                                  institution: 'Seoul National University',
-                                  email: contactEmails[1]
-                                },
-                                {
-                                  name: 'Dr. Catherine Dubois',
-                                  title: 'VP of R&D',
-                                  institution: 'Materials Innovation Inc.',
-                                  email: contactEmails[0]
-                                },
-                                {
-                                  name: 'Prof. Ahmed Hassan',
-                                  title: 'Materials Science Chair',
-                                  institution: 'King Abdullah University',
-                                  email: contactEmails[2]
-                                },
-                                {
-                                  name: 'Dr. Nina Patel',
-                                  title: 'Research Director',
-                                  institution: 'Indian Institute of Technology',
-                                  email: contactEmails[1]
-                                }
-                              ].map((speaker, index) => (
+                              {speakersLoading && speakers.length === 0 && (
+                                <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 0' }}>
+                                  <div style={{
+                                    display: 'inline-block',
+                                    width: '50px',
+                                    height: '50px',
+                                    border: '4px solid #f3f3f3',
+                                    borderTop: '4px solid #274338',
+                                    borderRadius: '50%',
+                                    animation: 'spin 1s linear infinite'
+                                  }} />
+                                  <p style={{ marginTop: '20px', color: '#666' }}>Loading speakers...</p>
+                                  <style dangerouslySetInnerHTML={{__html: `
+                                    @keyframes spin {
+                                      0% { transform: rotate(0deg); }
+                                      100% { transform: rotate(360deg); }
+                                    }
+                                  `}} />
+                                </div>
+                              )}
+
+                              {!speakersLoading && speakers.length === 0 && (
+                                <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 0' }}>
+                                  <p style={{ fontSize: '1.2rem', color: '#666' }}>
+                                    Speakers information will be available soon.
+                                  </p>
+                                </div>
+                              )}
+
+                              {speakers.length > 0 && speakers.slice(0, 8).map((speaker, index) => (
                                 <div
-                                  key={index}
+                                  key={speaker.id || index}
                                   style={{
                                     background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)',
                                     borderRadius: '16px',
@@ -776,13 +734,13 @@ const Home: React.FC = () => {
                                     {speaker.name}
                                   </h3>
                                   <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
-                                    {speaker.title}
+                                    {speaker.designation || speaker.role || 'Keynote Speaker'}
                                   </div>
                                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
                                     <MdSchool size={16} />
-                                    <span>{speaker.institution}</span>
+                                    <span>{speaker.affiliation}</span>
                                   </div>
-                                  <a href={`mailto:${speaker.email}`} style={{
+                                  <a href={`mailto:${contactEmails[index % contactEmails.length]}`} style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '6px',
