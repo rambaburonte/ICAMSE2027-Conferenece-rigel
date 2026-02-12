@@ -146,6 +146,13 @@ const Home: React.FC = () => {
     { value: 40, label: 'Countries' },
   ];
 
+  // Conference contact emails
+  const contactEmails = [
+    'secretary@icamse2027.com',
+    'contact@icamse2027.com',
+    'info@icamse2027.com',
+  ];
+
   // Scientific Themes & Tracks
   const scientificTracks: TrackItem[] = [
     {
@@ -395,7 +402,7 @@ const Home: React.FC = () => {
                                     The conference will serve as a premier interdisciplinary platform to present cutting-edge research on the design, synthesis, characterization, processing, and application of advanced materials across energy, healthcare, electronics, manufacturing, and sustainability sectors.
                                   </p>
                                   <p>
-                                    Held in {conferenceVenue}, we offer a unique opportunity to foster global collaborations in a high-quality academic and industrial environment.
+                                    The event offers a unique opportunity to foster global collaborations in a high-quality academic and industrial environment.
                                   </p>
 
                                 {/* Content Statistics */}
@@ -403,7 +410,7 @@ const Home: React.FC = () => {
                                   <div className="statistics__col-wrap">
                                     <div className="swiper statistics-slider__swiper1">
                                       <div className="swiper-wrapper">
-                                        {statistics.map((stat) => (
+                                        {statistics.filter(stat => stat.label !== 'Countries').map((stat) => (
                                           <div key={`content-${stat.label}`} className="swiper-slide">
                                             <div className="statistics__col">
                                               <h4>
@@ -469,7 +476,7 @@ const Home: React.FC = () => {
                                 Conference Objectives
                               </h2>
                               <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
-                                ICAMSE 2026 is dedicated to advancing the field of materials science and engineering by fostering innovation, collaboration, and global knowledge exchange. Our objectives are designed to empower researchers, professionals, and students to shape the future of technology and sustainability.
+                                ICAMSE 2027 is dedicated to advancing the field of materials science and engineering by fostering innovation, collaboration, and global knowledge exchange. Our objectives are designed to empower researchers, professionals, and students to shape the future of technology and sustainability.
                               </p>
                             </div>
                             <div style={{
@@ -567,7 +574,7 @@ const Home: React.FC = () => {
                                 </h2>
                               </div>
                               <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
-                                Meet the distinguished professionals behind ICAMSE 2026, committed to creating an exceptional conference experience.
+                                Meet the distinguished professionals behind ICAMSE 2027, committed to creating an exceptional conference experience.
                               </p>
                             </div>
 
@@ -578,14 +585,14 @@ const Home: React.FC = () => {
                               marginTop: '40px'
                             }}>
                               {[
-                                { name: 'Dr. Sarah Mitchell', role: 'Conference Chair', institution: 'ETH Zurich', email: 's.mitchell@ethz.ch' },
-                                { name: 'Prof. James Chen', role: 'Program Committee Chair', institution: 'MIT', email: 'jchen@mit.edu' },
-                                { name: 'Dr. Maria García', role: 'Technical Chair', institution: 'University of Cambridge', email: 'm.garcia@cam.ac.uk' },
-                                { name: 'Prof. David Kumar', role: 'Industry Liaison', institution: 'Stanford University', email: 'd.kumar@stanford.edu' },
-                                { name: 'Dr. Emma Wilson', role: 'Publicity Chair', institution: 'Imperial College London', email: 'e.wilson@ic.ac.uk' },
-                                { name: 'Prof. Michael Zhang', role: 'Publications Chair', institution: 'Tsinghua University', email: 'mzhang@tsinghua.edu.cn' },
-                                { name: 'Dr. Sophie Laurent', role: 'Workshop Coordinator', institution: 'Sorbonne University', email: 's.laurent@sorbonne.fr' },
-                                { name: 'Prof. Robert Brown', role: 'Finance Chair', institution: 'Oxford University', email: 'r.brown@ox.ac.uk' }
+                                { name: 'Dr. Sarah Mitchell', role: 'Conference Chair', institution: 'ETH Zurich', email: contactEmails[0] },
+                                { name: 'Prof. James Chen', role: 'Program Committee Chair', institution: 'MIT', email: contactEmails[1] },
+                                { name: 'Dr. Maria García', role: 'Technical Chair', institution: 'University of Cambridge', email: contactEmails[2] },
+                                { name: 'Prof. David Kumar', role: 'Industry Liaison', institution: 'Stanford University', email: contactEmails[0] },
+                                { name: 'Dr. Emma Wilson', role: 'Publicity Chair', institution: 'Imperial College London', email: contactEmails[1] },
+                                { name: 'Prof. Michael Zhang', role: 'Publications Chair', institution: 'Tsinghua University', email: contactEmails[2] },
+                                { name: 'Dr. Sophie Laurent', role: 'Workshop Coordinator', institution: 'Sorbonne University', email: contactEmails[0] },
+                                { name: 'Prof. Robert Brown', role: 'Finance Chair', institution: 'Oxford University', email: contactEmails[1] }
                               ].map((member, index) => (
                                 <div
                                   key={index}
@@ -683,49 +690,49 @@ const Home: React.FC = () => {
                                   name: 'Prof. Elizabeth Anderson',
                                   title: 'Nobel Laureate in Chemistry',
                                   institution: 'UC Berkeley',
-                                  email: 'e.anderson@berkeley.edu'
+                                  email: contactEmails[2]
                                 },
                                 {
                                   name: 'Dr. Hiroshi Tanaka',
                                   title: 'Director, Advanced Materials Institute',
                                   institution: 'University of Tokyo',
-                                  email: 'h.tanaka@u-tokyo.ac.jp'
+                                  email: contactEmails[1]
                                 },
                                 {
                                   name: 'Prof. Alexandra Petrov',
                                   title: 'Chair of Materials Engineering',
                                   institution: 'Max Planck Institute',
-                                  email: 'a.petrov@mpi.de'
+                                  email: contactEmails[0]
                                 },
                                 {
                                   name: 'Dr. Marcus Williams',
                                   title: 'Chief Scientist',
                                   institution: 'NASA Materials Lab',
-                                  email: 'm.williams@nasa.gov'
+                                  email: contactEmails[2]
                                 },
                                 {
                                   name: 'Prof. Yuki Nakamura',
                                   title: 'Distinguished Professor',
                                   institution: 'Seoul National University',
-                                  email: 'y.nakamura@snu.ac.kr'
+                                  email: contactEmails[1]
                                 },
                                 {
                                   name: 'Dr. Catherine Dubois',
                                   title: 'VP of R&D',
                                   institution: 'Materials Innovation Inc.',
-                                  email: 'c.dubois@matinnovation.com'
+                                  email: contactEmails[0]
                                 },
                                 {
                                   name: 'Prof. Ahmed Hassan',
                                   title: 'Materials Science Chair',
                                   institution: 'King Abdullah University',
-                                  email: 'a.hassan@kaust.edu.sa'
+                                  email: contactEmails[2]
                                 },
                                 {
                                   name: 'Dr. Nina Patel',
                                   title: 'Research Director',
                                   institution: 'Indian Institute of Technology',
-                                  email: 'n.patel@iit.ac.in'
+                                  email: contactEmails[1]
                                 }
                               ].map((speaker, index) => (
                                 <div
@@ -2423,7 +2430,7 @@ const Home: React.FC = () => {
                                 lineHeight: '1.5',
                                 fontWeight: 400
                               }}>
-                                Learn why researchers, professionals, and innovators worldwide choose ICAMSE 2026 for collaboration, growth, and impact.
+                                Learn why researchers, professionals, and innovators worldwide choose ICAMSE 2027 for collaboration, growth, and impact.
                               </p>
                             </div>
 
@@ -2607,7 +2614,7 @@ const Home: React.FC = () => {
                                 e.currentTarget.style.boxShadow = '0 8px 32px rgba(39, 67, 56, 0.3)';
                               }}
                               >
-                                <span>Register for ICAMSE 2026</span>
+                                <span>Register for ICAMSE 2027</span>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                   <path d="M5 12h14"></path>
                                   <path d="M12 5l7 7-7 7"></path>
@@ -2619,7 +2626,7 @@ const Home: React.FC = () => {
                                 marginTop: '16px',
                                 fontWeight: '400'
                               }}>
-                                Early bird registration ends June 30, 2026
+                                Early bird registration ends June 30, 2027
                               </p>
                             </div>
 

@@ -74,11 +74,9 @@ function App() {
 
   // Footer contacts
   const footerContacts: FooterContact[] = [
-    { title: 'Speaking and conference', email: 'info@americaslngsummit.com' },
-    { title: 'Attending and group bookings', email: 'delegates@americaslngsummit.com' },
-    { title: 'General inquiries', email: 'info@americaslngsummit.com' },
-    { title: 'Sponsorship and exhibition', email: 'sales@americaslngsummit.com' },
-    { title: 'Marketing and partnerships', email: 'marketing@americaslngsummit.com' },
+    { title: 'Secretary', email: 'secretary@icamse2027.com' },
+    { title: 'General Contact', email: 'contact@icamse2027.com' },
+    { title: 'Information', email: 'info@icamse2027.com' },
   ];
 
   return (
