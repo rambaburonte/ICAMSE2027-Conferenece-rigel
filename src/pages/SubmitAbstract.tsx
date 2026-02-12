@@ -3,7 +3,7 @@ import { submitAbstract, getErrorMessage } from '../services/api';
 import { useConference } from '../context/ConferenceContext';
 
 const SubmitAbstract: React.FC = () => {
-  const { importantDetails } = useConference();
+  const { importantDetails, shortName } = useConference();
   // Strip HTML tags (API may return <br> tags)
   const conferenceVenue = importantDetails?.ConferenceVenue
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
@@ -30,15 +30,12 @@ const SubmitAbstract: React.FC = () => {
     title: 'Mr.',
     name: '',
     paperTitle: '',
-    authors: '',
     affiliation: '',
     email: '',
     phone: '',
     country: '',
     address: '',
-    track: '',
-    presentationType: '',
-    keywords: ''
+    track: ''
   });
   
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -102,10 +99,15 @@ const SubmitAbstract: React.FC = () => {
       submitData.append('trackName', formData.track);
       submitData.append('address', formData.address);
       submitData.append('presentationTitle', formData.paperTitle);
-      submitData.append('entity', '');
       
       // Add file
       submitData.append('file', selectedFile);
+
+      // Debug: Log FormData contents
+      console.log('Submitting abstract with data:');
+      for (let [key, value] of submitData.entries()) {
+        console.log(`${key}:`, value);
+      }
 
       const response = await submitAbstract(submitData);
       setReferenceId(response.id || response.submissionId || 'PENDING');
@@ -401,228 +403,217 @@ const SubmitAbstract: React.FC = () => {
                 </div>
               )}
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '25px' }}>
-                {/* Title Select and Name */}
-                <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '20px' }}>
-                  <div>
-                    <label htmlFor="title" style={labelStyle}>Title *</label>
-                    <select
-                      id="title"
-                      name="title"
-                      required
-                      value={formData.title}
-                      onChange={handleChange}
-                      style={{ ...inputStyle, cursor: 'pointer', backgroundColor: 'white' }}
-                    >
-                      <option value="Mr.">Mr.</option>
-                      <option value="Mrs.">Mrs.</option>
-                      <option value="Ms.">Ms.</option>
-                      <option value="Dr.">Dr.</option>
-                      <option value="Prof.">Prof.</option>
-                      <option value="Engr.">Engr.</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="name" style={labelStyle}>Full Name *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      placeholder="Your full name"
-                    />
-                  </div>
-                </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px' }}>
+                {/* Paper Details Section */}
+                <div style={{
+                  background: '#f8f9fa',
+                  padding: '30px',
+                  borderRadius: '12px',
+                  border: '1px solid #e0e0e0'
+                }}>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#274338',
+                    marginBottom: '25px',
+                    paddingBottom: '10px',
+                    borderBottom: '2px solid #274338'
+                  }}>
+                    Paper Details
+                  </h3>
+                  
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px' }}>
+                    {/* Title Select and Name */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '20px' }}>
+                      <div>
+                        <label htmlFor="title" style={labelStyle}>Title *</label>
+                        <select
+                          id="title"
+                          name="title"
+                          required
+                          value={formData.title}
+                          onChange={handleChange}
+                          style={{ ...inputStyle, cursor: 'pointer', backgroundColor: 'white' }}
+                        >
+                          <option value="Mr.">Mr.</option>
+                          <option value="Mrs.">Mrs.</option>
+                          <option value="Ms.">Ms.</option>
+                          <option value="Dr.">Dr.</option>
+                          <option value="Prof.">Prof.</option>
+                          <option value="Engr.">Engr.</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label htmlFor="name" style={labelStyle}>Full Name *</label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          style={inputStyle}
+                          placeholder="Your full name"
+                        />
+                      </div>
+                    </div>
 
-                {/* Paper Title */}
-                <div>
-                  <label htmlFor="paperTitle" style={labelStyle}>
-                    Paper Title *
-                  </label>
-                  <input
-                    type="text"
-                    id="paperTitle"
-                    name="paperTitle"
-                    required
-                    value={formData.paperTitle}
-                    onChange={handleChange}
-                    style={inputStyle}
-                    placeholder="Enter the title of your paper"
-                  />
-                </div>
+                    {/* Paper Title */}
+                    <div>
+                      <label htmlFor="paperTitle" style={labelStyle}>
+                        Paper Title *
+                      </label>
+                      <input
+                        type="text"
+                        id="paperTitle"
+                        name="paperTitle"
+                        required
+                        value={formData.paperTitle}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        placeholder="Enter the title of your paper"
+                      />
+                    </div>
 
-                {/* Authors */}
-                <div>
-                  <label htmlFor="authors" style={labelStyle}>
-                    Authors (Full Names) *
-                  </label>
-                  <input
-                    type="text"
-                    id="authors"
-                    name="authors"
-                    required
-                    value={formData.authors}
-                    onChange={handleChange}
-                    style={inputStyle}
-                    placeholder="John Doe, Jane Smith, et al."
-                  />
-                </div>
-
-                {/* Affiliation */}
-                <div>
-                  <label htmlFor="affiliation" style={labelStyle}>
-                    Affiliation *
-                  </label>
-                  <input
-                    type="text"
-                    id="affiliation"
-                    name="affiliation"
-                    required
-                    value={formData.affiliation}
-                    onChange={handleChange}
-                    style={inputStyle}
-                    placeholder="University/Organization, Department, Country"
-                  />
-                </div>
-
-                {/* Contact Information */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                  <div>
-                    <label htmlFor="email" style={labelStyle}>
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" style={labelStyle}>
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      placeholder="+1 234 567 8900"
-                    />
+                    {/* Track Selection */}
+                    <div>
+                      <label htmlFor="track" style={labelStyle}>
+                        Select Track *
+                      </label>
+                      <select
+                        id="track"
+                        name="track"
+                        required
+                        value={formData.track}
+                        onChange={handleChange}
+                        style={{
+                          ...inputStyle,
+                          cursor: 'pointer',
+                          backgroundColor: 'white'
+                        }}
+                      >
+                        <option value="">Choose a track...</option>
+                        {tracks.map((track, index) => (
+                          <option key={index} value={track}>
+                            {track}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                 </div>
 
-                {/* Country and Address */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                  <div>
-                    <label htmlFor="country" style={labelStyle}>
-                      Country *
-                    </label>
-                    <input
-                      type="text"
-                      id="country"
-                      name="country"
-                      required
-                      value={formData.country}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      placeholder="Your country"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="address" style={labelStyle}>
-                      Address *
-                    </label>
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      required
-                      value={formData.address}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      placeholder="Your address"
-                    />
+                {/* Contact Details Section */}
+                <div style={{
+                  background: '#f8f9fa',
+                  padding: '30px',
+                  borderRadius: '12px',
+                  border: '1px solid #e0e0e0'
+                }}>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#274338',
+                    marginBottom: '25px',
+                    paddingBottom: '10px',
+                    borderBottom: '2px solid #274338'
+                  }}>
+                    Contact Details
+                  </h3>
+                  
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px' }}>
+                    {/* Email */}
+                    <div>
+                      <label htmlFor="email" style={labelStyle}>
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+
+                    {/* Country */}
+                    <div>
+                      <label htmlFor="country" style={labelStyle}>
+                        Country *
+                      </label>
+                      <input
+                        type="text"
+                        id="country"
+                        name="country"
+                        required
+                        value={formData.country}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        placeholder="Your country"
+                      />
+                    </div>
+
+                    {/* Phone Number */}
+                    <div>
+                      <label htmlFor="phone" style={labelStyle}>
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        placeholder="+1 234 567 8900"
+                      />
+                    </div>
+
+                    {/* Organization/Affiliation */}
+                    <div>
+                      <label htmlFor="affiliation" style={labelStyle}>
+                        Organization *
+                      </label>
+                      <input
+                        type="text"
+                        id="affiliation"
+                        name="affiliation"
+                        required
+                        value={formData.affiliation}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        placeholder="Your organization or university"
+                      />
+                    </div>
+
+                    {/* Address */}
+                    <div>
+                      <label htmlFor="address" style={labelStyle}>
+                        Address *
+                      </label>
+                      <textarea
+                        id="address"
+                        name="address"
+                        required
+                        value={formData.address}
+                        onChange={handleChange}
+                        rows={3}
+                        style={{
+                          ...inputStyle,
+                          resize: 'vertical',
+                          minHeight: '80px'
+                        }}
+                        placeholder="Your complete address"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Track Selection */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                  <div>
-                    <label htmlFor="track" style={labelStyle}>
-                      Select Track *
-                    </label>
-                    <select
-                      id="track"
-                      name="track"
-                      required
-                      value={formData.track}
-                      onChange={handleChange}
-                      style={{
-                        ...inputStyle,
-                        cursor: 'pointer'
-                      }}
-                    >
-                      <option value="">Choose a track...</option>
-                      {tracks.map((track, index) => (
-                        <option key={index} value={track}>
-                          {track}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="presentationType" style={labelStyle}>
-                      Presentation Type *
-                    </label>
-                    <select
-                      id="presentationType"
-                      name="presentationType"
-                      required
-                      value={formData.presentationType}
-                      onChange={handleChange}
-                      style={{
-                        ...inputStyle,
-                        cursor: 'pointer'
-                      }}
-                    >
-                      <option value="">Select type...</option>
-                      <option value="oral">Oral Presentation</option>
-                      <option value="poster">Poster Presentation</option>
-                      <option value="virtual">Virtual Presentation</option>
-                      <option value="young-researcher">Young Researcher Forum</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Keywords */}
-                <div>
-                  <label htmlFor="keywords" style={labelStyle}>
-                    Keywords (3-5 keywords) *
-                  </label>
-                  <input
-                    type="text"
-                    id="keywords"
-                    name="keywords"
-                    required
-                    value={formData.keywords}
-                    onChange={handleChange}
-                    style={inputStyle}
-                    placeholder="Nanomaterials, Energy Storage, Biomaterials..."
-                  />
-                </div>
-
-                {/* File Upload */}
+                {/* File Upload Section */}
                 <div style={{
                   border: '2px dashed #e0e0e0',
                   borderRadius: '12px',
