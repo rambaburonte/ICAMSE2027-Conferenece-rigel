@@ -104,14 +104,6 @@ const SubmitAbstract: React.FC = () => {
       // Add file
       submitData.append('file', selectedFile);
 
-      // Debug: Log FormData contents
-      console.log('Submitting abstract with data:');
-      console.log('shortName:', shortName);
-      console.log('importantDetails.ShortName:', importantDetails?.ShortName);
-      for (let [key, value] of submitData.entries()) {
-        console.log(`${key}:`, value);
-      }
-
       const response = await submitAbstract(submitData);
       setReferenceId(response.id || response.submissionId || 'PENDING');
       setIsSubmitted(true);

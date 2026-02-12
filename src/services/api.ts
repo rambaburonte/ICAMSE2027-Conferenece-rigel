@@ -210,12 +210,8 @@ export const createPaypalPayment = async (paymentData: any) => { // eslint-disab
  * @param {object} abstractData - The abstract data
  * Returns submission result
  */
-export const submitAbstract = async (formData: FormData) => {
-  const response = await apiClient.post('/abstract/submit', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  });
+export const submitAbstract = async (data: any) => {
+  const response = await apiClient.post('/abstract/submit', data);
   return response.data;
 };
 
