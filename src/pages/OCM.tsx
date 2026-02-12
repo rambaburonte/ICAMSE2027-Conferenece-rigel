@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useConference } from '../context/ConferenceContext';
 import { getMembersByUser } from '../services/api';
+import { MdSchool, MdEmail, MdRecordVoiceOver } from 'react-icons/md';
 
 interface CommitteeMember {
   id: number;
@@ -16,6 +17,14 @@ interface CommitteeMember {
 
 const OCM: React.FC = () => {
   const { loginDetails, importantDetails } = useConference();
+  
+  // Conference contact emails
+  const contactEmails = [
+    'secretary@icamse2027.com',
+    'contact@icamse2027.com',
+    'info@icamse2027.com',
+  ];
+  
   // Strip HTML tags (API may return <br> tags)
   const conferenceVenue = importantDetails?.ConferenceVenue
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
@@ -193,35 +202,47 @@ const OCM: React.FC = () => {
                 </h2>
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                  gap: '30px'
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 320px))',
+                  gap: '32px',
+                  maxWidth: '1400px',
+                  margin: '0 auto',
+                  justifyContent: 'center'
                 }}>
                   {committeeMembers.map((member, index) => (
-                    <div key={member.id || index} style={{
-                      background: 'white',
-                      padding: '30px',
-                      borderRadius: '12px',
-                      boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      cursor: 'pointer'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-5px)';
-                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.12)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.08)';
-                    }}>
-                      {member.photo && (
-                        <div style={{
-                          width: '80px',
-                          height: '80px',
-                          borderRadius: '50%',
-                          overflow: 'hidden',
-                          margin: '0 auto 20px',
-                          background: '#274338'
-                        }}>
+                    <div
+                      key={member.id || index}
+                      style={{
+                        background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)',
+                        borderRadius: '16px',
+                        padding: '32px 24px',
+                        boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                        border: '1px solid rgba(39,67,56,0.08)',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-6px)';
+                        e.currentTarget.style.boxShadow = '0 8px 24px rgba(39,67,56,0.12)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 2px 16px rgba(39,67,56,0.09)';
+                      }}
+                    >
+                      <div style={{
+                        width: '100px',
+                        height: '100px',
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                        marginBottom: '20px',
+                        boxShadow: '0 4px 12px rgba(39,67,56,0.2)',
+                        background: '#274338'
+                      }}>
+                        {member.photo ? (
                           <img
                             src={member.photo}
                             alt={member.name}
@@ -231,52 +252,47 @@ const OCM: React.FC = () => {
                               objectFit: 'cover'
                             }}
                             onError={(e) => {
-                              (e.target as HTMLImageElement).style.display = 'none';
+                              (e.target as HTMLImageElement).src = `https://via.placeholder.com/100x100/274338/ffffff?text=${member.name?.charAt(0) || 'M'}`;
                             }}
                           />
-                        </div>
-                      )}
-                      {(member.role || member.designation) && (
-                        <div style={{
-                          background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
-                          color: 'white',
-                          padding: '8px 16px',
-                          borderRadius: '20px',
-                          fontSize: '0.85rem',
-                          fontWeight: '600',
-                          display: 'inline-block',
-                          marginBottom: '15px'
-                        }}>
-                          {member.role || member.designation}
-                        </div>
-                      )}
-                      <h3 style={{
-                        fontSize: '1.3rem',
-                        fontWeight: '600',
-                        color: '#333',
-                        marginBottom: '10px'
-                      }}>
+                        ) : (
+                          <div style={{
+                            width: '100%',
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <MdRecordVoiceOver size={48} style={{ color: '#ffffff' }} />
+                          </div>
+                        )}
+                      </div>
+                      <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#1a2d26', marginBottom: '6px' }}>
                         {member.name}
                       </h3>
-                      {member.affiliation && (
-                        <p style={{
-                          fontSize: '0.95rem',
-                          color: '#666',
-                          lineHeight: '1.6'
-                        }}>
-                          {member.affiliation}
-                        </p>
-                      )}
-                      {member.specialty && (
-                        <p style={{
-                          fontSize: '0.85rem',
-                          color: '#888',
-                          fontStyle: 'italic',
-                          marginTop: '8px'
-                        }}>
-                          Specialty: {member.specialty}
-                        </p>
-                      )}
+                      <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
+                        {member.role || member.designation || 'Committee Member'}
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
+                        <MdSchool size={16} />
+                        <span>{member.affiliation}</span>
+                      </div>
+                      <a href={`mailto:${contactEmails[index % contactEmails.length]}`} style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        fontSize: '0.85rem',
+                        color: '#3498db',
+                        textDecoration: 'none',
+                        transition: 'color 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
+                      >
+                        <MdEmail size={14} />
+                        <span>Contact</span>
+                      </a>
                     </div>
                   ))}
                 </div>

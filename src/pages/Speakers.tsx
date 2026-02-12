@@ -157,10 +157,11 @@ const Speakers: React.FC = () => {
           {speakers.length > 0 && (
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 320px))',
               gap: '32px',
               maxWidth: '1400px',
-              margin: '0 auto'
+              margin: '0 auto',
+              justifyContent: 'center'
             }}>
               {speakers.map((speaker, index) => (
                 <div

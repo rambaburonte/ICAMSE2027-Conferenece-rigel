@@ -12,6 +12,20 @@ const SubmitAbstract: React.FC = () => {
     ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
     : 'March 15-16, 2027';
   
+  // Get dates from API
+  const abstractDeadline = importantDetails?.abstract_submission_deadline
+    ? importantDetails.abstract_submission_deadline.replace(/<[^>]*>/g, '')
+    : 'May 31, 2026';
+  const earlyRegistration = importantDetails?.EarlyBird
+    ? importantDetails.EarlyBird.replace(/<[^>]*>/g, '')
+    : 'June 30, 2026';
+  const notificationDate = importantDetails?.mid_term
+    ? importantDetails.mid_term.replace(/<[^>]*>/g, '')
+    : 'July 15, 2026';
+  const onSpotDate = importantDetails?.OnSpot
+    ? importantDetails.OnSpot.replace(/<[^>]*>/g, '')
+    : 'March 10, 2027';
+  
   const [formData, setFormData] = useState({
     title: 'Mr.',
     name: '',
@@ -312,10 +326,10 @@ const SubmitAbstract: React.FC = () => {
                 Important Dates
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2' }}>
-                <li><strong>Abstract Deadline:</strong> May 31, 2026</li>
-                <li><strong>Notification:</strong> July 15, 2026</li>
-                <li><strong>Early Registration:</strong> June 30, 2026</li>
-                <li><strong>Conference:</strong> Oct 13-15, 2026</li>
+                <li><strong>Abstract Deadline:</strong> {abstractDeadline}</li>
+                <li><strong>Notification:</strong> {notificationDate}</li>
+                <li><strong>Early Registration:</strong> {earlyRegistration}</li>
+                <li><strong>Conference:</strong> {conferenceDates}</li>
               </ul>
             </div>
 
