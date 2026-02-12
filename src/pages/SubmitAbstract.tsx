@@ -13,16 +13,23 @@ const SubmitAbstract: React.FC = () => {
     : 'March 15-16, 2027';
   
   const [formData, setFormData] = useState({
-    title: '',
+    title: 'Mr.',
+    name: '',
+    paperTitle: '',
     authors: '',
     affiliation: '',
     email: '',
     phone: '',
+    country: '',
+    address: '',
     track: '',
     presentationType: '',
-    abstract: '',
     keywords: ''
   });
+  
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [referenceId, setReferenceId] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -33,32 +40,62 @@ const SubmitAbstract: React.FC = () => {
     });
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate file type
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (!allowedTypes.includes(file.type)) {
+        alert('Please upload a PDF, DOC, or DOCX file');
+        e.target.value = '';
+        return;
+      }
+
+      // Validate file size (10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        alert('File size must be less than 10MB');
+        e.target.value = '';
+        return;
+      }
+
+      setSelectedFile(file);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!selectedFile) {
+      setError('Please upload your abstract file');
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
     try {
       const submitData = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        submitData.append(key, value);
-      });
+      
+      // Add all form fields matching backend expectations
       submitData.append('user', importantDetails?.ShortName || 'ICAMSE2027');
+      submitData.append('title', formData.title);
+      submitData.append('fname', formData.name);
+      submitData.append('country', formData.country);
+      submitData.append('org', formData.affiliation);
+      submitData.append('email', formData.email);
+      submitData.append('phno', formData.phone);
+      submitData.append('category', formData.track);
+      submitData.append('trackName', formData.track);
+      submitData.append('address', formData.address);
+      submitData.append('presentationTitle', formData.paperTitle);
+      submitData.append('entity', '');
+      
+      // Add file
+      submitData.append('file', selectedFile);
 
-      await submitAbstract(submitData);
-      alert('Abstract submitted successfully! You will receive a confirmation email shortly.');
-      // Reset form
-      setFormData({
-        title: '',
-        authors: '',
-        affiliation: '',
-        email: '',
-        phone: '',
-        track: '',
-        presentationType: '',
-        abstract: '',
-        keywords: ''
-      });
+      const response = await submitAbstract(submitData);
+      setReferenceId(response.id || response.submissionId || 'PENDING');
+      setIsSubmitted(true);
     } catch (err) {
       const errorMessage = getErrorMessage(err);
       setError(errorMessage);
@@ -99,6 +136,130 @@ const SubmitAbstract: React.FC = () => {
     color: '#333',
     fontSize: '1rem'
   };
+
+  if (isSubmitted) {
+    return (
+      <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
+        <section style={{
+          background: 'transparent',
+          padding: '150px 0',
+          textAlign: 'center',
+          color: 'white',
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <div className="container" style={{ maxWidth: '800px' }}>
+            <div style={{
+              width: '100px',
+              height: '100px',
+              borderRadius: '50%',
+              background: 'rgba(16, 185, 129, 0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 30px'
+            }}>
+              <svg width="60" height="60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h1 style={{ fontSize: '3rem', fontWeight: '700', marginBottom: '20px', color: 'white' }}>
+              Abstract Submitted Successfully!
+            </h1>
+            <p style={{ fontSize: '1.2rem', marginBottom: '30px', opacity: 0.95 }}>
+              Thank you for submitting your abstract to {importantDetails?.ConferenceTitle?.replace(/<[^>]*>/g, '') || 'ICAMSE 2027'}.
+            </p>
+            <div style={{
+              background: 'rgba(255,255,255,0.1)',
+              padding: '30px',
+              borderRadius: '12px',
+              marginBottom: '30px',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <p style={{ fontSize: '0.9rem', color: '#e0e0e0', marginBottom: '10px' }}>Your Reference ID</p>
+              <p style={{ fontSize: '2rem', fontWeight: '700', color: '#10b981' }}>{referenceId}</p>
+              <p style={{ fontSize: '0.9rem', color: '#e0e0e0', marginTop: '10px' }}>
+                Please save this reference ID for future correspondence.
+              </p>
+            </div>
+            <div style={{
+              background: 'rgba(255,255,255,0.05)',
+              padding: '30px',
+              borderRadius: '12px',
+              textAlign: 'left',
+              border: '2px solid rgba(255,255,255,0.1)'
+            }}>
+              <h3 style={{ fontWeight: '600', textAlign: 'center', marginBottom: '20px' }}>What Happens Next?</h3>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px', marginBottom: '15px' }}>
+                <div style={{
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  background: 'rgba(16, 185, 129, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  fontWeight: '700',
+                  color: '#10b981'
+                }}>1</div>
+                <p style={{ opacity: 0.9 }}>You will receive a confirmation email within 24 hours</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px', marginBottom: '15px' }}>
+                <div style={{
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  background: 'rgba(16, 185, 129, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  fontWeight: '700',
+                  color: '#10b981'
+                }}>2</div>
+                <p style={{ opacity: 0.9 }}>Your abstract will undergo peer review</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                <div style={{
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  background: 'rgba(16, 185, 129, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  fontWeight: '700',
+                  color: '#10b981'
+                }}>3</div>
+                <p style={{ opacity: 0.9 }}>You will be notified of acceptance status</p>
+              </div>
+            </div>
+            <button
+              onClick={() => window.location.href = '/'}
+              style={{
+                marginTop: '30px',
+                padding: '16px 40px',
+                background: '#10b981',
+                color: 'white',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              Return to Home
+            </button>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
@@ -213,18 +374,66 @@ const SubmitAbstract: React.FC = () => {
             </h2>
 
             <form onSubmit={handleSubmit}>
+              {error && (
+                <div style={{
+                  padding: '16px',
+                  background: '#fee2e2',
+                  border: '1px solid #ef4444',
+                  borderRadius: '8px',
+                  marginBottom: '24px',
+                  color: '#b91c1c'
+                }}>
+                  {error}
+                </div>
+              )}
+
               <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '25px' }}>
+                {/* Title Select and Name */}
+                <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '20px' }}>
+                  <div>
+                    <label htmlFor="title" style={labelStyle}>Title *</label>
+                    <select
+                      id="title"
+                      name="title"
+                      required
+                      value={formData.title}
+                      onChange={handleChange}
+                      style={{ ...inputStyle, cursor: 'pointer', backgroundColor: 'white' }}
+                    >
+                      <option value="Mr.">Mr.</option>
+                      <option value="Mrs.">Mrs.</option>
+                      <option value="Ms.">Ms.</option>
+                      <option value="Dr.">Dr.</option>
+                      <option value="Prof.">Prof.</option>
+                      <option value="Engr.">Engr.</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="name" style={labelStyle}>Full Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      style={inputStyle}
+                      placeholder="Your full name"
+                    />
+                  </div>
+                </div>
+
                 {/* Paper Title */}
                 <div>
-                  <label htmlFor="title" style={labelStyle}>
+                  <label htmlFor="paperTitle" style={labelStyle}>
                     Paper Title *
                   </label>
                   <input
                     type="text"
-                    id="title"
-                    name="title"
+                    id="paperTitle"
+                    name="paperTitle"
                     required
-                    value={formData.title}
+                    value={formData.paperTitle}
                     onChange={handleChange}
                     style={inputStyle}
                     placeholder="Enter the title of your paper"
@@ -299,6 +508,40 @@ const SubmitAbstract: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Country and Address */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                  <div>
+                    <label htmlFor="country" style={labelStyle}>
+                      Country *
+                    </label>
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      required
+                      value={formData.country}
+                      onChange={handleChange}
+                      style={inputStyle}
+                      placeholder="Your country"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="address" style={labelStyle}>
+                      Address *
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      required
+                      value={formData.address}
+                      onChange={handleChange}
+                      style={inputStyle}
+                      placeholder="Your address"
+                    />
+                  </div>
+                </div>
+
                 {/* Track Selection */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                   <div>
@@ -365,52 +608,81 @@ const SubmitAbstract: React.FC = () => {
                   />
                 </div>
 
-                {/* Abstract */}
-                <div>
-                  <label htmlFor="abstract" style={labelStyle}>
-                    Abstract (250-300 words) *
-                  </label>
-                  <textarea
-                    id="abstract"
-                    name="abstract"
+                {/* File Upload */}
+                <div style={{
+                  border: '2px dashed #e0e0e0',
+                  borderRadius: '12px',
+                  padding: '40px',
+                  textAlign: 'center',
+                  background: '#f8f9fa',
+                  transition: 'border-color 0.3s ease'
+                }}>
+                  <h3 style={{
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    color: '#274338',
+                    marginBottom: '10px'
+                  }}>
+                    Abstract Document * <span style={{ color: '#ef4444', fontSize: '0.9rem' }}>(Required)</span>
+                  </h3>
+                  <svg width="60" height="60" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ margin: '0 auto 15px', color: '#666' }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                  <p style={{ color: '#666', marginBottom: '8px' }}>Upload your abstract document</p>
+                  <p style={{ fontSize: '0.9rem', color: '#999', marginBottom: '20px' }}>PDF, DOC, or DOCX up to 10MB</p>
+                  <input
+                    type="file"
+                    id="file-upload"
+                    accept=".pdf,.doc,.docx"
+                    onChange={handleFileChange}
+                    style={{ display: 'none' }}
                     required
-                    value={formData.abstract}
-                    onChange={handleChange}
-                    rows={10}
-                    style={{
-                      ...inputStyle,
-                      resize: 'vertical'
-                    }}
-                    placeholder="Enter your abstract here..."
                   />
+                  <label htmlFor="file-upload">
+                    <button
+                      type="button"
+                      onClick={() => document.getElementById('file-upload')?.click()}
+                      style={{
+                        padding: '12px 30px',
+                        background: 'white',
+                        color: '#274338',
+                        border: '2px solid #274338',
+                        borderRadius: '8px',
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      {selectedFile ? selectedFile.name : 'Choose File'}
+                    </button>
+                  </label>
+                  {selectedFile && (
+                    <p style={{ color: '#10b981', fontSize: '0.9rem', marginTop: '15px', fontWeight: '600' }}>
+                      ✓ File selected: {selectedFile.name} ({(selectedFile.size / 1024 / 1024).toFixed(2)} MB)
+                    </p>
+                  )}
                 </div>
 
                 {/* Submit Button */}
                 <div style={{ textAlign: 'center', marginTop: '20px' }}>
                   <button
                     type="submit"
+                    disabled={loading}
                     style={{
-                      background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                      background: loading ? '#9ca3af' : 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
                       color: 'white',
                       padding: '18px 60px',
                       border: 'none',
                       borderRadius: '50px',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      cursor: 'pointer',
+                      cursor: loading ? 'not-allowed' : 'pointer',
                       boxShadow: '0 4px 20px rgba(39, 67, 56, 0.3)',
                       transition: 'all 0.3s ease'
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.boxShadow = '0 6px 25px rgba(39, 67, 56, 0.4)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 20px rgba(39, 67, 56, 0.3)';
-                    }}
                   >
-                    Submit Abstract
+                    {loading ? 'Submitting...' : 'Submit Abstract'}
                   </button>
                 </div>
               </div>

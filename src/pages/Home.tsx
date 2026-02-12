@@ -163,15 +163,16 @@ const Home: React.FC = () => {
         const allData = await getMembersByUser(username);
         console.log('Home: All members data received:', allData);
 
-        // Filter speakers only
-        const speakerMembers = (allData || []).filter(
+        // Filter speakers (exclude OCM only, same as robofuture pattern)
+        const speakersOnly = (allData || []).filter(
           (member: Speaker) => 
-            member.category?.toLowerCase() === 'speaker' || 
-            member.speaker_category?.toLowerCase() === 'speaker'
+            member.category?.toLowerCase() !== 'ocm' && 
+            member.speaker_category?.toLowerCase() !== 'ocm'
         );
 
-        setSpeakers(speakerMembers);
-        // Data is already cached by Speakers page
+        setSpeakers(speakersOnly);
+        // Cache all members data
+        localStorage.setItem('conferenceSpeakers', JSON.stringify(allData || []));
       } catch (error) {
         console.error('Failed to fetch speakers:', error);
       } finally {
@@ -214,8 +215,9 @@ const Home: React.FC = () => {
     try {
       const cached = localStorage.getItem('conferenceSpeakers');
       const allMembers = cached ? JSON.parse(cached) : [];
+      // Show all members except OCM
       return allMembers.filter((m: Speaker) =>
-        m.category?.toLowerCase() === 'speaker' || m.speaker_category?.toLowerCase() === 'speaker'
+        m.category?.toLowerCase() !== 'ocm' && m.speaker_category?.toLowerCase() !== 'ocm'
       );
     } catch {
       return [];
@@ -724,14 +726,36 @@ const Home: React.FC = () => {
                                     width: '100px',
                                     height: '100px',
                                     borderRadius: '50%',
-                                    background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
+                                    overflow: 'hidden',
                                     marginBottom: '20px',
-                                    boxShadow: '0 4px 12px rgba(39,67,56,0.2)'
+                                    boxShadow: '0 4px 12px rgba(39,67,56,0.2)',
+                                    background: '#274338'
                                   }}>
-                                    <MdRecordVoiceOver size={48} style={{ color: '#ffffff' }} />
+                                    {speaker.photo ? (
+                                      <img
+                                        src={speaker.photo}
+                                        alt={speaker.name}
+                                        style={{
+                                          width: '100%',
+                                          height: '100%',
+                                          objectFit: 'cover'
+                                        }}
+                                        onError={(e) => {
+                                          (e.target as HTMLImageElement).src = `https://via.placeholder.com/100x100/274338/ffffff?text=${speaker.name?.charAt(0) || 'S'}`;
+                                        }}
+                                      />
+                                    ) : (
+                                      <div style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                      }}>
+                                        <MdRecordVoiceOver size={48} style={{ color: '#ffffff' }} />
+                                      </div>
+                                    )}
                                   </div>
                                   <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#1a2d26', marginBottom: '6px' }}>
                                     {speaker.name}
