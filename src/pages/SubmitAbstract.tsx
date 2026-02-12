@@ -99,6 +99,7 @@ const SubmitAbstract: React.FC = () => {
       submitData.append('trackName', formData.track);
       submitData.append('address', formData.address);
       submitData.append('presentationTitle', formData.paperTitle);
+      submitData.append('entity', '');
       
       // Add file
       submitData.append('file', selectedFile);
