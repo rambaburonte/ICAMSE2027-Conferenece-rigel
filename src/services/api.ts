@@ -144,9 +144,8 @@ export const getScheduleByShortName = async (shortName: string) => {
  * Returns conference configuration including email, username, ConfName, conference_url, etc.
  */
 export const getConferenceLoginDetails = async () => {
-  // Extract conference URL from current website hostname (without https://)
-  const hostname = window.location.hostname;
-  const conferenceUrl = hostname === 'localhost' ? 'icamse2027.com' : hostname;
+  // Use icamse2027.com as the conference identifier regardless of deployment domain
+  const conferenceUrl = 'icamse2027.com';
 
   const cacheKey = `login_details_${conferenceUrl}`;
 
