@@ -552,101 +552,6 @@ const Home: React.FC = () => {
                         </section>
                       </div>
 
-                      {/* Conference Objectives Section - Enhanced */}
-                      <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '80px 0', background: '#f7fafc' }}>
-                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-                            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-                              <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', marginBottom: '14px', letterSpacing: '-0.5px' }}>
-                                Conference Objectives
-                              </h2>
-                              <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
-                                ICAMSE 2027 is dedicated to advancing the field of materials science and engineering by fostering innovation, collaboration, and global knowledge exchange. Our objectives are designed to empower researchers, professionals, and students to shape the future of technology and sustainability.
-                              </p>
-                            </div>
-                            <div style={{
-                              display: 'grid',
-                              gridTemplateColumns: 'repeat(4, 1fr)',
-                              gap: '36px',
-                              marginTop: '32px',
-                            }}>
-                              {/* Objective 1 */}
-                              <div style={{
-                                background: '#fff',
-                                borderRadius: '16px',
-                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
-                                padding: '38px 28px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                minHeight: 210,
-                                border: '1px solid rgba(39,67,56,0.07)'
-                              }}>
-                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdScience size={36} /></div>
-                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Advance Scientific Knowledge</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
-                                  Showcase and disseminate the latest breakthroughs in materials science, engineering, and technology.
-                                </p>
-                              </div>
-                              {/* Objective 2 */}
-                              <div style={{
-                                background: '#fff',
-                                borderRadius: '16px',
-                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
-                                padding: '38px 28px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                minHeight: 210,
-                                border: '1px solid rgba(39,67,56,0.07)'
-                              }}>
-                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdBusiness size={36} /></div>
-                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Foster Global Collaboration</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
-                                  Connect academia, industry, and government to drive interdisciplinary partnerships and impactful solutions.
-                                </p>
-                              </div>
-                              {/* Objective 3 */}
-                              <div style={{
-                                background: '#fff',
-                                borderRadius: '16px',
-                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
-                                padding: '38px 28px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                minHeight: 210,
-                                border: '1px solid rgba(39,67,56,0.07)'
-                              }}>
-                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdBolt size={36} /></div>
-                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Promote Sustainable Solutions</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
-                                  Address global challenges by promoting green, circular, and innovative materials and processes.
-                                </p>
-                              </div>
-                              {/* Objective 4 */}
-                              <div style={{
-                                background: '#fff',
-                                borderRadius: '16px',
-                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
-                                padding: '38px 28px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                minHeight: 210,
-                                border: '1px solid rgba(39,67,56,0.07)'
-                              }}>
-                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdLocalHospital size={36} /></div>
-                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Inspire the Next Generation</h3>
-                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
-                                  Empower young scientists and students through mentorship, networking, and educational opportunities.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                      </div>
-
                       {/* Speakers Section */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ padding: '80px 0', background: '#f7fafc' }}>
@@ -785,6 +690,101 @@ const Home: React.FC = () => {
                                   </a>
                                 </div>
                               ))}
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+
+                      {/* Conference Objectives Section - Enhanced */}
+                      <div className="umb-block-grid__layout-item">
+                        <section style={{ padding: '80px 0', background: '#f7fafc' }}>
+                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+                              <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', marginBottom: '14px', letterSpacing: '-0.5px' }}>
+                                Conference Objectives
+                              </h2>
+                              <p style={{ color: '#4a5568', fontSize: '1.12rem', maxWidth: 700, margin: '0 auto', fontWeight: 400, lineHeight: 1.7 }}>
+                                ICAMSE 2027 is dedicated to advancing the field of materials science and engineering by fostering innovation, collaboration, and global knowledge exchange. Our objectives are designed to empower researchers, professionals, and students to shape the future of technology and sustainability.
+                              </p>
+                            </div>
+                            <div style={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(4, 1fr)',
+                              gap: '36px',
+                              marginTop: '32px',
+                            }}>
+                              {/* Objective 1 */}
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
+                              }}>
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdScience size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Advance Scientific Knowledge</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Showcase and disseminate the latest breakthroughs in materials science, engineering, and technology.
+                                </p>
+                              </div>
+                              {/* Objective 2 */}
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
+                              }}>
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdBusiness size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Foster Global Collaboration</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Connect academia, industry, and government to drive interdisciplinary partnerships and impactful solutions.
+                                </p>
+                              </div>
+                              {/* Objective 3 */}
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
+                              }}>
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdBolt size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Promote Sustainable Solutions</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Address global challenges by promoting green, circular, and innovative materials and processes.
+                                </p>
+                              </div>
+                              {/* Objective 4 */}
+                              <div style={{
+                                background: '#fff',
+                                borderRadius: '16px',
+                                boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                                padding: '38px 28px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                minHeight: 210,
+                                border: '1px solid rgba(39,67,56,0.07)'
+                              }}>
+                                <div style={{ fontSize: '2.2rem', color: '#274338', marginBottom: 18, opacity: 0.85 }}><MdLocalHospital size={36} /></div>
+                                <h3 style={{ color: '#1a2d26', fontWeight: 600, fontSize: '1.18rem', marginBottom: 10 }}>Inspire the Next Generation</h3>
+                                <p style={{ color: '#444', fontSize: '1rem', lineHeight: 1.7 }}>
+                                  Empower young scientists and students through mentorship, networking, and educational opportunities.
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </section>
