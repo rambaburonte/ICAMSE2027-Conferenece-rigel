@@ -210,8 +210,14 @@ export const createPaypalPayment = async (paymentData: any) => { // eslint-disab
  * @param {object} abstractData - The abstract data
  * Returns submission result
  */
-export const submitAbstract = async (data: any) => {
-  const response = await apiClient.post('/abstract/submit', data);
+export const submitAbstract = async (formData: FormData) => {
+  // Create a new axios instance without default Content-Type for file uploads
+  const uploadClient = axios.create({
+    baseURL: API_BASE,
+    timeout: 30000, // 30 seconds for file uploads
+  });
+
+  const response = await uploadClient.post('/abstract/submit', formData);
   return response.data;
 };
 
@@ -254,6 +260,87 @@ export const getErrorMessage = (error: any) => { // eslint-disable-line @typescr
     // Error in request setup
     return error.message || 'An unexpected error occurred';
   }
+};
+
+/**
+ * Validate discount code
+ * @param {string} code - The discount code to validate
+ * @param {string} conferenceId - The conference ID
+ * Returns discount information or null if invalid
+ */
+export const validateDiscountCode = async (code: string, conferenceId: string) => {
+  try {
+    const response = await apiClient.post('/discount/validate', {
+      code,
+      conferenceId
+    });
+    return response.data;
+  } catch (error) {
+    console.log('Discount code validation failed:', error);
+    return null;
+  }
+};
+
+interface SponsorshipInquiryData {
+  companyName: string;
+  contactName: string;
+  email: string;
+  phone: string;
+  sponsorshipTier: string;
+  message: string;
+}
+
+/**
+ * Submit sponsorship inquiry
+ * @param {SponsorshipInquiryData} sponsorshipData - The sponsorship inquiry data
+ * Returns submission result
+ */
+export const submitSponsorshipInquiry = async (sponsorshipData: SponsorshipInquiryData) => {
+  const response = await apiClient.post('/sponsorship/inquiry', sponsorshipData);
+  return response.data;
+};
+
+/**
+ * Get call for abstracts/tracks by user
+ * @param {string} user - The user identifier
+ * Returns list of tracks/abstract categories for the conference
+ */
+export const getCallForAbstractsByUser = async (user: string) => {
+  const cacheKey = `call_for_abstracts_${user}`;
+
+  // Check cache first
+  const cached = apiCache.get(cacheKey);
+  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+    console.log('Returning cached call for abstracts for:', user);
+    return cached.data;
+  }
+
+  try {
+    console.log('Making API call to:', `/fetch/call-for-abstracts/user/${user}`);
+    const response = await apiClient.get(`/fetch/call-for-abstracts/user/${user}`);
+    console.log('API response received:', response);
+    console.log('API response data:', response.data);
+
+    // Cache the response
+    apiCache.set(cacheKey, {
+      data: response.data,
+      timestamp: Date.now()
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('API call failed:', error);
+    console.log('Call for abstracts API not available, returning empty array');
+    return [];
+  }
+};
+
+/**
+ * Clear API cache
+ */
+export const clearApiCache = () => {
+  apiCache.clear();
+  console.log('API cache cleared');
 };
 
 /**

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useConference } from '../context/ConferenceContext';
 import { getMembersByUser } from '../services/api';
 import heroBg from '../assets/hero-bg.jpg';
@@ -664,7 +665,7 @@ const Home: React.FC = () => {
 
                             <div style={{
                               display: 'grid',
-                              gridTemplateColumns: 'repeat(4, 1fr)',
+                              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                               gap: '32px',
                               marginTop: '40px'
                             }}>
@@ -697,7 +698,7 @@ const Home: React.FC = () => {
                                 </div>
                               )}
 
-                              {speakers.length > 0 && speakers.slice(0, 8).map((speaker, index) => (
+                              {speakers.length > 0 && speakers.map((speaker, index) => (
                                 <div
                                   key={speaker.id || index}
                                   style={{

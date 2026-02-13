@@ -108,7 +108,7 @@ const Speakers: React.FC = () => {
             textShadow: '0 2px 4px rgba(0,0,0,0.2)',
             color: 'white'
           }}>
-            Keynote Speakers
+            Speakers
           </h1>
           <p style={{
             fontSize: '1.3rem',
@@ -125,6 +125,15 @@ const Speakers: React.FC = () => {
       {/* Speakers Grid */}
       <section style={{ padding: '80px 0', background: '#f8f9fa' }}>
         <div className="container">
+          <h2 style={{
+            fontSize: '2.5rem',
+            fontWeight: '700',
+            textAlign: 'center',
+            color: '#274338',
+            marginBottom: '20px'
+          }}>
+            Speakers
+          </h2>
           {loading && speakers.length === 0 && (
             <div style={{ textAlign: 'center', padding: '60px 0' }}>
               <div style={{

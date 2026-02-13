@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './assets/ICAMSE2026_logo.png';
+//import logo from './assets/ICAMSE2026_logo.png';
 import { Link } from 'react-router-dom';
 import { useConference } from './context/ConferenceContext';
 
@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
         {/* Logo Section */}
         <div className="header__top-logo">
           <Link to="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <img src={logo} alt="ICAMSE2026 Logo" style={{ height: '88px', width: '223px', objectFit: 'cover', display: 'flow' }} />
+           <h1 style={{ color: '#274338' }}>ICAMSE2027</h1>
           </Link>
           <h6>
             {conferenceDates}

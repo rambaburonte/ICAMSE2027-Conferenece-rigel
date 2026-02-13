@@ -87,7 +87,7 @@ const SubmitAbstract: React.FC = () => {
     try {
       const submitData = new FormData();
       
-      // Add all form fields matching backend expectations
+      // Add all form fields matching backend DTO expectations
       submitData.append('user', shortName || 'ICAMSE2027');
       submitData.append('title', formData.title);
       submitData.append('fname', formData.name);
@@ -96,10 +96,11 @@ const SubmitAbstract: React.FC = () => {
       submitData.append('email', formData.email);
       submitData.append('phno', formData.phone);
       submitData.append('category', formData.track);
+      submitData.append('sentFrom', ''); // Optional field
       submitData.append('trackName', formData.track);
       submitData.append('address', formData.address);
       submitData.append('presentationTitle', formData.paperTitle);
-      submitData.append('entity', '');
+      submitData.append('entity', ''); // Optional field
       
       // Add file
       submitData.append('file', selectedFile);
