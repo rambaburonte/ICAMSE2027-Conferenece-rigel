@@ -53,7 +53,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
       {/* Main Footer */}
       <footer className="footer">
         <div className="container">
-          <div className="footer-block">
+          <div className="footer-block" style={{   gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}>
             {/* Footer Block 1: Timings & Location */}
             <div className="footer-block-1">
               <div className="footer-timings">
@@ -177,14 +177,47 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
                 </svg>
                 CONTACT US
               </h5>
-              <div className="footer-content-row">
-                {footerContacts.map((contact) => (
-                  <div key={contact.email} className="footer-content-text">
-                    <p>{contact.title}</p>
-                    <a href={`mailto:${contact.email}`}>{contact.email}</a>
-                  </div>
-                ))}
-              </div>
+              <ul style={{ paddingLeft: 0, margin: 0, listStyle: 'none', fontSize: '0.9rem' }}>
+                {[...footerContacts.map(c => c.email), importantDetails?.EmailId1]
+                  .filter(Boolean)
+                  .map((email, idx) => (
+                    <li key={email || idx} style={{ display: 'list-item', marginBottom: 6, color: '#b3d9c0' }}>
+                      <a href={`mailto:${email}`} style={{ color: '#b3d9c0', textDecoration: 'none' }}>{email}</a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+
+            {/* Footer Block 4: Important Dates */}
+            <div className="footer-block-4">
+              <h5 className="footer-heading">IMPORTANT DATES</h5>
+              <ul style={{ paddingLeft: 0, margin: 0, listStyle: 'none', fontSize: '0.85rem', color: '#b3d9c0' }}>
+                {importantDetails?.abstract_submission_deadline && (
+                  <li style={{ display: 'list-item', marginBottom: 4, color: '#b3d9c0' }}>
+                    <strong>Abstract:</strong> {importantDetails.abstract_submission_deadline}
+                  </li>
+                )}
+                {importantDetails?.registration_opens && (
+                  <li style={{ display: 'list-item', marginBottom: 4, color: '#b3d9c0' }}>
+                    <strong>Registration:</strong> {importantDetails.registration_opens}
+                  </li>
+                )}
+                {importantDetails?.EarlyBird && (
+                  <li style={{ display: 'list-item', marginBottom: 4, color: '#b3d9c0' }}>
+                    <strong>Early Bird:</strong> {importantDetails.EarlyBird}
+                  </li>
+                )}
+                {importantDetails?.mid_term && (
+                  <li style={{ display: 'list-item', marginBottom: 4, color: '#b3d9c0' }}>
+                    <strong>Mid Term:</strong> {importantDetails.mid_term}
+                  </li>
+                )}
+                {importantDetails?.OnSpot && (
+                  <li style={{ display: 'list-item', marginBottom: 4, color: '#b3d9c0' }}>
+                    <strong>On-Spot:</strong> {importantDetails.OnSpot}
+                  </li>
+                )}
+              </ul>
             </div>
           </div>
 
