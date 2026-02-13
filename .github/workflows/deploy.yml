@@ -23,7 +23,6 @@ jobs:
           server: 217.196.55.155
           username: u629132086.icamse2027.com
           password: kMAK7syq9mdH2o?T
-          local-dir: dist/
-          server-dir: ./
-          exclude: |
-              **/.htaccess
+          local_path: dist/*
+          remote_path: ./public_html/
+          sftpArgs: -o ConnectTimeout=30
