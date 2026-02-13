@@ -445,10 +445,11 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
 
 // Default fallback configuration
 const getDefaultConfig = (shortName: string, importantDetails: any = null) => ({ // eslint-disable-line @typescript-eslint/no-explicit-any
-  shortName: shortName,
-  name: shortName,
+  shortName: shortName || 'ICAMSE2027',
+  name: shortName || 'ICAMSE2027',
   fullName: 'ICAMSE 2027 Conference',
   title: 'ICAMSE2027',
+  domain: importantDetails?.WebDomain || 'https://icamse2027.com',
   theme: 'Advancing Materials Science and Engineering',
   description: 'Join leading researchers and innovators in materials science and engineering for cutting-edge insights and collaboration.',
   registrationOpen: true,
@@ -491,9 +492,12 @@ const getDefaultImportantDetails = () => ({
   ConferenceTitle: 'International Conference on Advanced Materials Science and Engineering 2027',
   ConferenceDates: 'March 15-16, 2027',
   ConferenceVenue: 'Bangalore, India',
+  ConferenceCity: 'Bangalore',
+  ConferenceCountry: 'India',
   ShortName: 'ICAMSE2027',
-  confName: 'ICAMSE2027', // Add confName for compatibility
+  confName: 'ICAMSE2027',
   EmailId1: 'info@icamse2027.com',
+  WebDomain: 'https://icamse2027.com',
   abstract_submission_deadline: '',
   registration_opens: '',
   EarlyBird: '',
