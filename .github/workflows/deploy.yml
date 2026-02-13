@@ -17,8 +17,8 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to Hostinger via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: 217.196.55.155
           username: u629132086.icamse2027.com
