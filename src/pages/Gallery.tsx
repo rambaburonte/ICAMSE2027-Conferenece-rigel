@@ -1,4 +1,4 @@
-import galaImg1 from '../assets/ICAMSE_gallery2.png';
+import galaImg1 from '../assets/ICAMSE_gallery1.png';
 import galaImg2 from '../assets/ICAMSE_gallery3.png';
 import React from 'react';
 import { useConference } from '../context/ConferenceContext';
