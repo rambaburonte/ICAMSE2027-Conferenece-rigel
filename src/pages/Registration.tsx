@@ -278,8 +278,7 @@ const Registration: React.FC = () => {
 
       {/* Main Content */}
       <section style={{ padding: '80px 0', background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '40px', alignItems: 'start' }}>
+        <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
             {/* Registration Form */}
             <form onSubmit={handleSubmit} style={{ backgroundColor: 'white', padding: '40px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
               {error && (
@@ -522,6 +521,58 @@ const Registration: React.FC = () => {
                 </label>
               </div>
 
+              {/* Pricing Summary */}
+              <div style={{ marginTop: '40px', marginBottom: '30px' }}>
+                <div style={{ backgroundColor: '#f8f9fa', padding: '30px', borderRadius: '12px', border: '2px solid #e0e0e0' }}>
+                  <h2 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '20px', color: '#274338' }}>Pricing Summary</h2>
+                  <div style={{ marginBottom: '20px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
+                      <span style={{ color: '#666' }}>Base Registration ({getPricingTierLabel()})</span>
+                      <span style={{ fontWeight: '600' }}>${getBasePrice()}</span>
+                    </div>
+                    {includeAccommodation && (
+                      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
+                        <span style={{ color: '#666' }}>Accommodation ({accommodationNights} {accommodationNights === 1 ? 'night' : 'nights'})</span>
+                        <span style={{ fontWeight: '600' }}>${(150 * accommodationNights).toFixed(0)}</span>
+                      </div>
+                    )}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
+                      <span style={{ color: '#666' }}>Subtotal</span>
+                      <span style={{ fontWeight: '600' }}>${(() => {
+                        let subtotal = getBasePrice();
+                        if (includeAccommodation) subtotal += 150 * accommodationNights;
+                        return subtotal.toFixed(2);
+                      })()}</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '2px solid #e0e0e0' }}>
+                      <span style={{ color: '#666' }}>Tax (5%)</span>
+                      <span style={{ fontWeight: '600' }}>${(() => {
+                        let subtotal = getBasePrice();
+                        if (includeAccommodation) subtotal += 150 * accommodationNights;
+                        return (subtotal * 0.05).toFixed(2);
+                      })()}</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px 0', fontSize: '1.3rem', fontWeight: '700', color: '#274338' }}>
+                      <span>Total (incl. tax)</span>
+                      <span>${calculateTotal().toFixed(2)}</span>
+                    </div>
+                  </div>
+
+                  <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
+                    <p style={{ fontSize: '0.95rem', fontWeight: '600', marginBottom: '12px', color: '#333' }}>Registration Includes:</p>
+                    <ul style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.8, paddingLeft: '20px' }}>
+                      <li>All technical sessions</li>
+                      <li>Keynote presentations</li>
+                      <li>Coffee breaks & lunches</li>
+                      <li>Conference materials</li>
+                      <li>Digital proceedings</li>
+                      <li>Welcome reception</li>
+                      <li>Certificate of attendance</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
@@ -542,59 +593,6 @@ const Registration: React.FC = () => {
                 {loading ? 'Processing...' : `Proceed to Payment (${paymentProvider === 'stripe' ? 'Stripe' : 'PayPal'})`}
               </button>
             </form>
-
-            {/* Pricing Summary Sidebar */}
-            <div style={{ position: 'sticky', top: '100px' }}>
-              <div style={{ backgroundColor: 'white', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', border: '2px solid #e0e0e0' }}>
-                <h2 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '20px', color: '#274338' }}>Pricing Summary</h2>
-                <div style={{ marginBottom: '20px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
-                    <span style={{ color: '#666' }}>Base Registration ({getPricingTierLabel()})</span>
-                    <span style={{ fontWeight: '600' }}>${getBasePrice()}</span>
-                  </div>
-                  {includeAccommodation && (
-                    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
-                      <span style={{ color: '#666' }}>Accommodation ({accommodationNights} {accommodationNights === 1 ? 'night' : 'nights'})</span>
-                      <span style={{ fontWeight: '600' }}>${(150 * accommodationNights).toFixed(0)}</span>
-                    </div>
-                  )}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
-                    <span style={{ color: '#666' }}>Subtotal</span>
-                    <span style={{ fontWeight: '600' }}>${(() => {
-                      let subtotal = getBasePrice();
-                      if (includeAccommodation) subtotal += 150 * accommodationNights;
-                      return subtotal.toFixed(2);
-                    })()}</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '2px solid #e0e0e0' }}>
-                    <span style={{ color: '#666' }}>Tax (5%)</span>
-                    <span style={{ fontWeight: '600' }}>${(() => {
-                      let subtotal = getBasePrice();
-                      if (includeAccommodation) subtotal += 150 * accommodationNights;
-                      return (subtotal * 0.05).toFixed(2);
-                    })()}</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px 0', fontSize: '1.3rem', fontWeight: '700', color: '#274338' }}>
-                    <span>Total (incl. tax)</span>
-                    <span>${calculateTotal().toFixed(2)}</span>
-                  </div>
-                </div>
-
-                <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
-                  <p style={{ fontSize: '0.95rem', fontWeight: '600', marginBottom: '12px', color: '#333' }}>Registration Includes:</p>
-                  <ul style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.8, paddingLeft: '20px' }}>
-                    <li>All technical sessions</li>
-                    <li>Keynote presentations</li>
-                    <li>Coffee breaks & lunches</li>
-                    <li>Conference materials</li>
-                    <li>Digital proceedings</li>
-                    <li>Welcome reception</li>
-                    <li>Certificate of attendance</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </div>

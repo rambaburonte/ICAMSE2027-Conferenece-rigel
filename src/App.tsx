@@ -9,6 +9,8 @@ import Gallery from './pages/Gallery';
 import SubmitAbstract from './pages/SubmitAbstract';
 import Contact from './pages/Contact';
 import Registration from './pages/Registration';
+import PaymentSuccess from './pages/PaymentSuccess';
+import PaymentCancel from './pages/PaymentCancel';
 import Header from './Header';
 import Footer from './Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -94,6 +96,8 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/submit-abstract" element={<SubmitAbstract />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/payment/success" element={<PaymentSuccess />} />
+          <Route path="/payment/cancel" element={<PaymentCancel />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer socialLinks={socialLinks} footerContacts={footerContacts} />
