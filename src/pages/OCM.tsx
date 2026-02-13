@@ -278,17 +278,19 @@ const OCM: React.FC = () => {
                         <MdSchool size={16} />
                         <span>{member.affiliation}</span>
                       </div>
-                      <a href={`mailto:${contactEmails[index % contactEmails.length]}`} style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        fontSize: '0.85rem',
-                        color: '#3498db',
-                        textDecoration: 'none',
-                        transition: 'color 0.3s ease'
-                      }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
+                      <a
+                        href={`mailto:${contactEmails[index % contactEmails.length]}`}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          fontSize: '0.85rem',
+                          color: '#3498db',
+                          textDecoration: 'none',
+                          transition: 'color 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
                       >
                         <MdEmail size={14} />
                         <span>Contact</span>
@@ -300,46 +302,45 @@ const OCM: React.FC = () => {
             </>
           )}
 
-          {/* Display fallback members only if no API data is loaded */}
-          {!loading && committeeMembers.length === 0 && fallbackMembers && (
+          {!loading && committeeMembers.length === 0 && (
             <>
-          {/* Organizing Committee */}
-          <div style={{ marginBottom: '80px' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: '600',
-              color: '#274338',
-              marginBottom: '40px',
-              textAlign: 'center',
-              paddingBottom: '15px',
-              borderBottom: '3px solid #274338'
-            }}>
-              Organizing Committee
-            </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '30px'
-            }}>
-              {fallbackMembers.organizing.map((member: any, index: number) => (
-                <div key={index} style={{
-                  background: 'white',
-                  padding: '30px',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.12)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.08)';
+              {/* Organizing Committee */}
+              <div style={{ marginBottom: '80px' }}>
+                <h2 style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '600',
+                  color: '#274338',
+                  marginBottom: '40px',
+                  textAlign: 'center',
+                  paddingBottom: '15px',
+                  borderBottom: '3px solid #274338'
                 }}>
-                  <div style={{
-                    background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                  Organizing Committee
+                </h2>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                  gap: '30px'
+                }}>
+                  {fallbackMembers.organizing.map((member: any, index: number) => (
+                    <div key={index} style={{
+                      background: 'white',
+                      padding: '30px',
+                      borderRadius: '12px',
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-5px)';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.12)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.08)';
+                    }}>
+                      <div style={{
+                        background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
                     color: 'white',
                     padding: '8px 16px',
                     borderRadius: '20px',

@@ -1,10 +1,12 @@
+import galaImg1 from '../assets/ICAMSE_gallery2.png';
+import galaImg2 from '../assets/ICAMSE_gallery3.png';
 import React from 'react';
 import { useConference } from '../context/ConferenceContext';
 import confImg1 from '../assets/Conferenec_img02.png';
 import confImg2 from '../assets/Conferenec_img03.png';
 import confImg3 from '../assets/Conferenec_img04.png';
 import confImg4 from '../assets/Conferenec_img05.png';
-
+ 
 const Gallery: React.FC = () => {
   const { importantDetails } = useConference();
   // Strip HTML tags (API may return <br> tags)
@@ -14,21 +16,30 @@ const Gallery: React.FC = () => {
   const conferenceDates = importantDetails?.ConferenceDates
     ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
     : 'March 15-16, 2027';
+  const conferenceTitle = importantDetails?.ShortName
+    ? importantDetails.ShortName.replace(/<[^>]*>/g, '')
+    : 'ICAMSE 2027';
   
   const galleryImages = [
     { src: confImg1, title: 'Conference Hallway', category: 'Venue' },
     { src: confImg2, title: 'Conference Group Photo', category: 'Networking' },
     { src: confImg3, title: 'Conference Leaders', category: 'Speakers' },
     { src: confImg4, title: 'Conference Networking', category: 'Networking' },
-    { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop', title: 'Keynote Session', category: 'Sessions' },
-    { src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop', title: 'Poster Session', category: 'Sessions' },
-    { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop', title: 'Exhibition', category: 'Exhibition' },
-    { src: 'https://images.unsplash.com/photo-1519167758481-83f29da8339a?w=600&h=400&fit=crop', title: 'Gala Dinner', category: 'Networking' },
-    { src: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=600&h=400&fit=crop', title: 'Technical Workshop', category: 'Sessions' },
-    { src: 'https://images.unsplash.com/photo-1464047736614-af63643285bf?w=600&h=400&fit=crop', title: 'Awards Ceremony', category: 'Events' },
-    { src: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop', title: 'Panel Discussion', category: 'Sessions' },
-    { src: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&h=400&fit=crop', title: 'Bern City Tour', category: 'Events' }
+    { src: galaImg1, title: 'Gala Dinner - Night 1', category: 'Gala Dinner' },
+    { src: galaImg2, title: 'Gala Dinner - Night 2', category: 'Gala Dinner' },
   ];
+  
+
+  // Disable right-click context menu on the gallery page
+  React.useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
 
   return (
     <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
@@ -99,6 +110,8 @@ const Gallery: React.FC = () => {
                     height: '100%',
                     objectFit: 'cover'
                   }}
+                  draggable={false}
+                  onContextMenu={e => e.preventDefault()}
                 />
                 <div className="overlay" style={{
                   position: 'absolute',
@@ -155,7 +168,7 @@ const Gallery: React.FC = () => {
               color: '#274338',
               marginBottom: '20px'
             }}>
-              ICAMSE 2026 - Creating New Memories
+              {conferenceTitle} - Creating New Memories
             </h3>
             <p style={{
               fontSize: '1.1rem',
@@ -164,11 +177,11 @@ const Gallery: React.FC = () => {
               margin: '0 auto 30px',
               lineHeight: '1.7'
             }}>
-              Join us in Bern, Switzerland for three unforgettable days of cutting-edge research presentations, networking opportunities, and memorable experiences.
+              Join us in {conferenceVenue} for three unforgettable days of cutting-edge research presentations, networking opportunities, and memorable experiences.
             </p>
             <div className="btn-wrap">
               <div className="btn-theme-3">
-                <a href="forms/del-reg/delegate-registration/index.html">
+                <a href="/registration">
                   REGISTER NOW
                 </a>
               </div>

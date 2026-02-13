@@ -52,10 +52,10 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
               EVENT BROCHURE
             </a>
           </div>
-          <div className="btn-theme-4 header_cta">
-            <a href="forms/book-your-booth/index.html" aria-label="BOOK YOUR BOOTH">
-              BOOK YOUR BOOTH
-            </a>
+             <div className="btn-theme-4 header_cta">
+               <a href="/registration" aria-label="BOOK YOUR BOOTH">
+                 BOOK YOUR BOOTH
+               </a>
           </div>
         </div>
 
@@ -74,9 +74,9 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
               </a>
             </div>
             <div className="btn-theme-4 header_cta">
-              <a href="forms/book-your-booth/index.html" aria-label="BOOK YOUR BOOTH">
-                BOOK YOUR BOOTH
-              </a>
+                 <a href="/registration" aria-label="BOOK YOUR BOOTH">
+                   BOOK YOUR BOOTH
+                 </a>
             </div>
           </div>
 

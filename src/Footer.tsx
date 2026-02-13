@@ -122,7 +122,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="contact-us-now/contact-us/index.html" title="REGISTER YOUR INTEREST">
+                    <a href="/registration" title="REGISTER YOUR INTEREST">
                       Contact us
                     </a>
                   </li>

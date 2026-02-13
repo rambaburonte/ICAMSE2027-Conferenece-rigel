@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import { useConference } from '../context/ConferenceContext';
 import { getMembersByUser } from '../services/api';
@@ -59,7 +60,16 @@ const Home: React.FC = () => {
     : 'International Conference on Advanced Materials Science and Engineering 2027';
   const conferenceDates = importantDetails?.ConferenceDates || 'March 15-16, 2027';
   const conferenceVenue = importantDetails?.ConferenceVenue || 'Bangalore, India';
-  
+  // Disable right-click context menu on the home page
+useEffect(() => {
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+  };
+  document.addEventListener('contextmenu', handleContextMenu);
+  return () => {
+    document.removeEventListener('contextmenu', handleContextMenu);
+  };
+}, []);
   // Parse conference dates for schedule display
   const parseConferenceDatesForSchedule = (dateString: string) => {
     try {
@@ -403,12 +413,12 @@ const Home: React.FC = () => {
                       </div>
                       <div className="btn-wrap">
                         <div className="btn-theme-3">
-                          <a href="forms/del-reg/delegate-registration/index.html" className="button__primary">
+                          <a href="/registration" className="button__primary">
                             BOOK YOUR DELEGATE PASS
                           </a>
                         </div>
                         <div className="btn-theme-5">
-                          <a href="forms/visitor-registration/index.html" className="button__primary">
+                          <a href="/registration" className="button__primary">
                             BOOK YOUR EXHIBITION VISITOR PASS
                           </a>
                         </div>
@@ -521,12 +531,12 @@ const Home: React.FC = () => {
                                     </a>
                                   </div>
                                   <div className="btn-theme-4">
-                                    <a href="forms/book-your-booth/index.html" target="_blank" rel="noopener noreferrer">
+                                    <a href="/registration" target="_blank" rel="noopener noreferrer">
                                       BOOK YOUR BOOTH
                                     </a>
                                   </div>
                                   <div className="btn-theme-4">
-                                    <a href="forms/del-reg/delegate-registration/index.html" target="_blank" rel="noopener noreferrer">
+                                    <a href="/registration" target="_blank" rel="noopener noreferrer">
                                       BOOK A DELEGATE PASS
                                     </a>
                                   </div>
@@ -545,6 +555,8 @@ const Home: React.FC = () => {
                                     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
                                     objectFit: 'cover'
                                   }}
+                                  draggable={false}
+                                  onContextMenu={e => e.preventDefault()}
                                 />
                               </div>
                             </div>
@@ -1028,7 +1040,7 @@ const Home: React.FC = () => {
                                 justifyContent: 'center',
                                 flexWrap: 'wrap'
                               }}>
-                                <button style={{
+                                <Link to="/submit-abstract" style={{
                                   padding: '14px 32px',
                                   background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
                                   color: '#ffffff',
@@ -1038,7 +1050,9 @@ const Home: React.FC = () => {
                                   fontWeight: 600,
                                   cursor: 'pointer',
                                   transition: 'all 0.3s ease',
-                                  boxShadow: '0 4px 12px rgba(39,67,56,0.25)'
+                                  boxShadow: '0 4px 12px rgba(39,67,56,0.25)',
+                                  textDecoration: 'none',
+                                  display: 'inline-block'
                                 }}
                                 onMouseEnter={(e) => {
                                   e.currentTarget.style.transform = 'translateY(-2px)';
@@ -1050,8 +1064,8 @@ const Home: React.FC = () => {
                                 }}
                                 >
                                   Submit Your Abstract
-                                </button>
-                                <button style={{
+                                </Link>
+                                <Link to="/contact" style={{
                                   padding: '14px 32px',
                                   background: '#ffffff',
                                   color: '#274338',
@@ -1060,7 +1074,9 @@ const Home: React.FC = () => {
                                   fontSize: '1rem',
                                   fontWeight: 600,
                                   cursor: 'pointer',
-                                  transition: 'all 0.3s ease'
+                                  transition: 'all 0.3s ease',
+                                  textDecoration: 'none',
+                                  display: 'inline-block'
                                 }}
                                 onMouseEnter={(e) => {
                                   e.currentTarget.style.background = '#274338';
@@ -1072,7 +1088,7 @@ const Home: React.FC = () => {
                                 }}
                                 >
                                   Contact Program Committee
-                                </button>
+                                </Link>
                               </div>
                             </div>
                           </div>
@@ -2639,12 +2655,12 @@ const Home: React.FC = () => {
                                 alignItems: 'stretch',
                               }}>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                                  <img src={confImg1} alt="Conference Hallway" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
-                                  <img src={confImg3} alt="Conference Leaders" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
+                                  <img src={confImg1} alt="Conference Hallway" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
+                                  <img src={confImg3} alt="Conference Leaders" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                                  <img src={confImg2} alt="Conference Group" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
-                                  <img src={confImg4} alt="Conference Networking" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} />
+                                  <img src={confImg2} alt="Conference Group" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
+                                  <img src={confImg4} alt="Conference Networking" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
                                 </div>
                               </div>
                             </div>
