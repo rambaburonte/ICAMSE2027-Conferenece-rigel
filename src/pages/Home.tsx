@@ -526,9 +526,9 @@ useEffect(() => {
                                 {/* Content CTA Buttons */}
                                 <div className="btn-wrap">
                                   <div className="btn-theme-4">
-                                    <a href="forms/download-event-brochure/index.html" target="_blank" rel="noopener noreferrer">
+                                    {/* <a href="forms/download-event-brochure/index.html" target="_blank" rel="noopener noreferrer">
                                       EVENT BROCHURE
-                                    </a>
+                                    </a> */}
                                   </div>
                                   <div className="btn-theme-4">
                                     <a href="/registration" target="_blank" rel="noopener noreferrer">
