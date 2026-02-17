@@ -411,8 +411,17 @@ useEffect(() => {
                           {conferenceTitle}
                         </h2>
                       </div>
-                      <div style={{ marginTop: '32px', color: '#fff', fontWeight: 500, fontSize: '1.15rem' }}>
-                         {conferenceVenue}
+                      <div className="btn-wrap">
+                        <div className="btn-theme-3">
+                          <a href="/registration" className="button__primary">
+                          Register Now
+                          </a>
+                        </div>
+                        <div className="btn-theme-5">
+                          <a href="/submit-abstract" className="button__primary">
+                          Submit Abstract
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1064,7 +1073,7 @@ useEffect(() => {
                                   borderRadius: '12px',
                                   fontSize: '1rem',
                                   fontWeight: 600,
-                                 cursor: 'pointer',
+                                  cursor: 'pointer',
                                   transition: 'all 0.3s ease',
                                   textDecoration: 'none',
                                   display: 'inline-block'
