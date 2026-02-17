@@ -532,12 +532,12 @@ useEffect(() => {
                                   </div>
                                   <div className="btn-theme-4">
                                     <a href="/registration" target="_blank" rel="noopener noreferrer">
-                                      BOOK YOUR BOOTH
+                                      REGISTER NOW
                                     </a>
                                   </div>
                                   <div className="btn-theme-4">
-                                    <a href="/registration" target="_blank" rel="noopener noreferrer">
-                                      BOOK A DELEGATE PASS
+                                    <a href="/submit-abstract" target="_blank" rel="noopener noreferrer">
+                                      SUBMIT ABSTRACT
                                     </a>
                                   </div>
                                 </div>
