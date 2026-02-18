@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useConference } from '../context/ConferenceContext';
 import { getMembersByUser } from '../services/api';
-import { MdSchool, MdEmail, MdRecordVoiceOver } from 'react-icons/md';
+import { MdSchool, MdEmail, MdRecordVoiceOver, MdGroups } from 'react-icons/md';
 
 interface Speaker {
   id: number;
@@ -166,7 +166,7 @@ const Speakers: React.FC = () => {
           {speakers.length > 0 && (
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 320px))',
+              gridTemplateColumns: 'repeat(5, 1fr)',
               gap: '32px',
               maxWidth: '1400px',
               margin: '0 auto',
@@ -242,21 +242,10 @@ const Speakers: React.FC = () => {
                     <MdSchool size={16} />
                     <span>{speaker.affiliation}</span>
                   </div>
-                  <a href={`mailto:${contactEmails[index % contactEmails.length]}`} style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '0.85rem',
-                    color: '#3498db',
-                    textDecoration: 'none',
-                    transition: 'color 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
-                  >
-                    <MdEmail size={14} />
-                    <span>Contact</span>
-                  </a>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666' }}>
+                    <MdGroups size={16} />
+                    <span>{speaker.speaker_category || speaker.category || 'Speaker'}</span>
+                  </div>
                 </div>
               ))}
             </div>

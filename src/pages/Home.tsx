@@ -567,7 +567,7 @@ useEffect(() => {
                       {/* Speakers Section */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ padding: '80px 0', background: '#f7fafc' }}>
-                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 20px' }}>
                             <div style={{ textAlign: 'center', marginBottom: '50px' }}>
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '14px' }}>
                                 <MdRecordVoiceOver size={36} style={{ color: '#274338' }} />
@@ -582,7 +582,7 @@ useEffect(() => {
 
                             <div style={{
                               display: 'grid',
-                              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                              gridTemplateColumns: 'repeat(5, 1fr)',
                               gap: '32px',
                               marginTop: '40px'
                             }}>
@@ -679,27 +679,16 @@ useEffect(() => {
                                     {speaker.name}
                                   </h3>
                                   <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
-                                    {speaker.designation || speaker.role || 'Keynote Speaker'}
+                                    {speaker.designation || speaker.role  }
                                   </div>
                                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
                                     <MdSchool size={16} />
                                     <span>{speaker.affiliation}</span>
                                   </div>
-                                  <a href={`mailto:${contactEmails[index % contactEmails.length]}`} style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '6px',
-                                    fontSize: '0.85rem',
-                                    color: '#3498db',
-                                    textDecoration: 'none',
-                                    transition: 'color 0.3s ease'
-                                  }}
-                                  onMouseEnter={(e) => { e.currentTarget.style.color = '#274338'; }}
-                                  onMouseLeave={(e) => { e.currentTarget.style.color = '#3498db'; }}
-                                  >
-                                    <MdEmail size={14} />
-                                    <span>Contact</span>
-                                  </a>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666' }}>
+                                    <MdGroups size={16} />
+                                    <span>{speaker.speaker_category || speaker.category || 'Speaker'}</span>
+                                  </div>
                                 </div>
                               ))}
                             </div>
