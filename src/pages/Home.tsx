@@ -583,7 +583,7 @@ useEffect(() => {
                             <div style={{
                               display: 'grid',
                               gridTemplateColumns: 'repeat(5, 1fr)',
-                              gap: '32px',
+                              gap: '24px',
                               marginTop: '40px'
                             }}>
                               {speakersLoading && speakers.length === 0 && (
@@ -621,7 +621,7 @@ useEffect(() => {
                                   style={{
                                     background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)',
                                     borderRadius: '16px',
-                                    padding: '32px 24px',
+                                    padding: '24px 16px',
                                     boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
                                     border: '1px solid rgba(39,67,56,0.08)',
                                     transition: 'all 0.3s ease',
