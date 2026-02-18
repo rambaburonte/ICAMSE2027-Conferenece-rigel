@@ -13,6 +13,7 @@ interface Speaker {
   biography?: string;
   designation?: string;
   expertise?: string;
+  role?: string;
 }
 
 const Speakers: React.FC = () => {
@@ -236,7 +237,7 @@ const Speakers: React.FC = () => {
                     {speaker.name}
                   </h3>
                   <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
-                    {speaker.designation || 'Keynote Speaker'}
+                    {speaker.designation || speaker.role}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
                     <MdSchool size={16} />
