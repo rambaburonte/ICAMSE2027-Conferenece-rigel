@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
         <div className="header__top-logo">
           <Link to="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <img
-                  src="src/assets/ICAMSE2026_logo.png"
+                  src="public/ICAMSE2026_logo.png"
                   alt="ICAMSE2026 Logo"
                   style={{ height: '89px', width: 'auto', display: 'block' }}
                 />
