@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
         <div className="header__top-cta desktop-only">
           <div className="btn-theme-3 header_cta">
             <a
-              href="forms/download-event-brochure/index.html"
+              href="/contact"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="EVENT BROCHURE"
