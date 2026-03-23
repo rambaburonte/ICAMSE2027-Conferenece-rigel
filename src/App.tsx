@@ -9,6 +9,7 @@ import Gallery from './pages/Gallery';
 import SubmitAbstract from './pages/SubmitAbstract';
 import Contact from './pages/Contact';
 import Registration from './pages/Registration';
+import DiscountRegistration from './pages/DiscountRegistration';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentCancel from './pages/PaymentCancel';
 import Header from './Header';
@@ -47,6 +48,7 @@ function App() {
     { href: '/gallery', label: 'Gallery', ariaLabel: 'Gallery' },
     { href: '/submit-abstract', label: 'Submit Abstract', ariaLabel: 'Submit Abstract' },
     { href: '/registration', label: 'Registration', ariaLabel: 'Registration' },
+    { href: '/discount-registration', label: 'Discount Registration', ariaLabel: 'Discount Registration' },
     { href: '/contact', label: 'Contact', ariaLabel: 'Contact' },
   ];
 
@@ -96,6 +98,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/submit-abstract" element={<SubmitAbstract />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/discount-registration" element={<DiscountRegistration />} />
           <Route path="/payment/success" element={<PaymentSuccess />} />
           <Route path="/payment/cancel" element={<PaymentCancel />} />
           <Route path="/contact" element={<Contact />} />
