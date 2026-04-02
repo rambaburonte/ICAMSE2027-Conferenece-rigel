@@ -566,9 +566,9 @@ useEffect(() => {
 
                       {/* Speakers Section */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '80px 0', background: '#f7fafc' }}>
+                        <section style={{ padding: '40px 0', background: '#f7fafc' }}>
                           <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 20px' }}>
-                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '24px' }}>
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '14px' }}>
                                 <MdRecordVoiceOver size={36} style={{ color: '#274338' }} />
                                 <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', letterSpacing: '-0.5px', margin: 0 }}>
@@ -698,9 +698,9 @@ useEffect(() => {
 
                       {/* Conference Objectives Section - Enhanced */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '80px 0', background: '#f7fafc' }}>
+                        <section style={{ padding: '40px 0', background: '#f7fafc' }}>
                           <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-                            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '24px' }}>
                               <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', marginBottom: '14px', letterSpacing: '-0.5px' }}>
                                 Conference Objectives
                               </h2>
@@ -793,7 +793,7 @@ useEffect(() => {
 
                       {/* Scientific Themes & Tracks Section */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '90px 0 100px', background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)', position: 'relative' }}>
+                        <section style={{ padding: '50px 0 60px', background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)', position: 'relative' }}>
                           {/* Decorative background elements */}
                           <div style={{
                             position: 'absolute',
@@ -808,7 +808,7 @@ useEffect(() => {
 
                           <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 20px', position: 'relative', zIndex: 1 }}>
                             {/* Section Header */}
-                            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                               <div style={{
                                 display: 'inline-block',
                                 padding: '8px 24px',
@@ -860,7 +860,7 @@ useEffect(() => {
                             </div>
 
                             {/* Tracks Grid */}
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px', marginTop: '50px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px', marginTop: '30px' }}>
                               {scientificTracks.map((track, index) => (
                                 <div
                                   key={index}
@@ -997,9 +997,9 @@ useEffect(() => {
 
                             {/* Call to Action */}
                             <div style={{
-                              marginTop: '70px',
+                              marginTop: '40px',
                               textAlign: 'center',
-                              padding: '50px 40px',
+                              padding: '30px 20px',
                               background: 'linear-gradient(135deg, rgba(39,67,56,0.04) 0%, rgba(39,67,56,0.08) 100%)',
                               borderRadius: '24px',
                               border: '1px solid rgba(39,67,56,0.12)'
@@ -1087,7 +1087,7 @@ useEffect(() => {
                       {/* Event Schedule Section - Enhanced */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ 
-                          padding: '90px 0', 
+                          padding: '50px 0', 
                           background: 'linear-gradient(135deg, #1a2d26 0%, #274338 100%)',
                           position: 'relative',
                           overflow: 'hidden'
@@ -1107,7 +1107,7 @@ useEffect(() => {
 
                           <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
                             {/* Header */}
-                            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                               <h2 style={{ 
                                 fontSize: '2.8rem', 
                                 fontWeight: 700, 
