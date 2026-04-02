@@ -48,7 +48,6 @@ function App() {
     { href: '/gallery', label: 'Gallery', ariaLabel: 'Gallery' },
     { href: '/submit-abstract', label: 'Submit Abstract', ariaLabel: 'Submit Abstract' },
     { href: '/registration', label: 'Registration', ariaLabel: 'Registration' },
-    { href: '/discount-registration', label: 'Discount Registration', ariaLabel: 'Discount Registration' },
     { href: '/contact', label: 'Contact', ariaLabel: 'Contact' },
   ];
 
