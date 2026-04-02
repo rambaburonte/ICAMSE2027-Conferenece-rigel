@@ -2614,7 +2614,7 @@ useEffect(() => {
                                   <img src={confImg3} alt="Conference Leaders" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                                  {/* <img src={confImg2} alt="Conference Group" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} /> */}
+                                  <img src={confImg2} alt="Conference Group" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
                                   <img src={confImg4} alt="Conference Networking" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
                                 </div>
                               </div>
