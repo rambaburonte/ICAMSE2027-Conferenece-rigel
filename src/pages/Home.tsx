@@ -867,7 +867,7 @@ useEffect(() => {
                                   style={{
                                     background: 'linear-gradient(135deg, #ffffff 0%, #fafbfc 100%)',
                                     borderRadius: '20px',
-                                    padding: '40px 32px 36px',
+                                    padding: '30px 32px 26px',
                                     boxShadow: '0 2px 20px rgba(39, 67, 56, 0.08)',
                                     transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
                                     cursor: 'pointer',
@@ -886,41 +886,7 @@ useEffect(() => {
                                     e.currentTarget.style.borderColor = 'rgba(39, 67, 56, 0.08)';
                                   }}
                                 >
-                                  {/* Track Number Badge */}
-                                  <div style={{
-                                    position: 'absolute',
-                                    top: '20px',
-                                    right: '20px',
-                                    width: '42px',
-                                    height: '42px',
-                                    borderRadius: '50%',
-                                    background: 'linear-gradient(135deg, rgba(39,67,56,0.08) 0%, rgba(39,67,56,0.12) 100%)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontWeight: 700,
-                                    fontSize: '0.95rem',
-                                    color: '#274338',
-                                    border: '2px solid rgba(39,67,56,0.15)'
-                                  }}>
-                                    {String(index + 1).padStart(2, '0')}
-                                  </div>
-
-                                  {/* Icon */}
-                                  <div style={{ 
-                                    marginBottom: '24px', 
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '64px',
-                                    height: '64px',
-                                    borderRadius: '16px',
-                                    background: 'linear-gradient(135deg, rgba(39,67,56,0.08) 0%, rgba(39,67,56,0.05) 100%)',
-                                    border: '1px solid rgba(39,67,56,0.12)',
-                                    color: '#274338'
-                                  }}>
-                                    <track.icon size={32} />
-                                  </div>
+                                  {/* Removed Track Number Badge */}
 
                                   {/* Title */}
                                   <h3 style={{ 
@@ -2648,7 +2614,7 @@ useEffect(() => {
                                   <img src={confImg3} alt="Conference Leaders" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                                  <img src={confImg2} alt="Conference Group" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
+                                  {/* <img src={confImg2} alt="Conference Group" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} /> */}
                                   <img src={confImg4} alt="Conference Networking" style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '16px', boxShadow: '0 4px 24px rgba(39,67,56,0.10)' }} draggable={false} onContextMenu={e => e.preventDefault()} />
                                 </div>
                               </div>
