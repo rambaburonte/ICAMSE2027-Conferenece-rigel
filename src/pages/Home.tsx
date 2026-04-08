@@ -575,48 +575,23 @@ useEffect(() => {
                               padding: '34px 28px',
                               boxShadow: '0 12px 30px rgba(39, 67, 56, 0.08)'
                             }}>
-                              <div style={{ display: 'flex', gap: '26px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-                                 <div style={{ flex: '1 1 540px', minWidth: 0 }}>
-  <h2 style={{ marginBottom: '16px', color: '#1f3a30' }}>
-    Message from the Conference Chair
-  </h2>
-  <img 
-    src="../assets/ICAMSE2027-conf-chair.png" 
-    alt="Conference Chair Banner" 
-    style={{ 
-      width: '100%', 
-      height: 'auto', 
-      borderRadius: '12px',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
-    }} 
-  />
-</div>
-                                <div
-                                  style={{
-                                    flex: '0 1 320px',
-                                    width: '100%',
-                                    maxWidth: '320px',
-                                    marginLeft: 'auto',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    paddingTop: '50px'
-                                  }}
-                                >
-                                  <img
+                             <div style={{ display: 'flex', gap: '26px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                           <div style={{ flex: '1 1 540px', minWidth: 0 }}>
+                                  <h2 style={{ marginBottom: '16px', color: '#1f3a30' }}>
+                                    Message from the Conference Chair
+                                  </h2>
+                                  <img 
                                     src={chairImg}
-                                    alt="Prof. Dieter Bimberg, Conference Chair"
-                                    style={{
-                                      width: '100%',
-                                      height: 'auto',
+                                    alt="Conference Chair Banner" 
+                                    style={{ 
+                                      width: '100%', 
+                                      height: 'auto', 
                                       borderRadius: '12px',
-                                      border: '1px solid #d9e7df',
-                                      boxShadow: '0 8px 20px rgba(39, 67, 56, 0.12)'
-                                    }}
-                                    draggable={false}
-                                    onContextMenu={e => e.preventDefault()}
+                                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                                    }} 
                                   />
                                 </div>
+                               
                               </div>
                             </div>
                           </div>
