@@ -52,7 +52,7 @@ interface Speaker {
 }
 
 const Home: React.FC = () => {
-  const { importantDetails } = useConference();
+  const { importantDetails, getConferenceVenue } = useConference();
   
   // Get conference details from API or fallback
   // Strip HTML tags from title (API may return <br> tags)
@@ -2533,7 +2533,7 @@ useEffect(() => {
                                     'Network with 5,000+ global experts & leaders',
                                     'Build collaboration opportunities across sectors',
                                     'Publish in top-tier journals & proceedings',
-                                    'Experience Switzerland\'s innovation ecosystem',
+                                    `Experience ${getConferenceVenue()}'s innovation ecosystem`,
                                     'Discover latest industry technologies',
                                     'Professional development & career growth'
                                   ].map((item, index) => (
