@@ -9,6 +9,7 @@ import confImg1 from '../assets/Conferenec_img02.png';
 import confImg2 from '../assets/Conferenec_img03.png';
 import confImg3 from '../assets/Conferenec_img04.png';
 import confImg4 from '../assets/Conferenec_img05.png';
+import chairImg from '../assets/ICAMSE2027-conf-chair.png';
 import '../css/vendorc619.css';
 import '../css/mainc09f.css';
 import '../css/devstyles43e1.css';
@@ -558,6 +559,79 @@ useEffect(() => {
                                   draggable={false}
                                   onContextMenu={e => e.preventDefault()}
                                 />
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+
+                      <div className="umb-block-grid__layout-item">
+                        <section style={{ padding: '30px 0 20px' }}>
+                          <div className="container">
+                            <div style={{
+                              background: 'linear-gradient(135deg, #ffffff 0%, #f3f8f5 100%)',
+                              border: '1px solid #d9e7df',
+                              borderRadius: '14px',
+                              padding: '34px 28px',
+                              boxShadow: '0 12px 30px rgba(39, 67, 56, 0.08)'
+                            }}>
+                              <div style={{ display: 'flex', gap: '26px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                                <div style={{ flex: '1 1 540px', minWidth: 0 }}>
+                                  <h2 style={{ marginBottom: '16px', color: '#1f3a30' }}>
+                                    Message from the Conference Chair
+                                  </h2>
+                                  <p>
+                                    Dear Distinguished Colleagues, Researchers, and Esteemed Participants,
+                                  </p>
+                                  <p>
+                                    It is both an honor and a pleasure to welcome you to the International Conference on Advanced Materials Science and Engineering (ICAMSE-2027). Progress in Materials Science provides the basis and is intimately connected to progress in engineering.
+                                  </p>
+                                  <p>
+                                    This conference brings together a diverse and accomplished community of scientists, academicians, industry experts, and innovators from around the world. It provides a unique platform to share knowledge, present pioneering research, and engage in meaningful dialogue on the latest developments in materials science and engineering.
+                                  </p>
+                                  <p>
+                                    In an era where scientific advancement plays a pivotal role in addressing global challenges, the exchange of ideas and collaborative efforts fostered through gatherings such as ICAMSE-2027 are more important than ever. I sincerely hope that this conference will inspire new perspectives, encourage impactful collaborations, and contribute to the continued progress of our field.
+                                  </p>
+                                  <p>
+                                    I warmly encourage you to take full advantage of the technical sessions, keynote presentations, and networking opportunities. Your active participation is essential to the success and vibrancy of this event.
+                                  </p>
+                                  <p>
+                                    Wishing you a rewarding, engaging, and memorable experience at ICAMSE-2027.
+                                  </p>
+                                  <p style={{ marginTop: '18px', marginBottom: 0, lineHeight: 1.65 }}>
+                                    Warm regards,<br />
+                                    Prof. Dieter Bimberg<br />
+                                    Executive Director at CIOMP<br />
+                                    Founding Director, Centre of NanoPhotonics<br />
+                                    Conference Chair, ICAMSE-2027
+                                  </p>
+                                </div>
+                                <div
+                                  style={{
+                                    flex: '0 1 320px',
+                                    width: '100%',
+                                    maxWidth: '320px',
+                                    marginLeft: 'auto',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    paddingTop: '50px'
+                                  }}
+                                >
+                                  <img
+                                    src={chairImg}
+                                    alt="Prof. Dieter Bimberg, Conference Chair"
+                                    style={{
+                                      width: '100%',
+                                      height: 'auto',
+                                      borderRadius: '12px',
+                                      border: '1px solid #d9e7df',
+                                      boxShadow: '0 8px 20px rgba(39, 67, 56, 0.12)'
+                                    }}
+                                    draggable={false}
+                                    onContextMenu={e => e.preventDefault()}
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>
