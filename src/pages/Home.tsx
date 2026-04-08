@@ -576,36 +576,21 @@ useEffect(() => {
                               boxShadow: '0 12px 30px rgba(39, 67, 56, 0.08)'
                             }}>
                               <div style={{ display: 'flex', gap: '26px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-                                <div style={{ flex: '1 1 540px', minWidth: 0 }}>
-                                  <h2 style={{ marginBottom: '16px', color: '#1f3a30' }}>
-                                    Message from the Conference Chair
-                                  </h2>
-                                  <p>
-                                    Dear Distinguished Colleagues, Researchers, and Esteemed Participants,
-                                  </p>
-                                  <p>
-                                    It is both an honor and a pleasure to welcome you to the International Conference on Advanced Materials Science and Engineering (ICAMSE-2027). Progress in Materials Science provides the basis and is intimately connected to progress in engineering.
-                                  </p>
-                                  <p>
-                                    This conference brings together a diverse and accomplished community of scientists, academicians, industry experts, and innovators from around the world. It provides a unique platform to share knowledge, present pioneering research, and engage in meaningful dialogue on the latest developments in materials science and engineering.
-                                  </p>
-                                  <p>
-                                    In an era where scientific advancement plays a pivotal role in addressing global challenges, the exchange of ideas and collaborative efforts fostered through gatherings such as ICAMSE-2027 are more important than ever. I sincerely hope that this conference will inspire new perspectives, encourage impactful collaborations, and contribute to the continued progress of our field.
-                                  </p>
-                                  <p>
-                                    I warmly encourage you to take full advantage of the technical sessions, keynote presentations, and networking opportunities. Your active participation is essential to the success and vibrancy of this event.
-                                  </p>
-                                  <p>
-                                    Wishing you a rewarding, engaging, and memorable experience at ICAMSE-2027.
-                                  </p>
-                                  <p style={{ marginTop: '18px', marginBottom: 0, lineHeight: 1.65 }}>
-                                    Warm regards,<br />
-                                    Prof. Dieter Bimberg<br />
-                                    Executive Director at CIOMP<br />
-                                    Founding Director, Centre of NanoPhotonics<br />
-                                    Conference Chair, ICAMSE-2027
-                                  </p>
-                                </div>
+                                 <div style={{ flex: '1 1 540px', minWidth: 0 }}>
+  <h2 style={{ marginBottom: '16px', color: '#1f3a30' }}>
+    Message from the Conference Chair
+  </h2>
+  <img 
+    src="../assets/ICAMSE2027-conf-chair.png" 
+    alt="Conference Chair Banner" 
+    style={{ 
+      width: '100%', 
+      height: 'auto', 
+      borderRadius: '12px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+    }} 
+  />
+</div>
                                 <div
                                   style={{
                                     flex: '0 1 320px',
