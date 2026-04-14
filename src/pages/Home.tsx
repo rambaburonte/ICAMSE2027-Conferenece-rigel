@@ -2598,52 +2598,7 @@ useEffect(() => {
                               </div>
                             </div>
 
-                            {/* Call to Action */}
-                            <div style={{
-                              textAlign: 'center',
-                              marginTop: '40px'
-                            }}>
-                              <div style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '16px',
-                                background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
-                                color: 'white',
-                                padding: '20px 40px',
-                                borderRadius: '50px',
-                                fontSize: '1.1rem',
-                                fontWeight: '500',
-                                cursor: 'pointer',
-                                boxShadow: '0 8px 32px rgba(39, 67, 56, 0.3)',
-                                transition: 'all 0.3s ease',
-                                border: 'none',
-                                position: 'relative',
-                                overflow: 'hidden'
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-3px)';
-                                e.currentTarget.style.boxShadow = '0 12px 40px rgba(39, 67, 56, 0.4)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 8px 32px rgba(39, 67, 56, 0.3)';
-                              }}
-                              >
-                                <span>Register for ICAMSE 2027</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                  <path d="M5 12h14"></path>
-                                  <path d="M12 5l7 7-7 7"></path>
-                                </svg>
-                              </div>
-                              <p style={{
-                                fontSize: '0.95rem',
-                                color: '#666',
-                                marginTop: '16px',
-                                fontWeight: '400'
-                              }}>
-                                Early bird registration ends June 30, 2027
-                              </p>
-                            </div>
+                            {/* Call to Action removed as requested */}
 
                             {/* Conference Gallery */}
                             <div style={{
