@@ -49,6 +49,7 @@ interface Speaker {
   designation?: string;
   role?: string;
   specialty?: string;
+  companyLogo?: string;
 }
 
 const Home: React.FC = () => {
