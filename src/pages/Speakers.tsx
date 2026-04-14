@@ -123,7 +123,7 @@ const Speakers: React.FC = () => {
         </div>
       </section>
 
-      {/* Speakers Grid */}
+      {/* Speakers Grid - ICANET Style */}
       <section style={{ padding: '80px 0', background: '#f8f9fa' }}>
         <div className="container">
           <h2 style={{
@@ -166,8 +166,8 @@ const Speakers: React.FC = () => {
 
           {speakers.length > 0 && (
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(5, 1fr)',
+              display: 'flex',
+              flexWrap: 'wrap',
               gap: '24px',
               maxWidth: '1400px',
               margin: '0 auto',
@@ -176,76 +176,70 @@ const Speakers: React.FC = () => {
               {speakers.map((speaker, index) => (
                 <div
                   key={speaker.id || index}
+                  className="m-speakers-list__items__item__container"
                   style={{
-                    background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)',
+                    width: '240px',
+                    background: '#ffffff',
                     borderRadius: '16px',
-                    padding: '24px 16px',
-                    boxShadow: '0 2px 16px rgba(39,67,56,0.09)',
+                    overflow: 'hidden',
+                    boxShadow: '0 2px 16px rgba(39,67,56,0.10)',
                     border: '1px solid rgba(39,67,56,0.08)',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                     display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    textAlign: 'center'
+                    flexDirection: 'column'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-6px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(39,67,56,0.12)';
+                    e.currentTarget.style.boxShadow = '0 12px 32px rgba(39,67,56,0.16)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 2px 16px rgba(39,67,56,0.09)';
+                    e.currentTarget.style.boxShadow = '0 2px 16px rgba(39,67,56,0.10)';
                   }}
                 >
-                  <div style={{
-                    width: '100px',
-                    height: '100px',
-                    borderRadius: '50%',
-                    overflow: 'hidden',
-                    marginBottom: '20px',
-                    boxShadow: '0 4px 12px rgba(39,67,56,0.2)',
-                    background: '#274338'
-                  }}>
-                    {speaker.photo ? (
-                      <img
-                        src={speaker.photo}
-                        alt={speaker.name}
-                        style={{
+                  {/* Image wrapper */}
+                  <div className="m-speakers-list__items__item__wrapper-one">
+                    <div
+                      className="m-speakers-list__items__item__image"
+                      style={{ position: 'relative', width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#274338' }}
+                    >
+                      {speaker.photo ? (
+                        <img
+                          className="m-speakers-list__items__item__image__image u-shape-square u-width-100"
+                          src={speaker.photo}
+                          alt={`Speaker profile image for ${speaker.name}`}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                          loading="lazy"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = `https://via.placeholder.com/240x240/274338/ffffff?text=${speaker.name?.charAt(0) || 'S'}`;
+                          }}
+                        />
+                      ) : (
+                        <div style={{
                           width: '100%',
                           height: '100%',
-                          objectFit: 'cover'
-                        }}
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = `https://via.placeholder.com/100x100/274338/ffffff?text=${speaker.name?.charAt(0) || 'S'}`;
-                        }}
-                      />
-                    ) : (
-                      <div style={{
-                        width: '100%',
-                        height: '100%',
-                        background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}>
-                        <MdRecordVoiceOver size={48} style={{ color: '#ffffff' }} />
-                      </div>
-                    )}
+                          background: 'linear-gradient(135deg, #274338 0%, #3d5a4f 100%)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          <MdRecordVoiceOver size={64} style={{ color: '#ffffff' }} />
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#1a2d26', marginBottom: '6px' }}>
-                    {speaker.name}
-                  </h3>
-                  <div style={{ fontSize: '0.95rem', color: '#274338', fontWeight: 500, marginBottom: '8px' }}>
-                    {speaker.designation || speaker.role}
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666', marginBottom: '12px' }}>
-                    <MdSchool size={16} />
-                    <span>{speaker.affiliation}</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#666' }}>
-                    <MdGroups size={16} />
-                    <span>{speaker.speaker_category || speaker.category || 'Speaker'}</span>
+                  {/* Text content */}
+                  <div
+                    className="m-speakers-list__items__item__wrapper-two"
+                    style={{ padding: '16px', display: 'flex', flexDirection: 'column' }}
+                  >
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1a2d26', marginBottom: '4px', lineHeight: 1.3 }}>
+                      {speaker.name}
+                    </h3>
+                    <div style={{ fontSize: '0.88rem', color: '#444', lineHeight: 1.4 }}>
+                      {speaker.designation || speaker.role}{(speaker.designation || speaker.role) && speaker.affiliation ? ', ' : ''}{speaker.affiliation}
+                    </div>
                   </div>
                 </div>
               ))}
