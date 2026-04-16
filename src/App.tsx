@@ -18,6 +18,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { ConferenceProvider } from './context/ConferenceContext';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import './App.css';
+import './css/responsive-overrides.css';
 
 interface NavLink {
   href: string;

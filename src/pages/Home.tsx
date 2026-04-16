@@ -853,7 +853,7 @@ useEffect(() => {
 
                       {/* Scientific Themes & Tracks Section */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '50px 0 60px', background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)', position: 'relative' }}>
+                        <section className="tracks-section" style={{ padding: '50px 0 60px', background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)', position: 'relative' }}>
                           {/* Decorative background elements */}
                           <div style={{
                             position: 'absolute',
@@ -886,7 +886,7 @@ useEffect(() => {
                                 }}>Conference Tracks</span>
                               </div>
 
-                              <h2 style={{ 
+                              <h2 className="tracks-heading" style={{ 
                                 fontSize: '2.8rem', 
                                 fontWeight: 800, 
                                 color: '#1a2d26', 
@@ -897,7 +897,7 @@ useEffect(() => {
                               }}>
                                 Scientific Themes & Research Tracks
                               </h2>
-                              <p style={{ 
+                              <p className="tracks-subtitle" style={{ 
                                 fontSize: '1.125rem', 
                                 color: '#5a6c7d', 
                                 maxWidth: '820px', 
@@ -920,10 +920,11 @@ useEffect(() => {
                             </div>
 
                             {/* Tracks Grid */}
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px', marginTop: '30px' }}>
+                            <div className="tracks-grid-responsive" style={{ marginTop: '30px' }}>
                               {scientificTracks.map((track, index) => (
                                 <div
                                   key={index}
+                                  className="track-card"
                                   style={{
                                     background: 'linear-gradient(135deg, #ffffff 0%, #fafbfc 100%)',
                                     borderRadius: '20px',
@@ -949,7 +950,7 @@ useEffect(() => {
                                   {/* Removed Track Number Badge */}
 
                                   {/* Title */}
-                                  <h3 style={{ 
+                                  <h3 className="track-title" style={{ 
                                     fontSize: '1.3rem', 
                                     fontWeight: 700, 
                                     color: '#1a2d26', 
@@ -973,10 +974,11 @@ useEffect(() => {
                                   }}></div>
 
                                   {/* Topics List */}
-                                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                                  <ul className="track-topics" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                                     {track.topics.map((topic, topicIndex) => (
                                       <li
                                         key={topicIndex}
+                                        className="track-topic-item"
                                         style={{  
                                           fontSize: '0.94rem',
                                           color: '#5a6c7d',

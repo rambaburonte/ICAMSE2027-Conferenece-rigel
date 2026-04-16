@@ -1,0 +1,164 @@
+/* Responsive overrides for ICAMSE2027 */
+
+/* Banner Title */
+.banner-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+@media (min-width: 768px) {
+  .banner-title {
+    font-size: 4rem;
+  }
+}
+
+/* Two Column Section */
+.two-col-block .two-col-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+@media (max-width: 900px) {
+  .two-col-block .two-col-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.two-col-content, .two-col-media {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Section paddings */
+section, .container {
+  width: 100%;
+  max-width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (max-width: 600px) {
+  section, .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Responsive font sizes */
+h1, h2, h3, h4, h5, h6 {
+  word-break: break-word;
+}
+@media (max-width: 600px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Responsive images */
+img, video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Responsive buttons */
+.btn-theme-3, .btn-theme-4, button, a.button__primary {
+  font-size: 1rem;
+  padding: 0.5em 1em;
+}
+
+/* Responsive statistics */
+.statistics__col-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+.statistics__col {
+  min-width: 120px;
+  flex: 1 1 120px;
+  text-align: center;
+}
+
+/* Responsive grid for speakers, tracks, etc. */
+.responsive-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .responsive-grid {
+    gap: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .responsive-grid {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Hide scrollbars on mobile */
+@media (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Scientific themes and tracks */
+.tracks-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .tracks-grid-responsive {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .tracks-section {
+    padding: 36px 0 44px !important;
+  }
+
+  .tracks-heading {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .tracks-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .tracks-grid-responsive {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 18px !important;
+  }
+
+  .track-card {
+    padding: 22px 18px 18px !important;
+    border-radius: 14px !important;
+  }
+
+  .track-title {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+    min-height: auto !important;
+    margin-bottom: 14px !important;
+    padding-right: 0 !important;
+  }
+
+  .track-topic-item {
+    font-size: 0.9rem !important;
+    margin-bottom: 10px !important;
+    padding-left: 20px !important;
+  }
+}
