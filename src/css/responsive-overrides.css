@@ -162,3 +162,102 @@ img, video {
     padding-left: 20px !important;
   }
 }
+
+/* Event schedule mobile responsiveness */
+@media (max-width: 900px) {
+  .event-schedule-content {
+    padding: 30px 20px !important;
+  }
+
+  .event-day-tabs {
+    gap: 10px !important;
+    margin-bottom: 26px !important;
+  }
+
+  .event-day-tab-button {
+    padding: 10px 16px !important;
+    min-width: 110px;
+  }
+
+  .schedule-event-list > div {
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-schedule-section {
+    padding: 34px 0 !important;
+  }
+
+  .event-schedule-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .event-schedule-subtitle {
+    font-size: 0.98rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .event-schedule-content {
+    border-radius: 14px !important;
+    padding: 20px 14px !important;
+  }
+
+  .event-day-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px !important;
+  }
+
+  .event-day-tab-button {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 8px !important;
+    font-size: 0.9rem !important;
+    border-radius: 10px !important;
+  }
+
+  .schedule-event-list {
+    gap: 10px !important;
+  }
+
+  .schedule-event-list > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 14px 12px !important;
+  }
+
+  .schedule-event-list > div > div:first-child {
+    min-width: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1.2;
+  }
+
+  .schedule-event-list > div > div:nth-child(2) h4 {
+    font-size: 1rem !important;
+    margin-bottom: 4px !important;
+    line-height: 1.35 !important;
+  }
+
+  .schedule-event-list > div > div:nth-child(2) span {
+    font-size: 0.86rem !important;
+  }
+
+  .schedule-event-list > div > div:last-child {
+    align-self: flex-start;
+    padding: 5px 10px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .event-schedule-content {
+    padding: 16px 10px !important;
+  }
+
+  .event-day-tabs {
+    grid-template-columns: 1fr;
+  }
+}

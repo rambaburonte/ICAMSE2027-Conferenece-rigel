@@ -1114,7 +1114,7 @@ useEffect(() => {
 
                       {/* Event Schedule Section - Enhanced */}
                       <div className="umb-block-grid__layout-item">
-                        <section style={{ 
+                        <section className="event-schedule-section" style={{ 
                           padding: '50px 0', 
                           background: 'linear-gradient(135deg, #1a2d26 0%, #274338 100%)',
                           position: 'relative',
@@ -1135,8 +1135,8 @@ useEffect(() => {
 
                           <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
                             {/* Header */}
-                            <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                              <h2 style={{ 
+                            <div className="event-schedule-header" style={{ textAlign: 'center', marginBottom: '30px' }}>
+                              <h2 className="event-schedule-title" style={{ 
                                 fontSize: '2.8rem', 
                                 fontWeight: 700, 
                                 color: '#ffffff', 
@@ -1145,7 +1145,7 @@ useEffect(() => {
                               }}>
                                 Event Schedule
                               </h2>
-                              <p style={{ 
+                              <p className="event-schedule-subtitle" style={{ 
                                 fontSize: '1.15rem', 
                                 color: 'rgba(255,255,255,0.88)', 
                                 maxWidth: '650px', 
@@ -1166,7 +1166,7 @@ useEffect(() => {
                             </div>
 
                             {/* Day Tabs */}
-                            <div style={{ 
+                            <div className="event-day-tabs" style={{ 
                               display: 'flex', 
                               gap: '16px', 
                               marginBottom: '50px',
@@ -1180,6 +1180,7 @@ useEffect(() => {
                               ].map(({ day, label, date }) => (
                                 <button
                                   key={day}
+                                  className="event-day-tab-button"
                                   onClick={() => setSelectedDay(day)}
                                   style={{
                                     background: selectedDay === day ? '#ffffff' : 'rgba(255, 255, 255, 0.12)',
@@ -1216,7 +1217,7 @@ useEffect(() => {
                             </div>
 
                             {/* Schedule Content */}
-                            <div style={{ 
+                            <div className="event-schedule-content" style={{ 
                               background: '#ffffff',
                               borderRadius: '20px',
                               padding: '48px 44px',
@@ -1243,7 +1244,7 @@ useEffect(() => {
                                   </div>
 
                                   {/* Event List */}
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                                  <div className="schedule-event-list" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                 {/* Event 1 */}
                                 <div style={{
                                   background: '#f8fafc',
@@ -1641,7 +1642,7 @@ useEffect(() => {
                                   </div>
 
                                   {/* Event List */}
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                                  <div className="schedule-event-list" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                     {/* Event 1 */}
                                     <div style={{
                                       background: '#f8fafc',
@@ -2039,7 +2040,7 @@ useEffect(() => {
                                   </div>
 
                                   {/* Event List */}
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                                  <div className="schedule-event-list" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                     {/* Event 1 */}
                                     <div style={{
                                       background: '#f8fafc',
