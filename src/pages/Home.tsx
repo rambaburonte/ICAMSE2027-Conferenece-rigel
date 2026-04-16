@@ -602,7 +602,7 @@ useEffect(() => {
                       {/* Speakers Section */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ padding: '40px 0', background: '#f7fafc' }}>
-                          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 20px' }}>
+                          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 20px', width: '100%' }}>
                             <div style={{ textAlign: 'center', marginBottom: '24px' }}>
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '14px' }}>
                                 <MdRecordVoiceOver size={36} style={{ color: '#274338' }} />
@@ -618,6 +618,7 @@ useEffect(() => {
                             <div style={{
                               display: 'flex',
                               flexWrap: 'wrap',
+                              flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
                               gap: '24px',
                               maxWidth: '1400px',
                               margin: '0 auto',
@@ -2452,27 +2453,30 @@ useEffect(() => {
 
                             <div style={{ 
                               display: 'grid', 
-                              gridTemplateColumns: 'repeat(2, 1fr)', 
-                              gap: '50px', 
+                              gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : 'repeat(2, 1fr)',
+                              gap: window.innerWidth <= 768 ? '20px' : '50px',
                               alignItems: 'start',
-                              marginBottom: '40px'
+                              marginBottom: window.innerWidth <= 768 ? '20px' : '40px',
+                              width: '100%'
                             }}>
                               
                               {/* Who Should Attend */}
                               <div style={{
                                 background: 'linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%)',
                                 borderRadius: '16px',
-                                padding: '40px 32px',
-                                border: '1px solid rgba(39, 67, 56, 0.08)'
+                                padding: window.innerWidth <= 768 ? '20px 10px' : '40px 32px',
+                                border: '1px solid rgba(39, 67, 56, 0.08)',
+                                width: '100%'
                               }}>
                                 <h3 style={{
-                                  fontSize: '1.6rem',
+                                  fontSize: window.innerWidth <= 768 ? '1.2rem' : '1.6rem',
                                   fontWeight: 600,
                                   color: '#1a2d26',
-                                  marginBottom: '24px',
+                                  marginBottom: window.innerWidth <= 768 ? '12px' : '24px',
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '10px'
+                                  gap: '10px',
+                                  wordBreak: 'break-word'
                                 }}>
                                   <span style={{ fontSize: '1.5rem', display: 'flex', alignItems: 'center' }}><MdGroups size={28} style={{ marginRight: 6, color: '#274338' }} /></span>
                                   Who Should Attend
