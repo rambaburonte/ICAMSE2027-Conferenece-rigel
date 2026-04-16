@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
     : 'October 13-15, 2026';
   const conferenceVenue = importantDetails?.ConferenceVenue
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
-    : 'Lake Charles, USA';
+    : '';
 
   return (
     <header className="header main_header" style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000, background: '#274338' }}>
