@@ -490,10 +490,10 @@ const getDefaultConfig = (shortName: string, importantDetails: any = null) => ({
 // Default important details for immediate rendering
 const getDefaultImportantDetails = () => ({
   ConferenceTitle: 'International Conference on Advanced Materials Science and Engineering 2027',
-  ConferenceDates: 'March 15-16, 2027',
-  ConferenceVenue: 'Bangalore, India',
-  ConferenceCity: 'Bangalore',
-  ConferenceCountry: 'India',
+  ConferenceDates: '',
+  ConferenceVenue: '',
+  ConferenceCity: '',
+  ConferenceCountry: '',
   ShortName: 'ICAMSE2027',
   confName: 'ICAMSE2027',
   EmailId1: 'info@icamse2027.com',
