@@ -274,7 +274,7 @@ const PaymentSuccess = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '20px 0' }}>
                 <span style={{ color: '#666', fontWeight: '600' }}>Amount Paid:</span>
                 <span style={{ fontWeight: '700', color: '#10b981', fontSize: '1.5rem' }}>
-                  ${registration.price}
+                  €{registration.price}
                 </span>
               </div>
             </div>

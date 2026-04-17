@@ -42,7 +42,7 @@ const Registration: React.FC = () => {
     let total = getBasePrice();
 
     if (includeAccommodation) {
-      const pricePerNight = 150; // USD per night
+      const pricePerNight = 150; // EUR per night
       total += pricePerNight * accommodationNights;
     }
 
@@ -68,16 +68,16 @@ const Registration: React.FC = () => {
       const totalAmount = calculateTotal();
 
       // Build detailed description
-      const descParts = [`Registration (${importantDetails?.ShortName || 'ICAMSE2027'}): Registration Price: $${getBasePrice()}`];
+      const descParts = [`Registration (${importantDetails?.ShortName || 'ICAMSE2027'}): Registration Price: €${getBasePrice()}`];
       if (includeAccommodation) {
         const pricePerNight = 150;
-        descParts.push(`Accommodation: $${pricePerNight} x ${accommodationNights} nights = $${(pricePerNight * accommodationNights).toFixed(2)}`);
+        descParts.push(`Accommodation: €${pricePerNight} x ${accommodationNights} nights = €${(pricePerNight * accommodationNights).toFixed(2)}`);
       }
       let subtotal = getBasePrice();
       if (includeAccommodation) {
         subtotal += 150 * accommodationNights;
       }
-      descParts.push(`Tax (5%): $${(subtotal * 0.05).toFixed(2)}`);
+      descParts.push(`Tax (5%): €${(subtotal * 0.05).toFixed(2)}`);
       const description = descParts.join(', ');
 
       const paymentData = {
@@ -90,7 +90,7 @@ const Registration: React.FC = () => {
         org: formData.affiliation,
         paymentProvider: paymentProvider,
         amount: totalAmount,
-        currency: 'USD',
+        currency: 'EUR',
         conf: importantDetails?.ShortName || 'ICAMSE2027',
         category: formData.category,
         description,
@@ -421,7 +421,7 @@ const Registration: React.FC = () => {
                     </div>
                     {formData.category === cat.value && (
                       <div style={{ fontWeight: '700', color: '#274338', fontSize: '1.1rem' }}>
-                        ${getPricing(cat.value)}
+                        €{getPricing(cat.value)}
                       </div>
                     )}
                   </label>
@@ -441,7 +441,7 @@ const Registration: React.FC = () => {
                     <div style={{ fontWeight: '600', color: '#333', marginBottom: '4px' }}>
                       Accommodation
                       <span style={{ marginLeft: '8px', color: '#274338', fontWeight: '700' }}>
-                        +${(150 * accommodationNights).toFixed(0)}
+                        +€{(150 * accommodationNights).toFixed(0)}
                       </span>
                     </div>
                     {includeAccommodation && (
@@ -453,11 +453,11 @@ const Registration: React.FC = () => {
                           onChange={(e) => setAccommodationNights(parseInt(e.target.value))}
                           style={{ width: '100%', padding: '10px', border: '1px solid #e0e0e0', borderRadius: '6px', backgroundColor: 'white' }}
                         >
-                          <option value="1">1 Night - $150</option>
-                          <option value="2">2 Nights - $300</option>
-                          <option value="3">3 Nights - $450</option>
-                          <option value="4">4 Nights - $600</option>
-                          <option value="5">5 Nights - $750</option>
+                          <option value="1">1 Night - €150</option>
+                          <option value="2">2 Nights - €300</option>
+                          <option value="3">3 Nights - €450</option>
+                          <option value="4">4 Nights - €600</option>
+                          <option value="5">5 Nights - €750</option>
                         </select>
                       </div>
                     )}
@@ -528,17 +528,17 @@ const Registration: React.FC = () => {
                   <div style={{ marginBottom: '20px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
                       <span style={{ color: '#666' }}>Base Registration ({getPricingTierLabel()})</span>
-                      <span style={{ fontWeight: '600' }}>${getBasePrice()}</span>
+                      <span style={{ fontWeight: '600' }}>€{getBasePrice()}</span>
                     </div>
                     {includeAccommodation && (
                       <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
                         <span style={{ color: '#666' }}>Accommodation ({accommodationNights} {accommodationNights === 1 ? 'night' : 'nights'})</span>
-                        <span style={{ fontWeight: '600' }}>${(150 * accommodationNights).toFixed(0)}</span>
+                        <span style={{ fontWeight: '600' }}>€{(150 * accommodationNights).toFixed(0)}</span>
                       </div>
                     )}
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #e0e0e0' }}>
                       <span style={{ color: '#666' }}>Subtotal</span>
-                      <span style={{ fontWeight: '600' }}>${(() => {
+                      <span style={{ fontWeight: '600' }}>€{(() => {
                         let subtotal = getBasePrice();
                         if (includeAccommodation) subtotal += 150 * accommodationNights;
                         return subtotal.toFixed(2);
@@ -546,7 +546,7 @@ const Registration: React.FC = () => {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '2px solid #e0e0e0' }}>
                       <span style={{ color: '#666' }}>Tax (5%)</span>
-                      <span style={{ fontWeight: '600' }}>${(() => {
+                      <span style={{ fontWeight: '600' }}>€{(() => {
                         let subtotal = getBasePrice();
                         if (includeAccommodation) subtotal += 150 * accommodationNights;
                         return (subtotal * 0.05).toFixed(2);
@@ -554,7 +554,7 @@ const Registration: React.FC = () => {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px 0', fontSize: '1.3rem', fontWeight: '700', color: '#274338' }}>
                       <span>Total (incl. tax)</span>
-                      <span>${calculateTotal().toFixed(2)}</span>
+                      <span>€{calculateTotal().toFixed(2)}</span>
                     </div>
                   </div>
 

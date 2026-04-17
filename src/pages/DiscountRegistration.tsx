@@ -63,10 +63,10 @@ const DiscountRegistration: React.FC = () => {
         org: formData.affiliation,
         paymentProvider,
         amount: totalAmount,
-        currency: 'USD',
+        currency: 'EUR',
         conf: confCode,
         category: 'discount',
-        description: `Discount Registration (${confCode}): Base $${baseAmount.toFixed(2)}, Tax (5%): $${tax.toFixed(2)}, Total: $${totalAmount.toFixed(2)}`,
+        description: `Discount Registration (${confCode}): Base €${baseAmount.toFixed(2)}, Tax (5%): €${tax.toFixed(2)}, Total: €${totalAmount.toFixed(2)}`,
         successUrl: `${window.location.origin}/payment/success`,
         cancelUrl: `${window.location.origin}/payment/cancel`,
         user: confCode,
@@ -218,7 +218,7 @@ const DiscountRegistration: React.FC = () => {
 
             <h2 style={{ fontSize: '1.8rem', fontWeight: '600', marginBottom: '20px', color: '#274338' }}>Discount Amount *</h2>
             <div style={{ marginBottom: '30px' }}>
-              <label htmlFor="amount" style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Amount (USD, before tax)</label>
+              <label htmlFor="amount" style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Amount (EUR, before tax)</label>
               <input type="number" id="amount" name="amount" min="0" step="0.01" value={formData.amount} onChange={handleChange} required style={{ width: '100%', padding: '12px', border: '2px solid #e0e0e0', borderRadius: '8px' }} />
             </div>
 
@@ -242,9 +242,9 @@ const DiscountRegistration: React.FC = () => {
 
             <div style={{ backgroundColor: '#f8f9fa', padding: '24px', borderRadius: '12px', border: '2px solid #e0e0e0', marginBottom: '30px' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '12px', color: '#274338' }}>Pricing Summary</h3>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}><span>Base Amount</span><span>${getBaseAmount().toFixed(2)}</span></div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}><span>Tax (5%)</span><span>${(getBaseAmount() * 0.05).toFixed(2)}</span></div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: '700', fontSize: '1.2rem', marginTop: '10px' }}><span>Total</span><span>${calculateTotal().toFixed(2)}</span></div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}><span>Base Amount</span><span>€{getBaseAmount().toFixed(2)}</span></div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}><span>Tax (5%)</span><span>€{(getBaseAmount() * 0.05).toFixed(2)}</span></div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: '700', fontSize: '1.2rem', marginTop: '10px' }}><span>Total</span><span>€{calculateTotal().toFixed(2)}</span></div>
             </div>
 
             <button
