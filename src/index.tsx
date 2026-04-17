@@ -273,7 +273,7 @@ const AmericasLNGSummit: React.FC = () => {
 
       <Header navLinks={navLinks} />
 
-      <main style={{ paddingTop: '110px' }}>
+      <main>
         {/* Social Icons Section */}
         <section className="social-icons__wrapper">
           <div className="social-icons--inner">

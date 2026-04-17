@@ -1,19 +1,5 @@
 /* Responsive overrides for ICAMSE2027 */
 
-/* Banner Title */
-.banner-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-@media (min-width: 768px) {
-  .banner-title {
-    font-size: 4rem;
-  }
-}
-
 /* Two Column Section */
 .two-col-block .two-col-wrapper {
   display: flex;
