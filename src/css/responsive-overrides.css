@@ -19,14 +19,10 @@
 }
 
 /* Section paddings */
-section, .container {
-  width: 100%;
-  max-width: 100vw;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 @media (max-width: 600px) {
   section, .container {
+    width: 100%;
+    max-width: 100vw;
     padding-left: 8px;
     padding-right: 8px;
   }
@@ -44,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive images */
-img, video {
+img:not(.banner__bg), video {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
@@ -57,16 +53,19 @@ img, video {
 }
 
 /* Responsive statistics */
-.statistics__col-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-.statistics__col {
-  min-width: 120px;
-  flex: 1 1 120px;
-  text-align: center;
+@media (max-width: 900px) {
+  .statistics__col-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .statistics__col {
+    min-width: 120px;
+    flex: 1 1 120px;
+    text-align: center;
+  }
 }
 
 /* Responsive grid for speakers, tracks, etc. */
