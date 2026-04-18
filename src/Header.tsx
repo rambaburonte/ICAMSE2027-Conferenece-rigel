@@ -37,10 +37,9 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                   style={{ height: '89px', width: 'auto', display: 'block' }}
                 />
           </Link>
-          <h6>
-            {conferenceDates}
-            <br />
-            {conferenceVenue}
+          <h6 className="header__meta-text">
+            <span className="header__meta-date">{conferenceDates}</span>
+            <span className="header__meta-venue">{conferenceVenue}</span>
           </h6>
         </div>
 

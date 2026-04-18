@@ -92,6 +92,32 @@ img:not(.banner__bg), video {
   ::-webkit-scrollbar {
     display: none;
   }
+  /* Reduce logo size for mobile view */
+  .header__top-logo img {
+    height: 48px !important;
+    max-width: 140px !important;
+  }
+
+  /* Remove extra white space above and below hero section */
+  main {
+    padding-top: 60px !important;
+    padding-bottom: 0 !important;
+  }
+  .component__banner.banner {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  /* Remove space between hero and about section */
+  .component__banner.banner + .umb-block-grid {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .umb-block-grid {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
 
 /* Scientific themes and tracks */
