@@ -231,13 +231,13 @@ const DiscountRegistration: React.FC = () => {
                   <div style={{ fontSize: '0.9rem', color: '#666' }}>Secure payment via Stripe</div>
                 </div>
               </label>
-              {/* <label style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '16px', border: '2px solid', borderColor: paymentProvider === 'paypal' ? '#274338' : '#e0e0e0', borderRadius: '8px', cursor: 'pointer', background: paymentProvider === 'paypal' ? 'rgba(39, 67, 56, 0.05)' : 'white' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '16px', border: '2px solid', borderColor: paymentProvider === 'paypal' ? '#274338' : '#e0e0e0', borderRadius: '8px', cursor: 'pointer', background: paymentProvider === 'paypal' ? 'rgba(39, 67, 56, 0.05)' : 'white' }}>
                 <input type="radio" name="paymentProvider" value="paypal" checked={paymentProvider === 'paypal'} onChange={(e) => setPaymentProvider(e.target.value)} style={{ width: '20px', height: '20px', accentColor: '#274338' }} />
                 <div>
                   <div style={{ fontWeight: '600' }}>PayPal</div>
                   <div style={{ fontSize: '0.9rem', color: '#666' }}>Pay with your PayPal account</div>
                 </div>
-              </label> */}
+              </label>
             </div>
 
             <div style={{ backgroundColor: '#f8f9fa', padding: '24px', borderRadius: '12px', border: '2px solid #e0e0e0', marginBottom: '30px' }}>

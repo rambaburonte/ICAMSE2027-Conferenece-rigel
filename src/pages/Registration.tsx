@@ -493,7 +493,7 @@ const Registration: React.FC = () => {
                     <div style={{ fontSize: '0.9rem', color: '#666' }}>Secure payment via Stripe</div>
                   </div>
                 </label>
-                {/* <label
+                <label
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -518,7 +518,7 @@ const Registration: React.FC = () => {
                     <div style={{ fontWeight: '600', color: '#333' }}>PayPal</div>
                     <div style={{ fontSize: '0.9rem', color: '#666' }}>Pay with your PayPal account</div>
                   </div>
-                </label> */}
+                </label>
               </div>
 
               {/* Pricing Summary */}
