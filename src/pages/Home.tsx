@@ -592,36 +592,20 @@ useEffect(() => {
                                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
                                     }} 
                                   />
+                                  <img 
+                                    src={coChairImg}
+                                    alt="Conference Co-Chair Banner" 
+                                    style={{ 
+                                      width: '100%', 
+                                      height: 'auto', 
+                                      marginTop: '18px',
+                                      borderRadius: '12px',
+                                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                                    }} 
+                                  />
                               </div>
+                               
                               </div>
-                            </div>
-                          </div>
-                        </section>
-                      </div>
-
-                      <div className="umb-block-grid__layout-item">
-                        <section style={{ padding: '20px 0 20px' }}>
-                          <div className="container">
-                            <div style={{
-                              background: 'linear-gradient(135deg, #ffffff 0%, #f3f8f5 100%)',
-                              border: '1px solid #d9e7df',
-                              borderRadius: '14px',
-                              padding: '34px 28px',
-                              boxShadow: '0 12px 30px rgba(39, 67, 56, 0.08)'
-                            }}>
-                              <h2 style={{ marginBottom: '16px', color: '#1f3a30' }}>
-                                Message from the Conference Co-Chair
-                              </h2>
-                              <img 
-                                src={coChairImg}
-                                alt="Conference Co-Chair Banner" 
-                                style={{ 
-                                  width: '100%', 
-                                  height: 'auto', 
-                                  borderRadius: '12px',
-                                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
-                                }} 
-                              />
                             </div>
                           </div>
                         </section>
