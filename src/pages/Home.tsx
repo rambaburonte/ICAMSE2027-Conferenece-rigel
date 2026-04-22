@@ -568,20 +568,44 @@ useEffect(() => {
                       </div>
 
                       <div className="umb-block-grid__layout-item">
+                        <section style={{ padding: '0 0 12px' }}>
+                          <div
+                            style={{
+                              width: '100%',
+                              background: 'linear-gradient(90deg, #214b3f 0%, #1e473a 100%)',
+                              padding: '16px 20px',
+                              textAlign: 'center'
+                            }}
+                          >
+                            <h2
+                              style={{
+                                margin: 0,
+                                color: '#ffffff',
+                                fontSize: '18px',
+                                fontWeight: 800,
+                                letterSpacing: '1px',
+                                textTransform: 'uppercase'
+                              }}
+                            >
+                              Supported By
+                            </h2>
+                          </div>
+                        </section>
+                      </div>
+
+                      <div className="umb-block-grid__layout-item">
                         <section style={{ padding: '30px 0 20px' }}>
                           <div className="container">
                             <div style={{
                               background: 'linear-gradient(135deg, #ffffff 0%, #f3f8f5 100%)',
                               border: '1px solid #d9e7df',
                               borderRadius: '14px',
-                              padding: '34px 28px',
+                              padding: '0x 28px',
                               boxShadow: '0 12px 30px rgba(39, 67, 56, 0.08)'
                             }}>
                              <div style={{ display: 'flex', gap: '26px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
                            <div style={{ flex: '1 1 540px', minWidth: 0 }}>
-                                  <h2 style={{ marginBottom: '16px', color: '#1f3a30' }}>
-                                    Message from the Conference Chair
-                                  </h2>
+                               
                                   <img 
                                     src={chairImg}
                                     alt="Conference Chair Banner" 
