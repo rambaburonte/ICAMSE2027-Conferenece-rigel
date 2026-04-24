@@ -122,7 +122,7 @@ const OCM: React.FC = () => {
   };
 
   return (
-    <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
+    <div style={{ paddingTop: '50px', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
       {/* Page Header */}
       <section style={{
         background: 'transparent',
