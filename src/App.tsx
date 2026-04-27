@@ -39,6 +39,7 @@ interface FooterContact {
 }
 
 function App() {
+  
   // Navigation links for header
   const navLinks: NavLink[] = [
     { href: '/about', label: 'About', ariaLabel: 'About' },
