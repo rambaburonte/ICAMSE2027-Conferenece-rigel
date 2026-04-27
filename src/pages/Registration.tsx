@@ -231,7 +231,7 @@ const Registration: React.FC = () => {
       {/* Page Header */}
       <section style={{
         background: 'transparent',
-        padding: '110px 0 60px',
+        padding: '150px 0 60px',
         textAlign: 'center',
         color: 'white'
       }}>
