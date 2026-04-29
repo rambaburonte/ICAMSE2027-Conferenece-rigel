@@ -7,10 +7,10 @@ const SubmitAbstract: React.FC = () => {
   // Strip HTML tags (API may return <br> tags)
   const conferenceVenue = importantDetails?.ConferenceVenue
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
-    : 'Conference Venue';
+    : 'Amsterdam, Netherlands';
   const conferenceDates = importantDetails?.ConferenceDates
     ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
-    : 'March 15-16, 2027';
+    : 'March 10-12, 2027';
   
   // Get dates from API
   const abstractDeadline = importantDetails?.abstract_submission_deadline
@@ -297,9 +297,10 @@ const SubmitAbstract: React.FC = () => {
             maxWidth: '800px',
             margin: '0 auto',
             opacity: 0.95,
-            color: 'white'
+            color: 'white',
+            whiteSpace: 'nowrap'
           }}>
-            {conferenceDates} • {conferenceVenue}
+            {conferenceDates} &nbsp;•&nbsp; {conferenceVenue}
           </p>
         </div>
       </section>

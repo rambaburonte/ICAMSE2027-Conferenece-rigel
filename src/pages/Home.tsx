@@ -413,15 +413,15 @@ useEffect(() => {
                           {conferenceTitle}
                         </h2>
                       </div>
-                      <div className="btn-wrap">
-                        <div className="btn-theme-3">
-                          <a href="/registration" className="button__primary">
-                          Register Now
+                      <div className="btn-wrap" style={{ display: 'flex', gap: '18px', alignItems: 'center', marginTop: 24 }}>
+                        <div className="btn-theme-3" style={{ minWidth: 170, textAlign: 'center' }}>
+                          <a href="/registration" className="button__primary" style={{ width: '100%', padding: '14px 32px', fontWeight: 600, fontSize: '1.1rem', borderRadius: 8, display: 'inline-block' }}>
+                            Register Now
                           </a>
                         </div>
-                        <div className="btn-theme-5">
-                          <a href="/submit-abstract" className="button__primary">
-                          Submit Abstract
+                        <div className="btn-theme-5" style={{ minWidth: 170, textAlign: 'center' }}>
+                          <a href="/submit-abstract" className="button__primary" style={{ width: '100%', padding: '14px 32px', fontWeight: 600, fontSize: '1.1rem', borderRadius: 8, display: 'inline-block' }}>
+                            Submit Abstract
                           </a>
                         </div>
                       </div>
