@@ -151,7 +151,7 @@ const SubmitAbstract: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
+      <div style={{ paddingTop: '50px', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
         <section style={{
           background: 'transparent',
           padding: '150px 0',
@@ -278,7 +278,7 @@ const SubmitAbstract: React.FC = () => {
       {/* Page Header */}
       <section style={{
         background: 'transparent',
-        padding: '110px 0 60px',
+        padding: '150px 0 60px',
         textAlign: 'center',
         color: 'white'
       }}>

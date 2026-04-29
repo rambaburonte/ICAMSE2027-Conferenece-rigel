@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useConference } from '../context/ConferenceContext';
 import conferenceImg from '../assets/Conferenec_img01.png';
 
@@ -18,18 +18,46 @@ const About: React.FC = () => {
     : 'March 15-16, 2027';
   
   const statistics: StatisticItem[] = [
-    { value: 5000, label: 'Attendees' },
-    { value: 300, label: 'Exhibitors' },
-    { value: 150, label: 'Speakers' },
-    { value: 40, label: 'Conference Sessions' },
+    { value: 300, label: 'Attendees' },
+    { value: 50, label: 'Exhibitors' },
+    { value: 40, label: 'Speakers' },
+    { value: 15, label: 'Conference Sessions' },
   ];
 
+  useEffect(() => {
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.counter');
+      const duration = 2000;
+
+      counters.forEach((counter: Element) => {
+        const target = parseInt((counter as HTMLElement).getAttribute('data-target') || '0', 10);
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            (counter as HTMLElement).textContent = Math.floor(current).toString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            (counter as HTMLElement).textContent = target.toString();
+          }
+        };
+
+        updateCounter();
+      });
+    };
+
+    const timer = window.setTimeout(animateCounters, 500);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
-    <div style={{ paddingTop: '0', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
+    <div style={{ paddingTop: '50px', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
       {/* Page Header */}
       <section style={{
         background: 'transparent',
-        padding: '110px 0 60px',
+        padding: '150px 0 60px',
         textAlign: 'center',
         color: 'white'
       }}>
@@ -94,24 +122,8 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="btn-wrap">
-                <div className="btn-theme-4">
-                  <a href="forms/download-event-brochure/index.html" target="_blank" rel="noopener noreferrer">
-                    EVENT BROCHURE
-                  </a>
-                </div>
-                <div className="btn-theme-4">
-                  <a href="forms/book-your-booth/index.html" target="_blank" rel="noopener noreferrer">
-                    BOOK YOUR BOOTH
-                  </a>
-                </div>
-                <div className="btn-theme-4">
-                  <a href="forms/del-reg/delegate-registration/index.html" target="_blank" rel="noopener noreferrer">
-                    BOOK A DELEGATE PASS
-                  </a>
-                </div>
-              </div>
+              
+              
             </div>
 
             {/* Conference Image */}
@@ -120,11 +132,12 @@ const About: React.FC = () => {
                 src={conferenceImg} 
                 alt="International Conference on Advanced Materials Science and Engineering" 
                 style={{
-                  width: '100%',
+                  width: '70%',
                   height: 'auto',
                   borderRadius: '12px',
                   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  margin: '0 auto'
                 }}
               />
             </div>
