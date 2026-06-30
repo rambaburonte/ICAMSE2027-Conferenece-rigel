@@ -514,10 +514,10 @@ const Registration: React.FC = () => {
                     onChange={(e) => setPaymentProvider(e.target.value)}
                     style={{ width: '20px', height: '20px', accentColor: '#274338' }}
                   />
-                  <div>
+                  {/* <div>
                     <div style={{ fontWeight: '600', color: '#333' }}>PayPal</div>
                     <div style={{ fontSize: '0.9rem', color: '#666' }}>Pay with your PayPal account</div>
-                  </div>
+                  </div> */}
                 </label>
               </div>
 
