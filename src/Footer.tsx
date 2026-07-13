@@ -222,7 +222,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
           </div>
 
           {/* Footer Bottom */}
-          <div className="footer-bottom">
+          {/* <div className="footer-bottom">
             <div className="footer-links">
               <a
                 href="https://www.dmgevents.com/privacy-policy/"
@@ -257,7 +257,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, footerContacts }) => {
                 Visitor Terms
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </footer>
 
