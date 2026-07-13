@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
   // Strip HTML tags (API may return <br> tags)
   const conferenceDates = importantDetails?.ConferenceDates 
     ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
-    : 'October 13-15, 2026';
+    : ' ';
   const conferenceVenue = importantDetails?.ConferenceVenue
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
     : '';
