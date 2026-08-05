@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Use proxy in development, direct URL in production
-const BACKEND_URL = 'https://api.ccai2026.com';
+const BACKEND_URL = 'https://api.rigelworld.com';
 const API_BASE = `${BACKEND_URL}/api`;
 
 // Create axios instance with default config
