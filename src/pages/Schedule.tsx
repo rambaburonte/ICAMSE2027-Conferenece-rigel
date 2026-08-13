@@ -38,6 +38,7 @@ const Schedule: React.FC = () => {
           fullDate: dateString
         };
       }
+      
     } catch (error) {
       console.error('Error parsing dates:', error);
     }
