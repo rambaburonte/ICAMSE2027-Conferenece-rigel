@@ -14,6 +14,45 @@ const Schedule: React.FC = () => {
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
     : 'Bangalore, India';
 
+  // Parse conference dates for schedule display
+  const parseConferenceDatesForSchedule = (dateString: string) => {
+    try {
+      // Handle format like "March 15-16, 2027" or "March 15, 2027"
+      const rangeMatch = dateString.match(/^(\w+)\s+(\d+)-(\d+),\s+(\d+)$/);
+      const singleMatch = dateString.match(/^(\w+)\s+(\d+),\s+(\d+)$/);
+
+      if (rangeMatch) {
+        const [, month, startDay, endDay, year] = rangeMatch;
+        return {
+          day1: `${month} ${startDay}, ${year}`,
+          day2: `${month} ${parseInt(endDay)}, ${year}`,
+          day3: `${month} ${parseInt(endDay) + 1}, ${year}`,
+          fullDate: dateString
+        };
+      } else if (singleMatch) {
+        const [, month, day, year] = singleMatch;
+        return {
+          day1: `${month} ${day}, ${year}`,
+          day2: `${month} ${parseInt(day) + 1}, ${year}`,
+          day3: `${month} ${parseInt(day) + 2}, ${year}`,
+          fullDate: dateString
+        };
+      }
+    } catch (error) {
+      console.error('Error parsing dates:', error);
+    }
+    
+    // Fallback
+    return {
+      day1: 'March 15, 2027',
+      day2: 'March 16, 2027',
+      day3: 'March 17, 2027',
+      fullDate: conferenceDates
+    };
+  };
+
+  const scheduleInfo = parseConferenceDatesForSchedule(conferenceDates);
+
   return (
     <div style={{ paddingTop: '50px', minHeight: '100vh', background: 'linear-gradient(135deg, #274338 0%, #1a2d26 100%)' }}>
       {/* Page Header */}
@@ -125,7 +164,7 @@ const Schedule: React.FC = () => {
                     Opening Day
                   </h3>
                   <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-                    October 13, 2026
+                    {scheduleInfo.day1}
                   </p>
                 </div>
 
@@ -180,7 +219,7 @@ const Schedule: React.FC = () => {
                     Technical Sessions Day
                   </h3>
                   <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-                    October 14, 2026
+                    {scheduleInfo.day2}
                   </p>
                 </div>
 
@@ -234,7 +273,7 @@ const Schedule: React.FC = () => {
                     Closing Day
                   </h3>
                   <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-                    October 15, 2026
+                    {scheduleInfo.day3}
                   </p>
                 </div>
 
