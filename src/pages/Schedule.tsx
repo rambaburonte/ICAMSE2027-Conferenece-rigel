@@ -25,8 +25,8 @@ const Schedule: React.FC = () => {
         const [, month, startDay, endDay, year] = rangeMatch;
         return {
           day1: `${month} ${startDay}, ${year}`,
-          day2: `${month} ${parseInt(endDay)}, ${year}`,
-          day3: `${month} ${parseInt(endDay) + 1}, ${year}`,
+          day2: `${month} ${parseInt(startDay) + 1}, ${year}`,
+          day3: `${month} ${endDay}, ${year}`,
           fullDate: dateString
         };
       } else if (singleMatch) {
