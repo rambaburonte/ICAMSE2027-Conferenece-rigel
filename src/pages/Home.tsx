@@ -378,6 +378,15 @@ useEffect(() => {
         'International collaboration and exchange',
       ],
     },
+
+
+     {
+      title: 'Advanced Electrochemical Materials, Energy Storage and Conversion',
+      icon: MdMemory,
+      topics: [
+        'Electrochemical sensors','Batteries and next-generation batteries','Fuel cells','Electrochemical energy storage','Corrosion and corrosion-resistant materials','Supercapacitors','Electrochemical materials and interfaces','Electrocatalysis','Electrochemical devices and technologies'
+      ],
+    },
   ];
 
   return (
