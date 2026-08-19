@@ -4,9 +4,18 @@ import {
   getErrorMessage,
   getConferenceLoginDetails,
   getConferenceLoginDetailsByUrl,
-  getImportantDetailsByShortName
+  getImportantDetailsByShortName,
+  getPdfsById
 } from '../services/api';
 
+const getCachedPdfDetails = () => {
+  try {
+    const cached = localStorage.getItem('conferencePdfDetails');
+    return cached ? JSON.parse(cached) : null;
+  } catch {
+    return null;
+  }
+};
 const ConferenceContext = createContext<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export const useConference = () => {
@@ -21,10 +30,29 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
   const [siteConfig, setSiteConfig] = useState<any>(getCachedSiteConfig()); // eslint-disable-line @typescript-eslint/no-explicit-any
   const [loginDetails, setLoginDetails] = useState<any>(getCachedLoginDetails()); // eslint-disable-line @typescript-eslint/no-explicit-any
   const [importantDetails, setImportantDetails] = useState<any>(getCachedImportantDetails() || getDefaultImportantDetails()); // eslint-disable-line @typescript-eslint/no-explicit-any
+  const [pdfDetails, setPdfDetails] = useState<any>(getCachedPdfDetails()); // eslint-disable-line @typescript-eslint/no-explicit-any
   const [pricing, setPricing] = useState<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
   const [shortName, setShortName] = useState<string>(getCurrentConferenceShortName());
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Fetch PDFs/brochure details by ID
+  const fetchPdfDetails = async () => {
+    try {
+      // Use ID 7 as per the API data provided
+      const data = await getPdfsById(7);
+      const details = Array.isArray(data) ? (data.length > 0 ? data[0] : null) : data;
+      setPdfDetails(details);
+      if (details) {
+        localStorage.setItem('conferencePdfDetails', JSON.stringify(details));
+      }
+      console.log('Loaded PDF/brochure details:', details);
+      return details;
+    } catch (err) {
+      console.error('Failed to fetch PDF details:', err);
+      return null;
+    }
+  };
 
   // Fetch conference login details from external API
   const fetchLoginDetails = async (conferenceUrl?: string) => {
@@ -140,6 +168,8 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
     return getDefaultConfig(shortName, importantDetails);
   };
 
+
+
   // Change conference by short name
   const changeConference = async (newShortName: string) => {
     if (newShortName === shortName) return;
@@ -226,6 +256,21 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
   // Check if abstract submission is open
   const isAbstractSubmissionOpen = () => {
     return siteConfig?.abstractSubmissionOpen !== false;
+  };
+
+  // Get brochure URL from PDF details
+  const getBrochureUrl = () => {
+    return pdfDetails?.Brochure || '';
+  };
+
+  // Get sponsorship URL from PDF details
+  const getSponsorshipUrl = () => {
+    return pdfDetails?.Sponsorship || '';
+  };
+
+  // Check if brochure is available
+  const isBrochureAvailable = () => {
+    return !!pdfDetails?.Brochure;
   };
 
   // Get days until conference
@@ -378,7 +423,8 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
         // Fetch everything in parallel for maximum speed
         await Promise.all([
           fetchLoginDetails(),
-          fetchPricing(shortName)
+          fetchPricing(shortName),
+          fetchPdfDetails()
         ]);
         console.log('All conference data loaded successfully');
       } catch (error) {
@@ -397,6 +443,7 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
     loginDetails,
     importantDetails,
     conference: importantDetails, // Alias for backward compatibility
+    pdfDetails,
     pricing,
     shortName,
     loading,
@@ -406,6 +453,7 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
     fetchLoginDetails,
     fetchImportantDetails,
     fetchPricing,
+    fetchPdfDetails,
     submitConferenceUrl,
     changeConference,
     refreshSiteConfig,
@@ -434,6 +482,9 @@ export const ConferenceProvider = ({ children }: { children: React.ReactNode }) 
     isRegistrationOpen,
     isAbstractSubmissionOpen,
     getDaysUntilConference,
+    getBrochureUrl,
+    getSponsorshipUrl,
+    isBrochureAvailable,
   };
 
   return (
