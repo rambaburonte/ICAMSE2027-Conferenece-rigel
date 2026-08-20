@@ -367,5 +367,16 @@ export const getCurrentConferenceShortName = () => {
   return 'ICAMSE2027';
 };
 
+
+export const getPdfsById = async (id: number) => {
+  try {
+    const response = await apiClient.get(`/fetch/pdfs/id/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching PDFs by ID:', error);
+    return [];
+  }
+};
+
 // Export axios instance for custom requests
 export default apiClient;

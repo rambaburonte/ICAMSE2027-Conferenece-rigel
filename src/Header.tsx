@@ -14,7 +14,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ navLinks }) => {
-  const { importantDetails } = useConference();
+  const { importantDetails, getBrochureUrl } = useConference();
   const [menuOpen, setMenuOpen] = React.useState(false);
   
   // Get conference details from API or fallback
@@ -25,6 +25,9 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
   const conferenceVenue = importantDetails?.ConferenceVenue
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
     : '';
+
+  // Get brochure URL from API or use fallback
+  const brochureUrl = getBrochureUrl() || '/contact';
 
   React.useEffect(() => {
     if (!menuOpen) return;
@@ -57,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
         <div className="header__top-cta desktop-only">
           <div className="btn-theme-3 header_cta">
             <a
-              href="/contact"
+              href={brochureUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="EVENT BROCHURE"
@@ -78,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
           <div className="header__top-cta mobile-only">
             <div className="btn-theme-3 header_cta">
               <a
-                href="forms/download-event-brochure/index.html"
+                href={brochureUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="EVENT BROCHURE"
