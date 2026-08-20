@@ -107,6 +107,15 @@ export const getImportantDetailsByShortName = async (shortName: string) => {
 };
 
 /**
+ * Get conference PDF links by conference ID.
+ * @param {number} conferenceId - The conference ID
+ */
+export const getConferencePdfsById = async (conferenceId: number) => {
+  const response = await apiClient.get(`/fetch/pdfs/id/${conferenceId}`);
+  return response.data;
+};
+
+/**
  * Get schedule data by conference short name
  * @param {string} shortName - The conference short name
  * Returns schedule data for the conference

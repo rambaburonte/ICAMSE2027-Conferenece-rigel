@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useConference } from '../context/ConferenceContext';
+import { getConferencePdfsById } from '../services/api';
 import americanelements from '../assets/logo_img1.png';
 const Sponsors: React.FC = () => {
   const { importantDetails } = useConference();
+  const [isLoadingSponsorship, setIsLoadingSponsorship] = useState(false);
   // Strip HTML tags (API may return <br> tags)
   const conferenceVenue = importantDetails?.ConferenceVenue
     ? importantDetails.ConferenceVenue.replace(/<[^>]*>/g, '')
@@ -10,6 +12,32 @@ const Sponsors: React.FC = () => {
   const conferenceDates = importantDetails?.ConferenceDates
     ? importantDetails.ConferenceDates.replace(/<[^>]*>/g, '')
     : 'March 15-16, 2027';
+
+  const handleViewSponsorship = async () => {
+    const sponsorshipWindow = window.open('', '_blank');
+    setIsLoadingSponsorship(true);
+
+    try {
+      const pdfs = await getConferencePdfsById(7);
+      const sponsorshipUrl = pdfs?.[0]?.Sponsorship;
+
+      if (!sponsorshipUrl) {
+        throw new Error('Sponsorship PDF is unavailable');
+      }
+
+      if (sponsorshipWindow) {
+        sponsorshipWindow.location.href = sponsorshipUrl;
+      } else {
+        window.location.href = sponsorshipUrl;
+      }
+    } catch (error) {
+      sponsorshipWindow?.close();
+      console.error('Unable to load sponsorship PDF:', error);
+      alert('Unable to load the sponsorship packages right now. Please try again.');
+    } finally {
+      setIsLoadingSponsorship(false);
+    }
+  };
   
   const sponsors = {
     platinum: [
@@ -195,9 +223,9 @@ const Sponsors: React.FC = () => {
             </p>
             <div className="btn-wrap">
               <div className="btn-theme-4">
-                <a href="forms/book-your-booth/index.html">
-                  VIEW SPONSORSHIP PACKAGES
-                </a>
+                <button type="button" onClick={handleViewSponsorship} disabled={isLoadingSponsorship}>
+                  {isLoadingSponsorship ? 'LOADING...' : 'VIEW SPONSORSHIP PACKAGES'}
+                </button>
               </div>
             </div>
           </div>
