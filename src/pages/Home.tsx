@@ -801,6 +801,47 @@ useEffect(() => {
                         </section>
                       </div>
 
+                      {/* Featured Workshop Section */}
+                      <div className="umb-block-grid__layout-item">
+                        <section style={{ padding: '50px 0', background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)' }}>
+                          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                            <div style={{ marginBottom: '32px', textAlign: 'center' }}>
+                              <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2d26', marginBottom: '12px', letterSpacing: '-0.5px' }}>
+                                Featured Workshop
+                              </h2>
+                              <p style={{ color: '#4a5568', fontSize: '1.12rem', fontWeight: 400 }}>
+                                Explore our specialized workshop sessions led by industry experts
+                              </p>
+                            </div>
+
+                            {/* Workshop Banner */}
+                            <div style={{
+                              borderRadius: '20px',
+                              overflow: 'hidden',
+                              boxShadow: '0 8px 32px rgba(39,67,56,0.15)',
+                              backgroundColor: '#fff',
+                              border: '1px solid rgba(39,67,56,0.08)',
+                              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center'
+                            } as React.CSSProperties}>
+                              <img
+                                src="/workshop-banner.png"
+                                alt="From Plant to Perception: Sustainable Colour Technologies in Practice"
+                                style={{
+                                  width: '100%',
+                                  height: 'auto',
+                                  display: 'block',
+                                  objectFit: 'contain'
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+
                       {/* Conference Objectives Section - Enhanced */}
                       <div className="umb-block-grid__layout-item">
                         <section style={{ padding: '40px 0', background: '#f7fafc' }}>
