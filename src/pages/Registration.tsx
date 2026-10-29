@@ -521,6 +521,7 @@ const Registration: React.FC = () => {
                 </label>
               </div>
 
+
               {/* Pricing Summary */}
               <div style={{ marginTop: '40px', marginBottom: '30px' }}>
                 <div style={{ backgroundColor: '#f8f9fa', padding: '30px', borderRadius: '12px', border: '2px solid #e0e0e0' }}>
